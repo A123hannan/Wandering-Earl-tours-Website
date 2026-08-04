@@ -55,7 +55,7 @@ export default function DestinationCard({
           <p className="font-black text-lg sm:text-xl 2xl:text-[20px] leading-tight 2xl:leading-[100%] tracking-[0%] uppercase text-[#1E1E1E]">
             {heading}
           </p>
-          <p className="pt-[10px] font-[400] text-sm sm:text-base 2xl:text-[16px] leading-[22px] tracking-[0%] text-[#1E1E1E]">
+          <p className="pt-[10px] font-[400] text-sm sm:text-base 2xl:text-[16px] leading-[22px] tracking-[0%] text-[#1E1E1E] line-clamp-4">
             {details}
           </p>
         </div>

@@ -62,7 +62,7 @@ export default function ReviewSection() {
       } else if (width >= 768) {
         setCardsPerPage(4); // md/lg/xl: 2 columns x 2 rows = 4 cards
       } else {
-        setCardsPerPage(2); // Mobile: 1 column x 2 rows = 2 cards
+        setCardsPerPage(1); // Mobile: 1 column x 1 row = 1 card
       }
     };
 

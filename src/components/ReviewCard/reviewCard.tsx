@@ -12,10 +12,10 @@ export default function reviewCard({
   location,
 }: reviewProps) {
   return (
-    <div className="flex flex-col justify-between h-full gap-[24px] py-[50px] px-[40px] bg-white border border-[#D6D6D6] rounded-[24px] shadow-[0px_30px_60px_-24px_rgba(0,0,0,0.16)]">
-      <div className="flex flex-col gap-[30px] items-center justify-start">
+    <div className="flex flex-col justify-between h-full gap-[24px] py-6 px-5 sm:py-10 sm:px-8 2xl:py-[50px] 2xl:px-[40px] bg-white border border-[#D6D6D6] rounded-[24px] shadow-[0px_30px_60px_-24px_rgba(0,0,0,0.16)]">
+      <div className="flex flex-col gap-4 sm:gap-6 2xl:gap-[30px] items-center justify-start">
         <ReviewLogo />
-        <p className="font-[400] text-[18px] leading-[24px] tracking-[0%] text-center text-[#1E1E1E]">
+        <p className="font-[400] text-[15px] sm:text-[16px] 2xl:text-[18px] leading-[22px] sm:leading-[24px] tracking-[0%] text-center text-[#1E1E1E]">
           {description}
         </p>
       </div>
