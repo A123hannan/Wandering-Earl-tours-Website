@@ -201,7 +201,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="relative w-full overflow-hidden px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-0 2xl:pl-[207px] 2xl:pr-[207px] pt-12 sm:pt-20 md:pt-28 lg:pt-36 2xl:pt-[200px]">
+      <div className="page-container relative overflow-hidden pt-12 sm:pt-20 md:pt-28 lg:pt-36 2xl:pt-[200px]">
         {/* Underlay Gradient */}
         <div className="h-[200px] sm:h-[260px] 2xl:h-[309px] absolute inset-0 bg-[linear-gradient(180deg,rgba(30,54,92,0.94)_0%,rgba(30,54,92,0.85)_22%,rgba(30,54,92,0.67)_41%,rgba(30,54,92,0.26)_66%,rgba(30,54,92,0)_88%)] pointer-events-none" />
 
@@ -219,7 +219,7 @@ export default function HeroSection() {
         <CountryMap />
       </div>
       {/* Review Section */}
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-[208px] flex flex-col gap-12 sm:gap-20 md:gap-28 2xl:gap-[140px]">
+      <div className="page-container flex flex-col gap-12 sm:gap-20 md:gap-28 2xl:gap-[140px]">
         <TourSection year="2025" />
         <ReviewSection />
       </div>
