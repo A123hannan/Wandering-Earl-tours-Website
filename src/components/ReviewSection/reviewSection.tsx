@@ -60,7 +60,7 @@ export default function ReviewSection() {
       if (width >= 1536) {
         setCardsPerPage(3); // 2xl: 3 columns x 1 row = 3 cards
       } else if (width >= 768) {
-        setCardsPerPage(4); // md/lg/xl: 2 columns x 2 rows = 4 cards
+        setCardsPerPage(2); // md/lg/xl: 2 columns x 2 rows = 4 cards
       } else {
         setCardsPerPage(1); // Mobile: 1 column x 1 row = 1 card
       }
@@ -150,11 +150,10 @@ export default function ReviewSection() {
             type="button"
             onClick={() => setCurrentPage(index)}
             aria-label={`Go to review page ${index + 1}`}
-            className={`transition-all duration-300 rounded-[6px] outline-none cursor-pointer ${
-              index === currentPage
-                ? "w-[40px] sm:w-[55px] h-[9px] sm:h-[11px] bg-[#1E365C]"
-                : "w-[18px] sm:w-[24px] h-[9px] sm:h-[11px] bg-[#1E365C]/30 hover:bg-[#1E365C]/60"
-            }`}
+            className={`transition-all duration-300 rounded-[6px] outline-none cursor-pointer ${index === currentPage
+              ? "w-[40px] sm:w-[55px] h-[9px] sm:h-[11px] bg-[#1E365C]"
+              : "w-[18px] sm:w-[24px] h-[9px] sm:h-[11px] bg-[#1E365C]/30 hover:bg-[#1E365C]/60"
+              }`}
           />
         ))}
       </div>

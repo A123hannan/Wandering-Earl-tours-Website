@@ -65,7 +65,7 @@ export default function Footer() {
       <div className="bg-[linear-gradient(0deg,rgba(30,54,92,0)_0%,rgba(30,54,92,0.95)_54.63%,#1E365C_75.11%,#1E365C_100%)] absolute inset-0" />
 
       {/* Main Content Row */}
-      <div className="relative flex flex-col 2xl:flex-row gap-10 sm:gap-14 2xl:gap-[148px] pt-12 sm:pt-16 2xl:pt-[80px] px-6 sm:px-12 2xl:px-0 2xl:pl-[80px]">
+      <div className="w-full max-w-[1920px] mx-auto relative flex flex-col 2xl:flex-row gap-10 sm:gap-14 2xl:gap-[148px] pt-12 sm:pt-16 2xl:pt-[80px] px-6 sm:px-12 2xl:px-0 2xl:pl-[80px]">
         
         {/* Brand Logo and Description */}
         <div className="relative flex flex-col items-start justify-start gap-5 sm:gap-[30px]">

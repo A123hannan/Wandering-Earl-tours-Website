@@ -28,7 +28,7 @@ export default function Navbar({
   return (
     <>
       <div
-        className={`${className} flex justify-between w-full pt-[30px] pr-[80px] pl-[80px] pb-[20px] max-xl:px-8 max-xl:py-6 items-center`}
+        className={`${className}  flex justify-between w-full pt-[30px] pr-[80px] pl-[80px] pb-[20px] max-xl:px-8 max-xl:py-6 items-center`}
       >
         {/* Logo */}
         <Logo />
@@ -64,37 +64,32 @@ export default function Navbar({
         aria-label="Open menu"
       >
         <span
-          className={`h-[3px] w-[26px] bg-white rounded-full transition-all duration-300 origin-center ${
-            isOpen ? "rotate-45 translate-y-[8px]" : ""
-          }`}
+          className={`h-[3px] w-[26px] bg-white rounded-full transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[8px]" : ""
+            }`}
         />
         <span
-          className={`h-[3px] w-[26px] bg-white rounded-full transition-opacity duration-300 ${
-            isOpen ? "opacity-0" : "opacity-100"
-          }`}
+          className={`h-[3px] w-[26px] bg-white rounded-full transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"
+            }`}
         />
         <span
-          className={`h-[3px] w-[26px] bg-white rounded-full transition-all duration-300 origin-center ${
-            isOpen ? "-rotate-45 -translate-y-[8px]" : ""
-          }`}
+          className={`h-[3px] w-[26px] bg-white rounded-full transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[8px]" : ""
+            }`}
         />
       </button>
 
       {/* Backdrop Overlay (Active under 1200px / lg) */}
       <div
         onClick={closeMenu}
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] transition-opacity duration-300 lg:hidden ${
-          isOpen
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] transition-opacity duration-300 lg:hidden ${isOpen
             ? "opacity-70 pointer-events-auto"
             : "opacity-0 pointer-events-none"
-        }`}
+          }`}
       />
 
       {/* Mobile / Tablet Sidebar Drawer (Active under 1200px / lg) */}
       <aside
-        className={`fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-[#1E365C] z-[90] p-8 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-[#1E365C] z-[90] p-8 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex flex-col gap-6 pt-16">
           {NAV_LINKS.map(({ href, label }) => (
