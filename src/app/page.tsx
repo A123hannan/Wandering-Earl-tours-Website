@@ -102,58 +102,60 @@ export default function HeroSection() {
 
       {/* Sustainable and Responsible travel - Centered wrapper on ultra-wide screens (>1920px) */}
       <div className="w-full flex justify-center bg-[linear-gradient(180deg,#1E365C_0%,#1E365C_84.5%,rgba(30,54,92,0.94)_100%)]">
-        <div className="w-full max-w-[1920px] pt-8 sm:pt-12 2xl:pt-[52px] relative flex flex-col-reverse 2xl:flex-row overflow-hidden 2xl:overflow-visible">
+        <div className="w-full max-w-[1920px] pt-8 sm:pt-12 lg:pt-16 2xl:pt-[52px] relative flex flex-col-reverse lg:flex-row 2xl:flex-row items-center lg:items-start 2xl:items-start justify-between gap-8 lg:gap-6 xl:gap-12 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-0 overflow-hidden 2xl:overflow-visible">
+
           {/* Text Content Block */}
-          <div className="pt-6 sm:pt-10 2xl:pt-[102px] px-6 sm:px-12 md:px-20 2xl:px-0 2xl:pl-[208px] flex flex-col items-center 2xl:items-start text-center 2xl:text-left justify-start pb-16 sm:pb-24 2xl:pb-[122px] z-10">
+          <div className="pt-6 sm:pt-10 lg:pt-8 xl:pt-14 2xl:pt-[102px] px-0 2xl:pl-[208px] flex flex-col items-center lg:items-start 2xl:items-start text-center lg:text-left 2xl:text-left justify-start pb-16 sm:pb-24 lg:pb-24 2xl:pb-[122px] z-10 w-full lg:w-[50%] 2xl:w-auto flex-1">
             <div>
-              <p className="uppercase font-[Inter] font-black text-2xl sm:text-3xl md:text-4xl 2xl:text-[48px] leading-tight 2xl:leading-[122%] tracking-[0%] text-white">
-                Sustainable and <br className="hidden sm:inline 2xl:inline" />{" "}
+              <p className="uppercase font-[Inter] font-black text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl 2xl:text-[48px] leading-tight 2xl:leading-[122%] tracking-[0%] text-white">
+                Sustainable and <br className="hidden sm:inline lg:inline 2xl:inline" />{" "}
                 Responsible Travel
               </p>
-              <p className="font-[400] text-base sm:text-xl 2xl:text-[24px] leading-snug 2xl:leading-[121%] tracking-[0.5%] text-white pt-3 2xl:pt-[12px]">
+              <p className="font-[400] text-base sm:text-xl lg:text-base xl:text-lg 2xl:text-[24px] leading-snug 2xl:leading-[121%] tracking-[0.5%] text-white pt-3 xl:pt-3 2xl:pt-[12px]">
                 We're fully committed to promoting and offering responsible,{" "}
-                <br className="hidden md:inline 2xl:inline" /> respectful and
+                <br className="hidden md:inline lg:inline 2xl:inline" /> respectful and
                 sustainable travel experiences around the world.
               </p>
             </div>
 
-            <div className="pt-6 2xl:pt-[30px] flex flex-col items-center 2xl:items-start">
-              <p className="font-[200] text-sm sm:text-base 2xl:text-[16px] leading-relaxed 2xl:leading-[24px] tracking-[0%] text-white">
+            <div className="pt-6 lg:pt-4 xl:pt-6 2xl:pt-[30px] flex flex-col items-center lg:items-start 2xl:items-start max-w-xl lg:max-w-none">
+              <p className="font-[200] text-sm sm:text-base lg:text-[13px] xl:text-sm 2xl:text-[16px] leading-relaxed 2xl:leading-[24px] tracking-[0%] text-white">
                 Everything we do is aimed at enriching the lives of the people we
                 work with. We want you to go{" "}
-                <br className="hidden lg:inline 2xl:inline" /> away from our tours
+                <br className="hidden xl:inline 2xl:inline" /> away from our tours
                 with great memories, new friends, and a real appreciation for the
-                places we <br className="hidden lg:inline 2xl:inline" /> visit.
+                places we <br className="hidden xl:inline 2xl:inline" /> visit.
                 But, more than that, we also want to leave those places better
                 than we found them.
               </p>
-              <p className="font-[Inter] font-[200] text-sm sm:text-base 2xl:text-[16px] leading-relaxed 2xl:leading-[24px] tracking-[0%] text-white pt-3 2xl:pt-[12px]">
+              <p className="font-[Inter] font-[200] text-sm sm:text-base lg:text-[13px] xl:text-sm 2xl:text-[16px] leading-relaxed 2xl:leading-[24px] tracking-[0%] text-white pt-3 2xl:pt-[12px]">
                 We make a point of avoiding mass tourism destinations. Instead, we
                 sustainably support local
-                <br className="hidden lg:inline 2xl:inline" /> businesses,
+                <br className="hidden xl:inline 2xl:inline" /> businesses,
                 communities and the environment everywhere we go. Every aspect of
                 our trips, from
-                <br className="hidden lg:inline 2xl:inline" />
+                <br className="hidden xl:inline 2xl:inline" />
                 accommodation to local guides, activities to meals, and everything
                 in between, are chosen to
-                <br className="hidden lg:inline 2xl:inline" /> ensure that your
+                <br className="hidden xl:inline 2xl:inline" /> ensure that your
                 tourism dollar leaves a positive and lasting impact and that our
-                visit leaves a<br className="hidden lg:inline 2xl:inline" />{" "}
+                visit leaves a<br className="hidden xl:inline 2xl:inline" />{" "}
                 minimal footprint.
               </p>
-              <div className="pt-6 2xl:pt-[30px] flex justify-center 2xl:justify-start">
+              <div className="pt-6 2xl:pt-[30px] flex justify-center lg:justify-start 2xl:justify-start">
                 <Button
                   text="Book a Tour Now"
-                  className="pt-[15px] px-[30px] pb-[15px] rounded-[30px] bg-[#e9482b]"
-                  textprop="font-[700] text-[18px] leading-[100%] tracking-[0%] text-white"
+                  className="pt-[12px] xl:pt-[15px] px-[24px] xl:px-[30px] pb-[12px] xl:pb-[15px] rounded-[30px] bg-[#e9482b]"
+                  textprop="font-[700] text-[15px] xl:text-[18px] leading-[100%] tracking-[0%] text-white"
                 />
               </div>
             </div>
           </div>
 
           {/* Visual Components Section */}
-          <div className="relative w-full 2xl:w-auto 2xl:static flex justify-center items-center pt-8 2xl:pt-0 px-4 sm:px-8 2xl:px-0">
-            <div className="relative w-full max-w-[480px] sm:max-w-[580px] md:max-w-[650px] aspect-[705/609] 2xl:max-w-none 2xl:w-auto 2xl:h-auto 2xl:aspect-none 2xl:static">
+          <div className="relative w-full lg:w-[46%] xl:w-[48%] 2xl:w-auto 2xl:static flex justify-center lg:justify-end 2xl:justify-center items-center pt-8 lg:pt-4 2xl:pt-0 px-0">
+            <div className="relative w-full max-w-[480px] sm:max-w-[580px] lg:max-w-[460px] xl:max-w-[560px] aspect-[705/609] 2xl:max-w-none 2xl:w-auto 2xl:h-auto 2xl:aspect-none 2xl:static">
+
               {/* Card Under */}
               <div className="absolute left-[18.30%] top-[27.09%] w-[42.41%] h-[72.91%] 2xl:left-[1117px] 2xl:top-[212px] 2xl:w-[299px] 2xl:h-[444px] rounded-[16px] sm:rounded-[24px] border border-[#FFFFFF99] overflow-hidden shadow-[-30px_30px_60px_0px_#0000001A] z-10 2xl:z-auto">
                 <Image
@@ -188,8 +190,10 @@ export default function HeroSection() {
               <div className="absolute left-[50.78%] top-0 w-[22.70%] 2xl:w-auto 2xl:h-auto 2xl:left-[1346px] 2xl:top-[48px] z-30 pointer-events-none [&_svg]:!w-full [&_svg]:!h-auto 2xl:[&_svg]:!w-auto 2xl:[&_svg]:!h-auto">
                 <GlobeSvg />
               </div>
+
             </div>
           </div>
+
         </div>
       </div>
 
