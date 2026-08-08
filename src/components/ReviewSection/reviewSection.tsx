@@ -81,11 +81,11 @@ export default function ReviewSection() {
   }, [cardsPerPage, currentPage, totalPages]);
 
   const handlePrev = () => {
-    setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+    setCurrentPage((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
   const handleNext = () => {
-    setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+    setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : totalPages - 1));
   };
 
   const currentReviews = reviewCardDetails.slice(
