@@ -71,7 +71,10 @@ export default function ReviewSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const totalPages = Math.max(1, Math.ceil(reviewCardDetails.length / cardsPerPage));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(reviewCardDetails.length / cardsPerPage),
+  );
 
   // Reset page index if resizing causes out-of-bounds page numbers
   useEffect(() => {
@@ -85,12 +88,14 @@ export default function ReviewSection() {
   };
 
   const handleNext = () => {
-    setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : totalPages - 1));
+    setCurrentPage((prev) =>
+      prev < totalPages - 1 ? prev + 1 : totalPages - 1,
+    );
   };
 
   const currentReviews = reviewCardDetails.slice(
     currentPage * cardsPerPage,
-    currentPage * cardsPerPage + cardsPerPage
+    currentPage * cardsPerPage + cardsPerPage,
   );
 
   return (
@@ -107,7 +112,7 @@ export default function ReviewSection() {
         </div>
 
         {/* Action Arrows */}
-        <div className="flex flex-row gap-4 sm:gap-6 2xl:gap-[35.61px]">
+        <div className="flex flex-row gap-4 sm:gap-2 2xl:gap-[15.61px]">
           <button
             type="button"
             className="group h-12 w-12 sm:h-14 sm:w-14 2xl:h-[65.39px] 2xl:w-[65.39px] rounded-full border-[2px] bg-transparent border-[#D6D6D6] flex justify-center items-center cursor-pointer hover:scale-[1.05] hover:border-[#1E365C] transition-all duration-200"
@@ -121,11 +126,14 @@ export default function ReviewSection() {
           </button>
           <button
             type="button"
-            className="h-12 w-12 sm:h-14 sm:w-14 2xl:h-[65.39px] 2xl:w-[65.39px] rounded-full border-[2px] bg-[#1E365C] border-white flex justify-center items-center cursor-pointer hover:scale-[1.05] transition-all duration-200"
+            className="h-12.5 w-12.5 sm:h-14 sm:w-14 2xl:h-[65.39px] 2xl:w-[65.39px] rounded-full bg-[#1E365C] flex justify-center items-center cursor-pointer hover:scale-[1.05] transition-all duration-200"
             onClick={handleNext}
             aria-label="Next reviews"
           >
-            <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 text-white" strokeWidth={1.5} />
+            <ChevronRight
+              className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+              strokeWidth={1.5}
+            />
           </button>
         </div>
       </div>
@@ -150,10 +158,11 @@ export default function ReviewSection() {
             type="button"
             onClick={() => setCurrentPage(index)}
             aria-label={`Go to review page ${index + 1}`}
-            className={`transition-all duration-300 rounded-[6px] outline-none cursor-pointer ${index === currentPage
-              ? "w-[40px] sm:w-[55px] h-[9px] sm:h-[11px] bg-[#1E365C]"
-              : "w-[18px] sm:w-[24px] h-[9px] sm:h-[11px] bg-[#1E365C]/30 hover:bg-[#1E365C]/60"
-              }`}
+            className={`transition-all duration-300 rounded-[6px] outline-none cursor-pointer ${
+              index === currentPage
+                ? "w-[40px] sm:w-[55px] h-[9px] sm:h-[11px] bg-[#1E365C]"
+                : "w-[18px] sm:w-[24px] h-[9px] sm:h-[11px] bg-[#1E365C]/30 hover:bg-[#1E365C]/60"
+            }`}
           />
         ))}
       </div>

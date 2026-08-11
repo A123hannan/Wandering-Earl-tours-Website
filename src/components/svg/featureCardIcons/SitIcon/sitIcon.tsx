@@ -3,8 +3,8 @@ import React from "react";
 export default function sitIcon() {
   return (
     <svg
-      width="30"
-      height="50"
+      width="50"
+      height="45"
       viewBox="0 0 30 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,32 +1,58 @@
 import React from "react";
-import Image from "next/image";
+import MapPosition from "@/components/MapPosition/mapPosition";
+
+const MapPositionDetails = [
+  { name: "Africa", left: "22.5%", top: "32.2%" },
+  { name: "Korea", left: "28.9%", top: "61.35%" },
+  { name: "United Kingdom", left: "53.5%", top: "15%" },
+  { name: "India", left: "69.6%", top: "31%" },
+  { name: "USA", left: "58.6%", top: "65.3%" },
+  { name: "China", left: "83.9%", top: "19.6%" },
+  { name: "Russia", left: "84.5%", top: "65.4%" },
+];
 
 export default function CountryMap() {
   return (
-    <div className="relative z-[-10] w-full overflow-hidden 2xl:overflow-visible">
-      {/* Background Gradient Blur Underlay - Locked exactly at 2xl */}
-      <div className="absolute -top-[50px] sm:-top-[80px] 2xl:-top-[100px] -left-10 sm:-left-20 2xl:-left-[160px] -right-10 sm:-right-20 2xl:-right-[160px] bottom-0 bg-[linear-gradient(180deg,rgba(30,54,92,0.3)_0%,#1E365C_20%,#1E365C_90%,rgba(30,54,92,0.4)_100%)] blur-[40px] sm:blur-[50px] 2xl:blur-[60px] pointer-events-none z-0" />
+    <div className="relative z-0 w-full overflow-hidden 2xl:overflow-visible">
+      {/* Background gradient blur - purely decorative, safe to keep absolute/inset */}
+      <div
+        className="absolute -top-[100px] sm:-top-[120px] md:-top-[160px] 2xl:-top-[80px]
+        -left-[60px] sm:-left-[60px] md:-left-[100px] 2xl:-left-[160px]
+        -right-[60px] sm:-right-[60px] md:-right-[100px] 2xl:-right-[160px]
+        -bottom-[100px] sm:-bottom-[120px] md:-bottom-[160px] 2xl:-bottom-[80px]
+        bg-[linear-gradient(180deg,rgba(120,150,190,0)_0%,rgba(75,105,150,0.4)_12%,#1E365C_25%,#1E365C_75%,rgba(75,105,150,0.4)_88%,rgba(120,150,190,0)_100%)]
+        2xl:bg-[linear-gradient(180deg,rgba(30,54,92,0)_0%,#1E365C_20%,#1E365C_80%,rgba(30,54,92,0)_100%)]
+        blur-[60px] pointer-events-none z-0"
+      />
 
-      {/* Main Section Content Container */}
-      <div className="w-full max-w-[1920px] mx-auto relative pt-12 sm:pt-16 md:pt-20 2xl:pt-[77px] pb-16 sm:pb-24 2xl:pb-[125px] flex flex-col gap-10 sm:gap-14 md:gap-20 2xl:gap-[80px]">
-        {/* Title Header */}
-        <div className="pt-8 sm:pt-16 md:pt-24 2xl:pt-[151px] px-4 sm:px-8 md:px-16 lg:px-24 2xl:px-[377px] text-center z-10">
+      <div className="relative z-10 pt-12 sm:pt-16 md:pt-20 2xl:pt-[77px] pb-16 sm:pb-24 2xl:pb-[125px] flex flex-col gap-10 sm:gap-14 md:gap-20 2xl:gap-[80px]">
+        {/* Title */}
+        <div className="pt-8 sm:pt-16 md:pt-24 2xl:pt-[151px] px-4 sm:px-8 md:px-16 lg:px-24 2xl:px-[377px] text-center">
           <p className="font-inter font-black text-2xl sm:text-3xl md:text-4xl 2xl:text-[48px] text-center uppercase leading-tight sm:leading-snug 2xl:leading-[58px] text-white">
             countries where we are offering tours{" "}
-            <span className="text-[#E9482B]">each year</span>
+            <span className="text-[#E9482B] block sm:inline">each year</span>
           </p>
         </div>
 
-        {/* Interactive Map Image Wrapper */}
-        <div className="px-4 sm:px-8 md:px-12 2xl:px-[79.98px] pb-12 sm:pb-20 2xl:pb-[115px] z-10">
-          <Image
-            src="/svg/Map.svg"
-            alt="Map"
-            width={1920}
-            height={900}
-            className="w-full h-auto object-contain"
-            priority
-          />
+        {/* Map — the padding lives HERE, outside the aspect-ratio box, so it
+            never distorts the coordinate system the pins are measured against */}
+        <div className="px-4 sm:px-8 md:px-12 2xl:px-[79.98px] pb-4 sm:pb-8 2xl:pb-0">
+          <div className="relative w-full aspect-[1761/699]">
+            <img
+              src="/svg/Maps.svg"
+              alt="Map"
+              className="w-full h-full object-fill block"
+            />
+
+            {MapPositionDetails.map((position) => (
+              <MapPosition
+                key={position.name}
+                name={position.name}
+                left={position.left}
+                top={position.top}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

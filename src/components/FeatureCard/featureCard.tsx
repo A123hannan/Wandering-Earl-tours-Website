@@ -24,7 +24,7 @@ export default function StandardCard({
     <div className="flex flex-col justify-between w-full h-full bg-white border border-[#D6D6D6] rounded-[24px] gap-6 sm:gap-8 2xl:gap-[40px] p-6 sm:p-8 2xl:pt-[30px] 2xl:pr-[40px] 2xl:pb-[40px] 2xl:pl-[40px] shadow-[0px_30px_60px_-24px_rgba(0,0,0,0.16)]">
       <div className="flex flex-col items-center justify-start gap-4 sm:gap-6 2xl:gap-[30px]">
         {/* Icon Container */}
-        <div className="pt-5 pb-5 px-5 2xl:pt-[27px] 2xl:pb-[28px] 2xl:px-[25px] rounded-[16px] border-[2px] border-[#FEF6F4] bg-[#1E365C]/5 flex items-center justify-center">
+        <div className="pt-5 pb-5 px-5 2xl:pt-[27px] 2xl:pb-[28px] 2xl:px-[25px] rounded-[16px] bg-[#1E365C]/5 flex items-center justify-center">
           {icon === 1 ? (
             <UserIcon />
           ) : icon === 2 ? (
@@ -56,11 +56,10 @@ export default function StandardCard({
       </div>
 
       {/* Button */}
-      <Button
-        text={buttontext}
-        className="group flex items-center justify-center self-center pt-[15px] px-[30px] pb-[16px] gap-[10px] border border-[#1E365C] rounded-[30px] hover:bg-[#1E365C] hover:text-white transition-colors"
-        textprop="font-[600] text-[16px] sm:text-[18px] leading-[100%] text-center tracking-[0%] text-[#1E365C]  group-hover:text-white"
-      />
+      <button className="group flex items-center justify-center self-center pt-[15px] px-[30px] pb-[16px] gap-[10px] border border-[#1E365C] rounded-[30px] hover:bg-[#1E365C] hover:text-white transition-colors font-[600] text-[16px] sm:text-[18px] leading-[100%] text-center tracking-[0%] text-[#1E365C]  group-hover:text-white cursor-pointer">
+        {buttontext}
+      </button>
+      
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function HeroSection() {
         <div className="bg-[linear-gradient(180deg,rgba(30,54,92,0)_0%,rgba(30,54,92,0.3)_30%,#1E365C_100%)] absolute inset-0 " />
 
         {/* Header - Centered for screens above 1920px without affecting standard screens */}
-        <Header className="bg-transparent absolute z-50 top-0 left-[-1px] min-[1921px]:left-1/2 min-[1921px]:-translate-x-1/2 min-[1921px]:max-w-[1920px] w-full" />
+        {/* <Header className="bg-transparent absolute z-50 top-0 left-[-1px] min-[1921px]:left-1/2 min-[1921px]:-translate-x-1/2 min-[1921px]:max-w-[1920px] w-full" /> */}
 
         {/* Hero Section */}
         <div className="absolute inset-0 w-full pointer-events-none flex justify-center z-10">
@@ -77,24 +77,22 @@ export default function HeroSection() {
         2xl:pt-[62px]
       "
             >
-              <Button
-                text="Visit 2024 Tours"
+              <button
                 className="
           w-full max-w-[204px] h-[53px] pt-[15px] pb-[16px] px-[30px]
           rounded-[30px] flex gap-[10px] bg-[#1e365c]
-          sm:w-[204px] 2xl:w-[204px]
-        "
-                textprop="font-sans font-semibold tracking-[0.9] text-white leading-[100%] text-base sm:text-lg 2xl:text-[18px]"
-              />
-              <Button
-                text="Visit 2025 Tours"
-                className="
-          w-full max-w-[204px] h-[53px] pt-[15px] pb-[16px] px-[30px]
+          sm:w-[204px] 2xl:w-[204px] cursor-pointer font-sans font-semibold tracking-[0.9] text-white leading-[100%] text-base sm:text-lg 2xl:text-[18px]"
+              >
+                {" "}
+                Visit 2024 Tours
+              </button>
+              <button
+                className="   w-full max-w-[204px] h-[53px] pt-[15px] pb-[16px] px-[30px]
           rounded-[30px] flex gap-[10px] bg-[#E9482B]
-          sm:w-[204px] 2xl:w-[204px]
-        "
-                textprop="font-sans font-semibold tracking-[0.9] text-white leading-[100%] text-base sm:text-lg 2xl:text-[18px]"
-              />
+          sm:w-[204px] 2xl:w-[204px] cursor-pointer font-sans font-semibold tracking-[0.9] text-white leading-[100%] text-base sm:text-lg 2xl:text-[18px]"
+              >
+                Visit 2025 Tours
+              </button>
             </div>
           </div>
         </div>
@@ -102,62 +100,59 @@ export default function HeroSection() {
 
       {/* Sustainable and Responsible travel - Centered wrapper on ultra-wide screens (>1920px) */}
       <div className="w-full flex justify-center bg-[linear-gradient(180deg,#1E365C_0%,#1E365C_84.5%,rgba(30,54,92,0.94)_100%)]">
-        <div className="w-full max-w-[1920px] pt-8 sm:pt-12 lg:pt-16 2xl:pt-[52px] relative flex flex-col-reverse lg:flex-row 2xl:flex-row items-center lg:items-start 2xl:items-start justify-between gap-8 lg:gap-6 xl:gap-12 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-0 overflow-hidden 2xl:overflow-visible">
-
+        <div className="w-full max-w-[1920px] pt-8 sm:pt-12 lg:pt-16 2xl:pt-[52px] relative flex flex-col-reverse lg:flex-row 2xl:flex-row items-center lg:items-start 2xl:items-start justify-between gap-8 lg:gap-6 2xl:gap-12 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-0 overflow-hidden 2xl:overflow-visible 2xl:[container-type:inline-size] 2xl:[container-name:heroRow]">
           {/* Text Content Block */}
           <div className="pt-6 sm:pt-10 lg:pt-8 xl:pt-14 2xl:pt-[102px] px-0 2xl:pl-[208px] flex flex-col items-center lg:items-start 2xl:items-start text-center lg:text-left 2xl:text-left justify-start pb-16 sm:pb-24 lg:pb-24 2xl:pb-[122px] z-10 w-full lg:w-[50%] 2xl:w-auto flex-1">
             <div>
               <p className="uppercase font-[Inter] font-black text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl 2xl:text-[48px] leading-tight 2xl:leading-[122%] tracking-[0%] text-white">
-                Sustainable and <br className="hidden sm:inline lg:inline 2xl:inline" />{" "}
+                Sustainable and{" "}
+                <br className="hidden sm:inline lg:inline 2xl:inline" />{" "}
                 Responsible Travel
               </p>
               <p className="font-[400] text-base sm:text-xl lg:text-base xl:text-lg 2xl:text-[24px] leading-snug 2xl:leading-[121%] tracking-[0.5%] text-white pt-3 xl:pt-3 2xl:pt-[12px]">
                 We're fully committed to promoting and offering responsible,{" "}
-                <br className="hidden md:inline lg:inline 2xl:inline" /> respectful and
-                sustainable travel experiences around the world.
+                <br className="hidden md:inline lg:inline 2xl:inline" />{" "}
+                respectful and sustainable travel experiences around the world.
               </p>
             </div>
 
             <div className="pt-6 lg:pt-4 xl:pt-6 2xl:pt-[30px] flex flex-col items-center lg:items-start 2xl:items-start max-w-xl lg:max-w-none">
               <p className="font-[200] text-sm sm:text-base lg:text-[13px] xl:text-sm 2xl:text-[16px] leading-relaxed 2xl:leading-[24px] tracking-[0%] text-white">
-                Everything we do is aimed at enriching the lives of the people we
-                work with. We want you to go{" "}
-                <br className="hidden xl:inline 2xl:inline" /> away from our tours
-                with great memories, new friends, and a real appreciation for the
-                places we <br className="hidden xl:inline 2xl:inline" /> visit.
-                But, more than that, we also want to leave those places better
-                than we found them.
+                Everything we do is aimed at enriching the lives of the people
+                we work with. We want you to go{" "}
+                <br className="hidden xl:inline 2xl:inline" /> away from our
+                tours with great memories, new friends, and a real appreciation
+                for the places we <br className="hidden xl:inline 2xl:inline" />{" "}
+                visit. But, more than that, we also want to leave those places
+                better than we found them.
               </p>
               <p className="font-[Inter] font-[200] text-sm sm:text-base lg:text-[13px] xl:text-sm 2xl:text-[16px] leading-relaxed 2xl:leading-[24px] tracking-[0%] text-white pt-3 2xl:pt-[12px]">
-                We make a point of avoiding mass tourism destinations. Instead, we
-                sustainably support local
+                We make a point of avoiding mass tourism destinations. Instead,
+                we sustainably support local
                 <br className="hidden xl:inline 2xl:inline" /> businesses,
-                communities and the environment everywhere we go. Every aspect of
-                our trips, from
+                communities and the environment everywhere we go. Every aspect
+                of our trips, from
                 <br className="hidden xl:inline 2xl:inline" />
-                accommodation to local guides, activities to meals, and everything
-                in between, are chosen to
+                accommodation to local guides, activities to meals, and
+                everything in between, are chosen to
                 <br className="hidden xl:inline 2xl:inline" /> ensure that your
                 tourism dollar leaves a positive and lasting impact and that our
                 visit leaves a<br className="hidden xl:inline 2xl:inline" />{" "}
                 minimal footprint.
               </p>
               <div className="pt-6 2xl:pt-[30px] flex justify-center lg:justify-start 2xl:justify-start">
-                <Button
-                  text="Book a Tour Now"
-                  className="pt-[12px] xl:pt-[15px] px-[24px] xl:px-[30px] pb-[12px] xl:pb-[15px] rounded-[30px] bg-[#e9482b]"
-                  textprop="font-[700] text-[15px] xl:text-[18px] leading-[100%] tracking-[0%] text-white"
-                />
+                <button className="pt-[12px] xl:pt-[15px] px-[24px] xl:px-[30px] pb-[12px] xl:pb-[15px] rounded-[30px] bg-[#e9482b] font-[700] text-[15px] xl:text-[18px] leading-[100%] tracking-[0%] text-white cursor-pointer">
+                  Book a Tour Now
+                </button>
               </div>
             </div>
           </div>
 
           {/* Visual Components Section */}
-          <div className="relative w-full lg:w-[46%] xl:w-[48%] 2xl:w-auto 2xl:static flex justify-center lg:justify-end 2xl:justify-center items-center pt-8 lg:pt-4 2xl:pt-0 px-0">
+          <div className="w-full lg:w-[46%] xl:w-[48%] 2xl:w-auto 2xl:static flex justify-center lg:justify-end 2xl:justify-center items-center pt-8 lg:pt-4 2xl:pt-0 px-0">
             <div className="relative w-full max-w-[480px] sm:max-w-[580px] lg:max-w-[460px] xl:max-w-[560px] aspect-[705/609] 2xl:max-w-none 2xl:w-auto 2xl:h-auto 2xl:aspect-none 2xl:static">
-
-              {/* Card Under */}
-              <div className="absolute left-[18.30%] top-[27.09%] w-[42.41%] h-[72.91%] 2xl:left-[1117px] 2xl:top-[212px] 2xl:w-[299px] 2xl:h-[444px] rounded-[16px] sm:rounded-[24px] border border-[#FFFFFF99] overflow-hidden shadow-[-30px_30px_60px_0px_#0000001A] z-10 2xl:z-auto">
+              {/* Card Under — 1117,212,299,444 / 1920 */}
+              <div className="absolute left-[18.30%] top-[27.09%] w-[42.41%] h-[72.91%] 2xl:left-[58.177cqw] 2xl:top-[11.042cqw] 2xl:w-[15.573cqw] 2xl:h-[23.125cqw] rounded-[16px] sm:rounded-[24px] border border-[#FFFFFF99] overflow-hidden shadow-[-30px_30px_60px_0px_#0000001A] z-10 2xl:z-auto">
                 <Image
                   src="/images/landingpage/cardImageUnder.jpg"
                   alt="underImage"
@@ -166,8 +161,8 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Card Up */}
-              <div className="absolute left-[57.59%] top-[8.37%] w-[42.41%] h-[72.91%] 2xl:left-[1394px] 2xl:top-[98px] 2xl:w-[299px] 2xl:h-[444px] aspect-[299/444] overflow-hidden border border-[#FFFFFF99] rounded-[16px] sm:rounded-[24px] shadow-[-40px_30px_60px_0px_#00000066] z-20 2xl:z-auto">
+              {/* Card Up — 1394,98,299,444 / 1920 */}
+              <div className="absolute left-[57.59%] top-[8.37%] w-[42.41%] h-[72.91%] 2xl:left-[72.604cqw] 2xl:top-[5.104cqw] 2xl:w-[15.573cqw] 2xl:h-[23.125cqw] aspect-[299/444] overflow-hidden border border-[#FFFFFF99] rounded-[16px] sm:rounded-[24px] shadow-[-40px_30px_60px_0px_#00000066] z-20 2xl:z-auto">
                 <Image
                   src="/images/landingpage/cardImageUp.jpg"
                   fill
@@ -176,24 +171,22 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* DashLine SVG */}
-              <div className="absolute left-0 top-[12.62%] w-[35.31%] 2xl:w-auto 2xl:h-auto 2xl:left-[988px] 2xl:top-[125.84px] z-0 pointer-events-none [&_svg]:!w-full [&_svg]:!h-auto 2xl:[&_svg]:!w-auto 2xl:[&_svg]:!h-auto">
+              {/* DashLine SVG — 988,125.84 / 1920 */}
+              <div className="absolute left-0 top-[12.62%] w-[35.31%] 2xl:w-auto 2xl:h-auto 2xl:left-[51.458cqw] 2xl:top-[6.554cqw] z-0 pointer-events-none [&_svg]:!w-full [&_svg]:!h-auto 2xl:[&_svg]:!w-auto 2xl:[&_svg]:!h-auto">
                 <DashLine />
               </div>
 
-              {/* Plane SVG */}
-              <div className="absolute left-[37.68%] top-[8.37%] w-[9.36%] 2xl:w-auto 2xl:h-auto 2xl:left-[1253.65px] 2xl:top-[99px] z-30 pointer-events-none [&_svg]:!w-full [&_svg]:!h-auto 2xl:[&_svg]:!w-auto 2xl:[&_svg]:!h-auto">
+              {/* Plane SVG — 1253.65,99 / 1920 */}
+              <div className="absolute left-[37.68%] top-[8.37%] w-[9.36%] 2xl:w-auto 2xl:h-auto 2xl:left-[65.294cqw] 2xl:top-[5.156cqw] z-30 pointer-events-none [&_svg]:!w-full [&_svg]:!h-auto 2xl:[&_svg]:!w-auto 2xl:[&_svg]:!h-auto">
                 <PlaneSvg />
               </div>
 
-              {/* Globe SVG */}
-              <div className="absolute left-[50.78%] top-0 w-[22.70%] 2xl:w-auto 2xl:h-auto 2xl:left-[1346px] 2xl:top-[48px] z-30 pointer-events-none [&_svg]:!w-full [&_svg]:!h-auto 2xl:[&_svg]:!w-auto 2xl:[&_svg]:!h-auto">
+              {/* Globe SVG — 1346,48 / 1920 */}
+              <div className="absolute left-[50.78%] top-0 w-[22.70%] 2xl:w-auto 2xl:h-auto 2xl:left-[70.104cqw] 2xl:top-[2.5cqw] z-30 pointer-events-none [&_svg]:!w-full [&_svg]:!h-auto 2xl:[&_svg]:!w-auto 2xl:[&_svg]:!h-auto">
                 <GlobeSvg />
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
 
@@ -228,10 +221,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="w-full mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]">
-        <Footer />
-      </div>
+     
     </div>
   );
 }

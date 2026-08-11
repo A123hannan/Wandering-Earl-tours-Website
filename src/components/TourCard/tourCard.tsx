@@ -59,7 +59,6 @@ export default function DestinationCard({
             {details}
           </p>
         </div>
-
         <div className="flex flex-col pt-5 sm:pt-[24px] pb-6 sm:pb-[30px]">
           <div className="flex flex-wrap items-center gap-4 sm:gap-[16px]">
             <div className="flex flex-row items-center">
@@ -99,17 +98,10 @@ export default function DestinationCard({
             </div>
           </div>
         </div>
-
         {/* Action Button */}
-        <Button
-          text={buttontext}
-          textprop={`font-[700] text-[16px] sm:text-[18px] leading-[100%] tracking-[0%] ${
-            cardNo === 2 ? "text-[#E9482B]" : "text-[#1E365C]"
-          }`}
-          className={`pt-[15px] px-[30px] pb-[16px] rounded-[30px] flex justify-center border ${
-            cardNo === 2 ? "border-[#E9482B4D]" : "border-[#D6D6D6]"
-          } flex gap-[10px] w-full`}
-        />
+        <button className="font-[700] text-[16px] sm:text-[18px] leading-[100%] tracking-[0%] text-[var(--color-primary)] hover:text-[var(--color-accent)] pt-[15px] px-[30px] pb-[16px] rounded-[30px] flex justify-center border border-[var(--color-border)] hover:border-[#E9482B4D] flex gap-[10px] cursor-pointer">
+          {buttontext}
+        </button>
       </div>
     </div>
   );

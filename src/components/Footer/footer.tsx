@@ -51,7 +51,7 @@ function FooterRoutes({
 
 export default function Footer() {
   return (
-    <div className="relative w-full 2xl:aspect-[1921/441] overflow-hidden">
+    <div className="relative w-full overflow-hidden w-full mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]">
       {/* Background Image */}
       <Image
         src="/images/landingpage/footerImage.png"
@@ -66,7 +66,6 @@ export default function Footer() {
 
       {/* Main Content Row */}
       <div className="w-full max-w-[1920px] mx-auto relative flex flex-col 2xl:flex-row gap-10 sm:gap-14 2xl:gap-[148px] pt-12 sm:pt-16 2xl:pt-[80px] px-6 sm:px-12 2xl:px-0 2xl:pl-[80px]">
-        
         {/* Brand Logo and Description */}
         <div className="relative flex flex-col items-start justify-start gap-5 sm:gap-[30px]">
           <Logo />

@@ -1,9 +1,11 @@
 "use client";
+
 import Logo from "./logo";
 import Link from "next/link";
 import React, { useState } from "react";
 import Cart from "@/components/Cart/cart";
 import Button from "@/components/Button/button";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { href: "/tours", label: "Tours" },
@@ -14,82 +16,90 @@ const NAV_LINKS = [
   { href: "/contact", label: "Contact Us" },
 ];
 
-export default function Navbar({
-  className = "",
-  buttonBg = "#1e365c",
-}: {
-  className?: string;
-  buttonBg?: string;
-}) {
+// Nav styles
+const navStyles: any = {
+  "/": {
+    className: "bg-transparent",
+    buttonBg: "bg-[var(--color-primary)]",
+    textColor: "text-[var(--color-white)]",
+    textWeight: "text-[500]",
+  },
+  "/tours": {
+    className: "bg-[var(--color-primary)]",
+    buttonBg: "bg-[var(--color-white)]",
+    textColor: "text-[var(--color-primary)]",
+  },
+};
+
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
+  const pathName = usePathname();
+  const styles = navStyles[pathName] ?? navStyles["/"];
+  const textWeight = styles.textWeight ?? "text-[700]";
+
   return (
     <>
-      <div
-        className={`${className}  flex justify-between w-full pt-[30px] pr-[80px] pl-[80px] pb-[20px] max-xl:px-8 max-xl:py-6 items-center`}
-      >
-        {/* Logo */}
-        <Logo />
+      <div className={`absolute top-0 left-0 z-50 w-full ${styles.className}`}>
+        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-[80px] pt-[30px] pb-[20px] max-xl:px-8 max-xl:py-6">
+          {/* Logo */}
+          <Logo />
 
-        {/* Desktop Nav Links (Visible on 1200px / lg and above) */}
-        <div className="hidden lg:flex gap-[30px] max-xl:gap-2 items-center pt-[1px]">
-          {NAV_LINKS.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="pt-[10px] pr-[16px] pb-[10px] pl-[16px] max-xl:px-2 max-xl:py-1 flex gap-[10px] font-[500] text-[18px] max-xl:text-[13px] leading-[100%] tracking-[0%] uppercase text-white whitespace-nowrap hover:opacity-80 transition-opacity"
+          {/* Desktop Nav Links */}
+          <div className="hidden items-center gap-[30px] pt-[1px] lg:flex max-xl:gap-2">
+            {NAV_LINKS.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="flex gap-[10px] px-[16px] py-[10px] font-[500] text-[18px] leading-[100%] tracking-[0%] text-white uppercase whitespace-nowrap transition-opacity hover:opacity-80 max-xl:px-2 max-xl:py-1 max-xl:text-[13px]"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Login + Cart */}
+          <div className="hidden items-center justify-start gap-[16px] py-[17px] lg:flex max-xl:gap-3">
+            <Cart />
+
+            <button
+              className={`flex gap-[10px] rounded-[24px] px-[30px] pt-[11px] pb-[12px] font-inter text-[14px] leading-[100%] tracking-[0%] whitespace-nowrap ${styles.buttonBg} ${textWeight} ${styles.textColor} cursor-pointer hover:bg-[var(--color-accent)] max-xl:px-4 max-xl:py-2 max-xl:text-[13px]`}
             >
-              {label}
-            </Link>
-          ))}
-        </div>
-
-        {/* Login Button and Cart (Visible on 1200px / lg and above) */}
-        <div className="hidden lg:flex gap-[16px] max-xl:gap-3 py-[17px] justify-start items-center">
-          <Cart />
-          <Button
-            text="Login"
-            className={`flex pt-[11px] px-[30px] pb-[12px] max-xl:px-4 max-xl:py-2 gap-[10px] bg-[${buttonBg}] rounded-[24px] whitespace-nowrap`}
-            textprop="font-inter font-[500] text-[14px] max-xl:text-[13px] leading-[100%] tracking-[0%] text-white"
-          />
+              Login
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Hamburger Toggle Button (Triggers on screens under 1200px / lg) */}
+      {/* Hamburger Toggle Button */}
       <button
         onClick={toggleMenu}
-        className={`lg:hidden flex flex-col justify-center items-center gap-[5px] ${isOpen ? "fixed" : "absolute"} z-[95] top-5 right-5 cursor-pointer transition-transform  p-2.5 rounded-full backdrop-blur-md bg-transparent`}
+        className={`absolute top-5 right-5 z-[95] flex cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full bg-transparent p-2.5 backdrop-blur-md transition-transform lg:hidden ${isOpen ? "fixed" : "absolute"}`}
         aria-label="Open menu"
       >
         <span
-          className={`h-[3px] w-[26px] bg-white rounded-full transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[8px]" : ""
-            }`}
+          className={`h-[3px] w-[26px] origin-center rounded-full bg-white transition-all duration-300 ${isOpen ? "translate-y-[8px] rotate-45" : ""}`}
         />
         <span
-          className={`h-[3px] w-[26px] bg-white rounded-full transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"
-            }`}
+          className={`h-[3px] w-[26px] rounded-full bg-white transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`}
         />
         <span
-          className={`h-[3px] w-[26px] bg-white rounded-full transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[8px]" : ""
-            }`}
+          className={`h-[3px] w-[26px] origin-center rounded-full bg-white transition-all duration-300 ${isOpen ? "-translate-y-[8px] -rotate-45" : ""}`}
         />
       </button>
 
-      {/* Backdrop Overlay (Active under 1200px / lg) */}
+      {/* Backdrop Overlay */}
       <div
         onClick={closeMenu}
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] transition-opacity duration-300 lg:hidden ${isOpen
-            ? "opacity-70 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-          }`}
+        className={`fixed inset-0 z-[80] bg-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${isOpen ? "pointer-events-auto opacity-70" : "pointer-events-none opacity-0"}`}
       />
 
-      {/* Mobile / Tablet Sidebar Drawer (Active under 1200px / lg) */}
+      {/* Mobile / Tablet Sidebar Drawer */}
       <aside
-        className={`fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-[#1E365C] z-[90] p-8 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed top-0 right-0 z-[90] flex h-full w-[280px] flex-col justify-between bg-[#1E365C] p-8 transition-transform duration-300 ease-in-out sm:w-[320px] lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex flex-col gap-6 pt-16">
           {NAV_LINKS.map(({ href, label }) => (
@@ -97,7 +107,7 @@ export default function Navbar({
               key={href}
               href={href}
               onClick={closeMenu}
-              className="text-white text-lg font-medium uppercase py-2 border-b border-white/10 last:border-b-0 hover:text-[#E9482B] transition-colors"
+              className="border-b border-white/10 py-2 text-lg font-medium text-white uppercase transition-colors last:border-b-0 hover:text-[#E9482B]"
             >
               {label}
             </Link>
@@ -105,14 +115,15 @@ export default function Navbar({
         </div>
 
         {/* Mobile Cart & Login */}
-        <div className="flex flex-col gap-4 pt-6 border-t border-white/10">
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-6">
           <div className="flex items-center justify-between">
-            <span className="text-white text-sm font-medium">Cart</span>
+            <span className="text-sm font-medium text-white">Cart</span>
             <Cart />
           </div>
+
           <Button
             text="Login"
-            className="w-full flex justify-center py-3 bg-[#E9482B] rounded-[24px]"
+            className="flex w-full justify-center rounded-[24px] bg-[#E9482B] py-3"
             textprop="font-inter font-medium text-[16px] text-white"
           />
         </div>

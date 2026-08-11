@@ -2,11 +2,9 @@
 
 @theme {
   --breakpoint-xl: 1600px;
-}
+  --breakpoint-3xl: 1920px;
 
-/* ─── Brand Design Tokens ─────────────────────────────────────────── */
-:root {
-  /* Colors */
+  /* Brand Design Tokens */
   --color-primary: #1e365c;
   --color-accent: #e9482b;
   --color-dark: #1e1e1e;
@@ -15,38 +13,28 @@
   --color-border: #d6d6d6;
 
   /* Typography */
-  --font-main: 'Inter', sans-serif;
+  --font-main: "Inter", sans-serif;
 
   /* Container */
   --container-max: 1920px;
   --container-px-2xl: 208px;
 }
 
-/* ─── Reusable Page Container ─────────────────────────────────────── */
-/*
- * .page-container controls ONLY:
- *   - horizontal padding  (responsive gutter)
- *   - max-width + centering
- * It does NOT set vertical padding, margins, height, or colours.
- * Those remain the responsibility of each individual section.
- *
- * NOTE: We use .page-container (not .container) because Tailwind v4
- * ships its own built-in .container utility that would conflict.
- */
+/* ─────────────────────────────────────────────
+   Reusable Page Container
+   ───────────────────────────────────────────── */
 .page-container {
   width: 100%;
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
-  /* 16px  — mobile  */
-  padding-right: 1rem;
+  padding-right:1rem
 }
 
 @media (min-width: 640px) {
   .page-container {
     padding-left: 2rem;
-    /* 32px  — sm      */
     padding-right: 2rem;
   }
 }
@@ -54,7 +42,6 @@
 @media (min-width: 768px) {
   .page-container {
     padding-left: 3rem;
-    /* 48px  — md      */
     padding-right: 3rem;
   }
 }
@@ -62,32 +49,37 @@
 @media (min-width: 1024px) {
   .page-container {
     padding-left: 4rem;
-    /* 64px  — lg      */
     padding-right: 4rem;
   }
 }
 
 @media (min-width: 1536px) {
   .page-container {
-    padding-left: var(--container-px-2xl);
-    /* 208px — 2xl     */
-    padding-right: var(--container-px-2xl);
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }
 
-/* ─── Scrollbar Hidden ────────────────────────────────────────────── */
-/* Chrome, Safari, Edge */
+@media (min-width: 1920px) {
+  .page-container {
+    padding-left: var(--container-px-2xl);
+    padding-right:var(--container-px-2xl);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Hide Scrollbar
+   ───────────────────────────────────────────── */
+
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
-/* Firefox */
 html {
   scrollbar-width: none;
 }
 
-/* IE / Old Edge */
 body {
   -ms-overflow-style: none;
 }

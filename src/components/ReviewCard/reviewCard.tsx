@@ -24,7 +24,7 @@ export default function reviewCard({
           {clientName}
         </p>
         <span className="border border-[#D6D6D6] w-full"></span>
-        <div className="flex flex-row gap-[6px]">
+        <div className="flex flex-row gap-[6px] items-center">
           <MapIcon />
           <p className="font-[Poppins] font-[400] text-[14px] leading-[100%] tracking-[0%] text-[#8F8F8F]">
             {location}
