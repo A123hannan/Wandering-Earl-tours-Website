@@ -13,7 +13,8 @@ export default function TourHero() {
           <TourSection
             limit={8}
             year="2024"
-            gridCols="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4"
+            cols={4}
+            // gridCols="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4"
             page="/tours"
             button={false}
           />
@@ -22,7 +23,8 @@ export default function TourHero() {
           <TourSection
             limit={8}
             year="2025"
-            gridCols="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4"
+            cols={4}
+            // gridCols="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4"
             page="/tours"
             button={false}
           />

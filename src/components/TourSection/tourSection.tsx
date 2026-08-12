@@ -1,8 +1,11 @@
 import React from "react";
 import DestinationCard from "@/components/TourCard/tourCard";
-import Button from "@/components/Button/button";
 import ArrowSvg from "@/components/svg/ArrowSvg/arrowSvg";
 import { toursData } from "@/data/data";
+
+/* =========================================================
+   2025 TOUR DATA
+========================================================= */
 
 const destCardDetils2025 = [
   {
@@ -43,6 +46,10 @@ const destCardDetils2025 = [
   },
 ];
 
+/* =========================================================
+   2024 TOUR DATA
+========================================================= */
+
 const destCardDetils = [
   {
     badge: "Limit",
@@ -82,21 +89,61 @@ const destCardDetils = [
   },
 ];
 
+/* =========================================================
+   COLUMN WIDTH MAP
+
+   Each entry is written out as a complete, literal Tailwind
+   class string (not built by string-concatenation) so the
+   JIT compiler can find and generate it at build time.
+   That's what lets `cols` be dynamic per usage while still
+   producing real Tailwind classes.
+
+   Card container is ALWAYS `flex flex-wrap justify-center`,
+   never CSS grid — grid has no way to center a short final
+   row, flex-wrap does it for free.
+========================================================= */
+
+const COLS_WIDTH_MAP: Record<number, string> = {
+  2: "w-full sm:w-[calc(50%-16px)] max-w-[488px] sm:max-w-none",
+  3: "w-full sm:w-[calc(50%-16px)] 2xl:w-[calc(33.333%-14px)] max-w-[488px] sm:max-w-none",
+  4: "w-full sm:w-[calc(50%-16px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] max-w-[488px] sm:max-w-none",
+  5: "w-full sm:w-[calc(50%-16px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] 2xl:w-[calc(20%-16px)] max-w-[488px] sm:max-w-none",
+};
+
+/* =========================================================
+   PROPS
+========================================================= */
+
 interface TourSectionProps {
   page?: string;
   year?: string;
-  gridCols?: string;
+
+  /**
+   * How many columns to show at the widest breakpoint.
+   * 2, 3, 4, or 5 — smaller breakpoints scale down automatically.
+   * Any incomplete last row is always centered.
+   */
+  cols?: 2 | 3 | 4 | 5;
+
   limit?: number;
   button?: boolean;
 }
 
+/* =========================================================
+   COMPONENT
+========================================================= */
+
 export default function TourSection({
   page = "/",
   year,
-  gridCols = "grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3",
+  cols = 3,
   limit = 3,
   button = true,
 }: TourSectionProps) {
+  /* -------------------------------------------------------
+     DATA
+  ------------------------------------------------------- */
+
   const cardData =
     page === "/"
       ? year === "2025"
@@ -106,9 +153,18 @@ export default function TourSection({
 
   const isToursPage = page === "/tours";
 
+  const widthClass = COLS_WIDTH_MAP[cols] ?? COLS_WIDTH_MAP[3];
+
+  /* -------------------------------------------------------
+     RENDER
+  ------------------------------------------------------- */
+
   return (
     <div>
-      {/* Header Container */}
+      {/* =====================================================
+          HEADER
+      ===================================================== */}
+
       <div
         className={`relative z-10 flex w-full items-center ${
           isToursPage
@@ -127,6 +183,7 @@ export default function TourSection({
               <p className="font-[900] font-black text-5xl sm:text-7xl md:text-8xl lg:text-[100px] 2xl:text-[128px] leading-tight sm:leading-none 2xl:leading-[120px] tracking-normal uppercase text-[#1E365C]">
                 {year}
               </p>
+
               <p className="font-[900] font-black text-5xl sm:text-7xl md:text-8xl lg:text-[100px] 2xl:text-[128px] leading-tight sm:leading-none 2xl:leading-[120px] tracking-[0%] uppercase text-[#404040]">
                 Tours
               </p>
@@ -146,9 +203,26 @@ export default function TourSection({
         )}
       </div>
 
-      {/* Destination Grid */}
+      {/* =====================================================
+          DESTINATION GRID
+
+          flex-wrap + justify-center, always. This is what makes
+          any incomplete final row (1 or 2 leftover cards) sit
+          centered instead of pinned to the left/grid-track.
+      ===================================================== */}
+
       <div
-        className={`${gridCols} gap-6 sm:gap-8 2xl:gap-[20px] pt-8 sm:pt-10 2xl:pt-[32px]`}
+        className="
+          flex flex-wrap justify-center
+
+          gap-6
+          sm:gap-8
+          2xl:gap-[20px]
+
+          pt-8
+          sm:pt-10
+          2xl:pt-[32px]
+        "
       >
         {(limit ? cardData.slice(0, limit) : cardData).map(
           (
@@ -167,7 +241,7 @@ export default function TourSection({
           ) => (
             <div
               key={`${heading}-${index}`}
-              className="w-full flex justify-center"
+              className={`${widthClass} flex justify-center`}
             >
               <DestinationCard
                 badge={badge}

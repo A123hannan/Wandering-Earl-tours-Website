@@ -75,6 +75,18 @@ export const toursData: Tour[] = [
   },
   {
     badge: "",
+    cardNo: 6,
+    imgSrc: "/images/landingpage/2024CardImages/dCard2.png",
+    heading: "WANDER TO VIETNAM",
+    details:
+      "Join our unique journey into the heart of Vietnam! We'll dive into the rich history, flavorful cuisine, city and village life and vibrant cultures in a style you won't want to miss!",
+    bookings: "2 out of 12 spots booked",
+    destination: "Vietnam",
+    duration: "Nov 08 — Nov 17, 2024 (10 days)",
+    buttontext: "Add to wishlist",
+  },
+  {
+    badge: "",
     cardNo: 7,
     imgSrc: "/images/landingpage/2024CardImages/dCard1.png",
     heading: "WANDER ACROSS MEXICO",
