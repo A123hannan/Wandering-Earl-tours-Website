@@ -27,7 +27,32 @@ const navStyles: any = {
   "/tours": {
     className: "bg-[var(--color-primary)]",
     buttonBg: "bg-[var(--color-white)]",
-    textColor: "text-[var(--color-primary)]",
+    textColor: "text-[var(--color-grey)]",
+  },
+  "/about": {
+    className: "",
+    buttonBg: "bg-[var(--color-white)]",
+    textColor: "text-[var(--color-grey)]",
+  },
+  "/style": {
+    className: "bg-[var(--color-primary)]",
+    buttonBg: "bg-[var(--color-white)]",
+    textColor: "text-[var(--color-grey)]",
+  },
+  "/private": {
+    className: "bg-[var(--color-primary)]",
+    buttonBg: "bg-[var(--color-white)]",
+    textColor: "text-[var(--color-grey)]",
+  },
+  "/past": {
+    className: "bg-[var(--color-primary)]",
+    buttonBg: "bg-[var(--color-white)]",
+    textColor: "text-[var(--color-grey)]",
+  },
+  "/contact": {
+    className: "bg-[var(--color-primary)]",
+    buttonBg: "bg-[var(--color-white)]",
+    textColor: "text-[var(--color-grey)]",
   },
 };
 
@@ -54,7 +79,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className="flex gap-[10px] px-[16px] py-[10px] font-[500] text-[18px] leading-[100%] tracking-[0%] text-white uppercase whitespace-nowrap transition-opacity hover:opacity-80 max-xl:px-2 max-xl:py-1 max-xl:text-[13px]"
+                className={` flex gap-[10px] px-[16px] py-[10px] font-[500] text-[18px] leading-[100%] tracking-[0%] ${styles.textColor} uppercase whitespacdarkp transition-opacity hover:opacity-80 max-xl:px-2 max-xl:py-1 max-xl:text-[13px]`}
               >
                 {label}
               </Link>
@@ -66,7 +91,7 @@ export default function Navbar() {
             <Cart />
 
             <button
-              className={`flex gap-[10px] rounded-[24px] px-[30px] pt-[11px] pb-[12px] font-inter text-[14px] leading-[100%] tracking-[0%] whitespace-nowrap ${styles.buttonBg} ${textWeight} ${styles.textColor} cursor-pointer hover:bg-[var(--color-accent)] max-xl:px-4 max-xl:py-2 max-xl:text-[13px]`}
+              className={`flex gap-[10px] rounded-[24px] px-[30px] pt-[11px] pb-[12px] font-inter text-[14px] leading-[100%] tracking-[0%] whitespace-nowrap ${styles.buttonBg} ${textWeight} ${styles.textColor} cursor-pointer hovedarkar(--color-accent)] max-xl:px-4 max-xl:py-2 max-xl:text-[13px]`}
             >
               Login
             </button>

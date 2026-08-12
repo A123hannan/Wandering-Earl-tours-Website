@@ -111,7 +111,9 @@ export default function TourSection({
       {/* Header Container */}
       <div
         className={`relative z-10 flex w-full items-center ${
-          isToursPage ? "justify-center text-center" : "justify-between"
+          isToursPage
+            ? "justify-center text-center mb-[50px]"
+            : "justify-between"
         }`}
       >
         <div className={isToursPage ? "w-full text-center" : ""}>

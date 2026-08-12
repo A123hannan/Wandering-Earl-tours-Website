@@ -4,16 +4,16 @@ import ToursIndexPage from "@/components/Tours/ToursRouteComponent/ToursRouteCom
 import TourSection from "@/components/TourSection/tourSection";
 export default function TourHero() {
   return (
-    <div className="">
+    <div className="w-full">
       <div className="pb-[128px]">
         <ToursIndexPage />
       </div>
-      <div className="mx-auto max-w-[1760px] ">
+      <div className="mx-auto max-w-[1760px] px-[1rem] 2xl:px-0 relative top-[-178px] z-50">
         <div className="">
           <TourSection
             limit={8}
             year="2024"
-            gridCols="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+            gridCols="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4"
             page="/tours"
             button={false}
           />
@@ -22,7 +22,7 @@ export default function TourHero() {
           <TourSection
             limit={8}
             year="2025"
-            gridCols="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+            gridCols="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4"
             page="/tours"
             button={false}
           />
