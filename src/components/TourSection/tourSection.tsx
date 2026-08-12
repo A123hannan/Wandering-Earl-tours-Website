@@ -193,9 +193,28 @@ export default function TourSection({
 
         {button && !isToursPage && (
           <div className="pb-0 sm:pb-[8px] 2xl:pb-[13px]">
-            <button className="group font-[700] text-[16px] leading-[100%] tracking-[0%] text-[#1E365C] flex cursor-pointer pt-[13px] px-[31px] pb-[14px] flex-row items-center gap-[10px] rounded-[30px] border border-[#1E365C] hover:bg-[#1E365C] hover:text-white transition-colors">
+            <button
+              className="
+                group flex flex-row items-center cursor-pointer
+                font-[700] leading-[100%] tracking-[0%] text-[#1E365C]
+                rounded-[30px] border border-[#1E365C]
+                hover:bg-[#1E365C] hover:text-white transition-colors
+ 
+                text-[13px]
+                sm:text-[14px]
+                2xl:text-[16px]
+ 
+                gap-[6px]
+                sm:gap-[8px]
+                2xl:gap-[10px]
+ 
+                pt-[9px] pb-[10px] px-[18px]
+                sm:pt-[11px] sm:pb-[12px] sm:px-[22px]
+                2xl:pt-[13px] 2xl:pb-[14px] 2xl:px-[31px]
+              "
+            >
               All Tours
-              <div className="pl-[10px] pt-[1px] text-[#1E365C] group-hover:text-white transition-colors">
+              <div className="pl-0 pt-[1px] text-[#1E365C] group-hover:text-white transition-colors shrink-0">
                 <ArrowSvg />
               </div>
             </button>
