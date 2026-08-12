@@ -220,8 +220,6 @@ export default function HeroSection() {
           <ContactSection />
         </div>
       </div>
-
-     
     </div>
   );
 }

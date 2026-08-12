@@ -33,7 +33,7 @@ export default function DestinationCard({
   return (
     <div className="flex flex-col w-full shadow-[0px_40px_48px_-16px_rgba(0,0,0,0.16)] bg-white rounded-[24px] overflow-hidden h-full justify-between">
       {/* Image Wrapper */}
-      <div className="relative w-full aspect-[16/10] sm:aspect-[488/301] 2xl:w-[488px] 2xl:h-[301px] 2xl:aspect-none">
+      <div className="relative w-full aspect-[16/10] sm:aspect-[488/301]">
         <Image
           src={imgSrc}
           fill
@@ -43,9 +43,9 @@ export default function DestinationCard({
         />
 
         {badge === "Limit" ? (
-          <BadgeLimit className="absolute top-4 right-4 sm:top-6 sm:right-6 2xl:top-[221px] 2xl:left-[408px] 2xl:bottom-[20px] 2xl:right-[20px]" />
+          <BadgeLimit className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5" />
         ) : badge === "Sold" ? (
-          <BadgeSold className="absolute top-4 right-4 sm:top-6 sm:right-6 2xl:top-[221px] 2xl:left-[408px] 2xl:bottom-[20px] 2xl:right-[20px]" />
+          <BadgeSold className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5" />
         ) : null}
       </div>
 

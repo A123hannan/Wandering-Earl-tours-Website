@@ -1,19 +1,33 @@
 import React from "react";
 import Image from "next/image";
-export default function page() {
+import ToursIndexPage from "@/components/Tours/ToursRouteComponent/ToursRouteComponent";
+import TourSection from "@/components/TourSection/tourSection";
+export default function TourHero() {
   return (
-    <div className="relative">
-      {/* <div className="relative w-full "> */}
-        <Image
-          src="/images/Tours/BgImage.png"
-          alt="Background Image"
-          fill
-          priority
-          className="object-cover "
-        />
-        {/* Overlay */}
-        <div className="bg-[linear-gradient(180deg,rgba(30,54,92,0)_0%,rgba(30,54,92,0.3)_30%,#1E365C_100%)] absolute inset-0 " />
-      {/* </div> */}
+    <div className="">
+      <div className="pb-[128px]">
+        <ToursIndexPage />
+      </div>
+      <div className="mx-auto max-w-[1760px] ">
+        <div className="">
+          <TourSection
+            limit={8}
+            year="2024"
+            gridCols="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+            page="/tours"
+            button={false}
+          />
+        </div>
+        <div className="mt-[94px]">
+          <TourSection
+            limit={8}
+            year="2025"
+            gridCols="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+            page="/tours"
+            button={false}
+          />
+        </div>
+      </div>
     </div>
   );
 }
