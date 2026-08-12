@@ -192,7 +192,7 @@ export default function TourSection({
         </div>
 
         {button && !isToursPage && (
-          <div className="pb-0 sm:pb-[8px] 2xl:pb-[13px]">
+          <div className="pb-[10px] sm:pb-[8px] 2xl:pb-[13px]">
             <button
               className="
                 group flex flex-row items-center cursor-pointer
