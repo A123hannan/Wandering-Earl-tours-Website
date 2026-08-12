@@ -192,7 +192,7 @@ export default function TourSection({
         </div>
 
         {button && !isToursPage && (
-          <div className="pb-0 sm:pb-[13px] 2xl:pb-[13px]">
+          <div className="pb-0 sm:pb-[8px] 2xl:pb-[13px]">
             <button className="group font-[700] text-[16px] leading-[100%] tracking-[0%] text-[#1E365C] flex cursor-pointer pt-[13px] px-[31px] pb-[14px] flex-row items-center gap-[10px] rounded-[30px] border border-[#1E365C] hover:bg-[#1E365C] hover:text-white transition-colors">
               All Tours
               <div className="pl-[10px] pt-[1px] text-[#1E365C] group-hover:text-white transition-colors">

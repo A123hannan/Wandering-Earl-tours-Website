@@ -79,7 +79,7 @@ export default function HeroSection() {
             >
               <button
                 className="
-          w-full max-w-[204px] h-[53px] pt-[15px] pb-[16px] px-[30px]
+          w-full max-w-[204px] h-[53px] pt-[17px] pb-[16px] px-[30px]
           rounded-[30px] flex gap-[10px] bg-[#1e365c]
           sm:w-[204px] 2xl:w-[204px] cursor-pointer font-sans font-semibold tracking-[0.9] text-white leading-[100%] text-base sm:text-lg 2xl:text-[18px]"
               >
@@ -87,7 +87,7 @@ export default function HeroSection() {
                 Visit 2024 Tours
               </button>
               <button
-                className="   w-full max-w-[204px] h-[53px] pt-[15px] pb-[16px] px-[30px]
+                className="   w-full max-w-[204px] h-[53px] pt-[17px] pb-[16px] px-[30px]
           rounded-[30px] flex gap-[10px] bg-[#E9482B]
           sm:w-[204px] 2xl:w-[204px] cursor-pointer font-sans font-semibold tracking-[0.9] text-white leading-[100%] text-base sm:text-lg 2xl:text-[18px]"
               >
