@@ -166,7 +166,7 @@ export default function TourSection({
       ===================================================== */}
 
       <div
-        className={`relative z-10 flex w-full items-center ${
+        className={`relative z-10 flex w-full items-end ${
           isToursPage
             ? "justify-center text-center mb-[50px]"
             : "justify-between"
