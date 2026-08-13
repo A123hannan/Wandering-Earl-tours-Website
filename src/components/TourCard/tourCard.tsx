@@ -31,7 +31,7 @@ export default function DestinationCard({
   buttontext,
 }: CardProps) {
   return (
-    <div className="flex flex-col w-full shadow-[0px_40px_48px_-16px_rgba(0,0,0,0.16)] bg-white rounded-[24px] overflow-hidden h-full justify-between">
+    <div className="flex flex-col w-full shadow-[0px_40px_48px_-16px_rgba(0,0,0,0.16)] bg-white rounded-[24px] overflow-hidden justify-between">
       {/* Image Wrapper */}
       <div className="relative w-full aspect-[16/10] sm:aspect-[488/301]">
         <Image

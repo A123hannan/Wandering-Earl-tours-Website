@@ -61,7 +61,6 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
-
   const pathName = usePathname();
   const styles = navStyles[pathName] ?? navStyles["/"];
   const textWeight = styles.textWeight ?? "text-[700]";
@@ -79,7 +78,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={` flex gap-[10px] px-[16px] py-[10px] font-[500] text-[18px] leading-[100%] tracking-[0%] ${styles.textColor} uppercase whitespacdarkp transition-opacity hover:opacity-80 max-xl:px-2 max-xl:py-1 max-xl:text-[13px]`}
+                className={` flex gap-[10px] px-[16px] py-[10px] font-[500] text-[18px] leading-[100%] tracking-[0%] ${styles.textColor} uppercase whitespacdarkp transition-opacity hover:opacity-80 max-xl:px-2 max-xl:py-1 max-xl:text-[13px] hover:`}
               >
                 {label}
               </Link>
