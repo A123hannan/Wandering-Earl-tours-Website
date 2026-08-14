@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 const NAV_LINKS = [
   { href: "/tours", label: "Tours" },
   { href: "/about", label: "About Us" },
-  { href: "/style", label: "Our Style" },
+  { href: "/ourStyle", label: "Our Style" },
   { href: "/private", label: "Private Tours" },
   { href: "/past", label: "Past Tours" },
   { href: "/contact", label: "Contact Us" },
@@ -30,11 +30,11 @@ const navStyles: any = {
     textColor: "text-[var(--color-grey)]",
   },
   "/about": {
-    className: "",
+    className: "bg-[var(--color-primary)]",
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",
   },
-  "/style": {
+  "/ourStyle": {
     className: "bg-[var(--color-primary)]",
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",
@@ -67,7 +67,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`absolute top-0 left-0 z-50 w-full ${styles.className}`}>
+      <div className={`relative top-0 left-0 z-50 w-full ${styles.className}`}>
         <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-[80px] pt-[30px] pb-[20px] max-xl:px-8 max-xl:py-6">
           {/* Logo */}
           <Logo />
