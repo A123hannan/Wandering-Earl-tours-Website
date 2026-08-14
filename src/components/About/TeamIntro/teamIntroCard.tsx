@@ -56,19 +56,20 @@ export default function teamIntroCard({ memberData }: TeamIntroProps) {
             </p>
           )}
           <div className="flex flex-row justify-between items-center gap-[24px]">
-<div className="flex flex-row items-center justify-center">
-  <p className="font-[500] leading-[100%] tracking-[0%] text-primary text-[20px]">
-    {memberData.pName}
-  </p>
+            <div className="flex flex-row items-center shrink-0 whitespace-nowrap">
+              <p className="font-[500] leading-[100%] text-primary text-[20px] whitespace-nowrap">
+                {memberData.pName}
+              </p>
 
-  <span className="mx-[8px] font-[300] leading-[100%] tracking-[0%] text-border text-[20px]">
-    |
-  </span>
+              <span className="mx-[12px] shrink-0 font-[300] leading-[100%] text-border text-[20px]">
+                |
+              </span>
 
-  <p className="font-[500] leading-[100%] tracking-[0%] text-grey text-[20px]">
-    {memberData.role}
-  </p>
-</div>
+              <p className="font-[500] leading-[100%] text-grey text-[20px] whitespace-nowrap">
+                {memberData.role}
+              </p>
+            </div>
+
             <div className="w-[561px] bg-border h-1"></div>
           </div>
         </div>
