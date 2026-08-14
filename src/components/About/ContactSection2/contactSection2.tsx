@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 export default function contactSection2() {
   return (
-    <div className="bg-accent w-full pl-[80px] ">
-      <div className="flex flex-row items-center justify-center">
+    <div className="bg-accent w-full max-w-[1920px] mx-auto ">
+      <div className="flex flex-row items-center justify-center pl-[80px] ">
         <div className="flex flex-col items-start">
           <p className="mb-[40px] font-[900] text-[48px] leading-[100%] tracking-[0%] uppercase text-white">
             Our Global family

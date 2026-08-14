@@ -67,7 +67,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`relative top-0 left-0 z-50 w-full ${styles.className}`}>
+      <div
+        className={`${
+          pathName === "/" ? "absolute top-0 left-0" : "relative"
+        } z-50 w-full ${styles.className}`}
+      >
         <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-[80px] pt-[30px] pb-[20px] max-xl:px-8 max-xl:py-6">
           {/* Logo */}
           <Logo />
