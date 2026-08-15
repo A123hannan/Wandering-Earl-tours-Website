@@ -12,7 +12,7 @@ export default function AboutImgComponent({ page }: props) {
       <div className="w-full bg-[#1E365C]">
         <div className="max-w-[1760px] mx-auto pt-[40px] sm:pt-[60px] md:pt-[80px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           {/* Heading + Description */}
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-12 mb-[30px] sm:mb-[50px] lg:mb-[80px]">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-12 mb-[30px] sm:mb-[50px] lg:mb-[80px]">
             <div className="flex-1">
               <h1 className="font-[900] text-[36px] sm:text-[48px] md:text-[56px] lg:text-[64px] leading-[110%] uppercase text-white">
                 About us
