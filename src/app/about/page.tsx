@@ -6,18 +6,18 @@ import ContactSection from "@/components/About/ContactSection2/contactSection2";
 import TeamIntro from "@/components/About/TeamIntro/teamIntro";
 import { teamData } from "@/data/teamData";
 export default function page() {
-  return (
-    <div className="">
-      <AboutImgComponent />
+    return (
+        <div className="">
+            <AboutImgComponent />
 
-      <div className="page-container ">
-        <TeamReviewSection />
-      </div>
-      <ContactSection />
-      <TeamIntro />
-      <div className="page-container ">
-        <Toursection />
-      </div>
-    </div>
-  );
+            <div className="page-container ">
+                <TeamReviewSection />
+            </div>
+            <ContactSection />
+            <TeamIntro />
+            <div className="page-container ">
+                <Toursection />
+            </div>
+        </div>
+    );
 }
