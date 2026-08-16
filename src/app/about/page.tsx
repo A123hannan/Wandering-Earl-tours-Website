@@ -1,22 +1,22 @@
 import React from "react";
-import Toursection from "@/components/TourSection/tourSection";
+import TourSection from "@/components/TourSection/tourSection";
 import AboutImgComponent from "@/components/About/aboutImgComponent/aboutImgComponent";
-import TeamReviewSection from "@/components/About/TeamReviewSection/teamReviewSection";
+import ComapnyReviewSection from "@/components/CompanyReviewSection/companyReviewSection";
 import ContactSection from "@/components/About/ContactSection2/contactSection2";
 import TeamIntro from "@/components/About/TeamIntro/teamIntro";
 import { teamData } from "@/data/teamData";
 export default function page() {
     return (
         <div className="">
-            <AboutImgComponent />
+            <AboutImgComponent page="/about" />
 
             <div className="page-container ">
-                <TeamReviewSection />
+                <ComapnyReviewSection page="/about" />
             </div>
             <ContactSection />
             <TeamIntro />
             <div className="page-container ">
-                <Toursection />
+                <TourSection />
             </div>
         </div>
     );

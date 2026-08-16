@@ -2,10 +2,15 @@ import React from "react";
 import Image from "next/image";
 
 interface props {
-  page?: string;
+  page: string;
 }
 
 export default function AboutImgComponent({ page }: props) {
+  const src =
+    page === "/about" ? "/images/About/aboutMainPicture.png"
+      : page === "/ourStyle" ? "/images/OurStyles/stylesMainPicture.png"
+        : page === "/privateTours" ? "/images/privateTours/privateToursMainPicture.png"
+          : "";
   return (
     <section className="w-full bg-white">
       {/* DARK BLUE AREA */}
@@ -15,13 +20,13 @@ export default function AboutImgComponent({ page }: props) {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-12 mb-[30px] sm:mb-[50px] lg:mb-[80px]">
             <div className="flex-1">
               <h1 className="font-[900] text-[36px] sm:text-[48px] md:text-[56px] lg:text-[64px] leading-[110%] uppercase text-white">
-                About us
+                {page === "/about" ? "About us" : page === "/ourStyle" ? "Our Style" : "Private Tours by Wandering Earl Tours"}
               </h1>
             </div>
 
-            <div className="flex-1 lg:max-w-[800px]">
+            <div className="flex-1 flex items-center justify-center lg:max-w-[800px]">
               <p className="font-[500] text-[16px] sm:text-[18px] md:text-[20px] leading-[26px] sm:leading-[32px] md:leading-[36px] text-left text-white/90">
-                {page === "/about" || !page ? (
+                {page === "/about" ? (
                   `We’re a small team of people who are passionate about travel.
                   Our goal is to create unique, inspiring, and thoughtful tours
                   that surprise and delight you. We’re just as excited as you are
@@ -32,7 +37,9 @@ export default function AboutImgComponent({ page }: props) {
 
                   Travel with us, as a friend.`
                 ) : (
-                  ""
+                  `Imagine an amazing private tour specifically crafted for your group or organization. We’ll take care of every aspect of the trip, and will even provide one of our Expert Tour Leaders.
+
+                  All you need to do is enjoy.`
                 )}
               </p>
             </div>
@@ -41,7 +48,7 @@ export default function AboutImgComponent({ page }: props) {
           {/* IMAGE */}
           <div className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] lg:aspect-[1760/480] mt-[20px] sm:mt-[30px] lg:mt-[50px] overflow-hidden rounded-[16px] sm:rounded-[24px]">
             <Image
-              src="/images/About/aboutMainPicture.png"
+              src={src}
               fill
               alt="About us"
               className="object-cover"

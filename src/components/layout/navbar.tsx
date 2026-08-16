@@ -11,9 +11,9 @@ const NAV_LINKS = [
   { href: "/tours", label: "Tours" },
   { href: "/about", label: "About Us" },
   { href: "/ourStyle", label: "Our Style" },
-  { href: "/private", label: "Private Tours" },
-  { href: "/past", label: "Past Tours" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/privateTours", label: "Private Tours" },
+  { href: "/pastTours", label: "Past Tours" },
+  { href: "/contactUs", label: "Contact Us" },
 ];
 
 // Nav styles
@@ -39,12 +39,12 @@ const navStyles: any = {
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",
   },
-  "/private": {
+  "/privateTours": {
     className: "bg-[var(--color-primary)]",
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",
   },
-  "/past": {
+  "/pastTours": {
     className: "bg-[var(--color-primary)]",
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",
@@ -68,9 +68,8 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={`${
-          pathName === "/" ? "absolute top-0 left-0" : "relative"
-        } z-50 w-full ${styles.className}`}
+        className={`${pathName === "/" ? "absolute top-0 left-0" : "relative"
+          } z-50 w-full ${styles.className}`}
       >
         <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-[80px] pt-[30px] pb-[20px] max-xl:px-8 max-xl:py-6">
           {/* Logo */}
