@@ -62,7 +62,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
   const pathName = usePathname();
-  const styles = navStyles[pathName] ?? navStyles["/"];
+  const styles = navStyles[pathName] ?? navStyles["/contactUs"];
   const textWeight = styles.textWeight ?? "text-[700]";
 
   return (

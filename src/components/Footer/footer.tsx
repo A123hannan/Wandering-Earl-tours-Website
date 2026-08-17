@@ -15,7 +15,7 @@ const tourPages = [
   { label: "Past Tours", href: "/pastTours" },
 ];
 
-const contactPages = [{ label: "Contact Us", href: "/contact" }];
+const contactPages = [{ label: "Contact Us", href: "/contactUs" }];
 
 const companyPages = [
   { label: "Privacy Policy", href: "/privacy" },
@@ -54,7 +54,7 @@ function FooterRoutes({
 export default function Footer() {
   const pathName = usePathname();
   return (
-    <div className={`relative w-full overflow-hidden w-full ${pathName !== "/pastTours" && pathName !== "/contactUs" ? "mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]" : "mt-0"}`}>
+    <div className={`relative w-full overflow-hidden w-full ${pathName !== "/pastTours" && pathName !== "/contactUs" && pathName !== "/privacy" && pathName !== "/terms" && pathName !== "/refund" ? "mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]" : "mt-0"}`}>
       {/* Background Image */}
       <Image
         src="/images/landingpage/footerImage.png"

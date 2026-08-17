@@ -11,7 +11,7 @@ export default function ContactSection2() {
             <path d="M 0.25,0.07 C 0.2,0.07 0,0.18 0,0.45 C 0,0.72 0.08,0.8 0.18,1 L 1,1 L 1,0 Z" />
           </clipPath>
           <clipPath id="global-family-curve-mobile" clipPathUnits="objectBoundingBox">
-            <path d="M 0,0.18 C 0.2,0.04 0.5,0 1,0.12 L 1,1 L 0,1 Z" />
+            <path d="M 0,0 L 1,0 L 1,0.85 C 0.5,1 0.2,0.95 0,0.85 Z" />
           </clipPath>
         </defs>
       </svg>
@@ -28,7 +28,8 @@ export default function ContactSection2() {
         }
       `}</style>
 
-      <div className="flex flex-col lg:flex-row items-stretch justify-between w-full min-h-[500px] xl:min-h-[580px]">
+      {/* flex-col-reverse puts Image on top on mobile, lg:flex-row restores side-by-side on desktop */}
+      <div className="flex flex-col-reverse lg:flex-row items-stretch justify-between w-full min-h-[500px] xl:min-h-[580px]">
         {/* TEXT CONTENT */}
         <div className="flex flex-col justify-center w-full lg:w-1/2 xl:w-[48%] px-6 sm:px-10 md:px-12 xl:px-16 2xl:px-20 py-10 lg:py-12 xl:py-16">
           <h2 className="mb-4 sm:mb-6 lg:mb-8 font-[900] text-3xl sm:text-4xl lg:text-[40px] xl:text-[48px] leading-tight uppercase text-white">
