@@ -24,7 +24,7 @@ export default function AboutImgComponent({ page }: props) {
               </h1>
             </div>
 
-            <div className="flex-1 flex items-center justify-center lg:max-w-[800px]">
+            <div className="flex-1 lg:max-w-[800px]">
               <p className="font-[500] text-[16px] sm:text-[18px] md:text-[20px] leading-[26px] sm:leading-[32px] md:leading-[36px] text-left text-white/90">
                 {page === "/about" ? (
                   `We’re a small team of people who are passionate about travel.

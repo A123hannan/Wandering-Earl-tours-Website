@@ -6,12 +6,12 @@ import Link from "next/link";
 const ourPages = [
   { label: "Tours", href: "/tours" },
   { label: "About Us", href: "/about" },
-  { label: "Our Style", href: "/style" },
+  { label: "Our Style", href: "/ourStyle" },
 ];
 
 const tourPages = [
-  { label: "Private Tours", href: "/private-tours" },
-  { label: "Past Tours", href: "/past-tours" },
+  { label: "Private Tours", href: "/privateTours" },
+  { label: "Past Tours", href: "/pastTours" },
 ];
 
 const contactPages = [{ label: "Contact Us", href: "/contact" }];
