@@ -49,7 +49,7 @@ const navStyles: any = {
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",
   },
-  "/contact": {
+  "/contactUs": {
     className: "bg-[var(--color-primary)]",
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",

@@ -1,20 +1,63 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react'
+import AskQuestionCard from '@/components/PastTours/ContactPortion/askQuestionCard'
 
-export default function PastMainComponent() {
+type AskQuestionProps = {
+    variant?: 'dark' | 'light'
+    title: string
+    highlightedWord?: string
+    subtitle?: string
+}
+
+export default function ContactPortion({
+    variant = 'light',
+    title,
+    highlightedWord,
+    subtitle,
+}: AskQuestionProps) {
+    const isDark = variant === 'dark'
+
     return (
-        <section className="pt-[200px] flex flex-col items-center justify-start gap-[80px] page-container bg-primary">
-            <div className="">
-                <p className="font-[900] text-[40px] leading-[100%] tracking-[0%] uppercase text-center text-white">If you have any questions, simply get in touch. We’re here to help and we always reply quickly.</p>
-            </div>
-            <div className="">
-                <div className="flex flex-col lg:flex-row gap-[80px]">
-                    <div className="flex flex-col gap-[16px] w-full">
-                        <p className="font-[400] text-[20px] leading-[100%] tracking-[0%] text-center text-white">First Name</p>
-                        <input type="text" className="border border-[#FFFFFF3D] rounded-[12px] p-[20px]" placeholder="write"></input>
-                    </div>
+        <div
+            className={`w-full py-16 sm:py-20 lg:py-[100px] `}
+        >
+            <div className=' px-4 sm:px-6 lg:px-8 2xl:!px-[80px] flex flex-col items-center gap-[24px] sm:gap-[32px] lg:gap-[42px] xl:gap-[80px]'>
+                <div className='flex flex-col items-center text-center gap-[8px] sm:gap-[12px] max-w-[1504px]'>
+                    <h2
+                        className={`font-inter font-bold uppercase text-[20px] sm:text-[28px] lg:text-[40px] leading-[1.2] ${isDark ? 'text-white' : 'text-text-dark'
+                            }`}
+                    >
+                        {highlightedWord ? (
+                            <>
+                                {title.split(highlightedWord)[0]}
+                                <span className='text-accent-orange'>{highlightedWord}</span>
+                                {title.split(highlightedWord)[1]}
+                            </>
+                        ) : (
+                            title
+                        )}
+                    </h2>
+
+                    {subtitle && (
+                        <p
+                            className={`font-inter font-medium text-[14px] sm:text-[16px] leading-[1.4] lg:text-[20px] max-w-[890px] ${isDark ? 'text-white/80' : 'text-text-muted'
+                                }`}
+                        >
+                            {subtitle}
+                        </p>
+                    )}
+                </div>
+
+                <AskQuestionCard variant={variant} />
+                <div className='flex justify-center cursor-pointer'>
+                    <button
+                        type='submit'
+                        className='cursor-pointer bg-accent hover:scale-[1.05] text-white font-inter font-bold text-[14px] sm:text-[16px] lg:text-[18px] px-8 lg:px-[53px] py-3 lg:pt-[15px] lg:pb-[16px] rounded-full transition-colors'
+                    >
+                        Submit
+                    </button>
                 </div>
             </div>
-        </section>
-    );
+
+        </div>
+    )
 }
