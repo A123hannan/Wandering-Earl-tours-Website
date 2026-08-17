@@ -1,8 +1,9 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import Logo from "@/components/layout/logo";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 const ourPages = [
   { label: "Tours", href: "/tours" },
   { label: "About Us", href: "/about" },
@@ -29,6 +30,7 @@ function FooterRoutes({
   title: string;
   links: { label: string; href: string }[];
 }) {
+
   return (
     <div className="flex flex-col gap-6 sm:gap-8 2xl:gap-[45px]">
       <p className="font-[Inter] font-[900] text-lg sm:text-xl 2xl:text-[20px] leading-[100%] tracking-[0%] text-white uppercase">
@@ -50,8 +52,9 @@ function FooterRoutes({
 }
 
 export default function Footer() {
+  const pathName = usePathname();
   return (
-    <div className="relative w-full overflow-hidden w-full mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]">
+    <div className={`relative w-full overflow-hidden w-full ${pathName !== "/pastTours" ? "mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]" : "mt-0"}`}>
       {/* Background Image */}
       <Image
         src="/images/landingpage/footerImage.png"

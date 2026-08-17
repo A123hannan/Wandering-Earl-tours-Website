@@ -43,11 +43,7 @@ export default function ContactSection() {
               If you have any questions, simply get in touch. We’re here to help
               and we always reply quickly.
             </p>
-            <Button
-              text="CONTACT US"
-              className="pt-[7px] sm:pt-[9px] md:pt-[11px] lg:pt-[13px] 2xl:pt-[15px] px-[14px] sm:px-[18px] md:px-[22px] lg:px-[26px] 2xl:px-[30px] pb-[7px] sm:pb-[9px] md:pb-[12px] lg:pb-[14px] 2xl:pb-[16px] flex gap-[10px] rounded-[14px] sm:rounded-[20px] md:rounded-[24px] 2xl:rounded-[30px] bg-[var(--color-primary)] hover:scale-105 transition-transform duration-200 cursor-pointer"
-              textprop="font-[Inter] font-[700] text-[9px] sm:text-[12px] md:text-[14px] lg:text-[16px] 2xl:text-[18px] leading-[100%] tracking-[0%] text-[var(--color-white)]"
-            />
+            <button className="pt-[7px] sm:pt-[9px] md:pt-[11px] lg:pt-[13px] 2xl:pt-[15px] px-[14px] sm:px-[18px] md:px-[22px] lg:px-[26px] 2xl:px-[30px] pb-[7px] sm:pb-[9px] md:pb-[12px] lg:pb-[14px] 2xl:pb-[16px] flex gap-[10px] rounded-[14px] sm:rounded-[20px] md:rounded-[24px] 2xl:rounded-[30px] bg-[var(--color-primary)] hover:scale-105 transition-transform duration-200 cursor-pointer font-[Inter] font-[700] text-[9px] sm:text-[12px] md:text-[14px] lg:text-[16px] 2xl:text-[18px] leading-[100%] tracking-[0%] text-[var(--color-white)]">CONTACT US</button>
           </div>
 
           {/* Tourist Thumbs Up Overlay Image */}

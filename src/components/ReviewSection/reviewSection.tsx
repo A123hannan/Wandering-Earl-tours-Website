@@ -158,11 +158,10 @@ export default function ReviewSection() {
             type="button"
             onClick={() => setCurrentPage(index)}
             aria-label={`Go to review page ${index + 1}`}
-            className={`transition-all duration-300 rounded-[6px] outline-none cursor-pointer ${
-              index === currentPage
+            className={`transition-all duration-300 rounded-[6px] outline-none cursor-pointer ${index === currentPage
                 ? "w-[40px] sm:w-[55px] h-[9px] sm:h-[11px] bg-[#1E365C]"
                 : "w-[18px] sm:w-[24px] h-[9px] sm:h-[11px] bg-[#1E365C]/30 hover:bg-[#1E365C]/60"
-            }`}
+              }`}
           />
         ))}
       </div>

@@ -59,7 +59,7 @@ export default function StandardCard({
       <button className="group flex items-center justify-center self-center pt-[15px] px-[30px] pb-[16px] gap-[10px] border border-[#1E365C] rounded-[30px] hover:bg-[#1E365C] hover:text-white transition-colors font-[600] text-[16px] sm:text-[18px] leading-[100%] text-center tracking-[0%] text-[#1E365C]  group-hover:text-white cursor-pointer">
         {buttontext}
       </button>
-      
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import DestinationCard from "@/components/TourCard/tourCard";
+import TourCard from "@/components/TourCard/tourCard";
 import ArrowSvg from "@/components/svg/ArrowSvg/arrowSvg";
 import { toursData } from "@/data/data";
 import { destCardDetils2025 } from "@/data/2025data";
@@ -40,11 +40,10 @@ export default function TourSection({
   return (
     <div>
       <div
-        className={` relative z-10 flex w-full items-end ${
-          isToursPage
+        className={` relative z-10 flex w-full items-end ${isToursPage
             ? "justify-center text-center mb-[50px]"
             : "justify-between"
-        }`}
+          }`}
       >
         <div className={isToursPage ? "w-full text-center" : ""}>
           {isToursPage ? (
@@ -96,7 +95,7 @@ export default function TourSection({
               key={`${heading}-${index}`}
               className={`${widthClass} flex justify-center`}
             >
-              <DestinationCard
+              <TourCard
                 badge={badge}
                 cardNo={cardNo}
                 imgSrc={imgSrc}
