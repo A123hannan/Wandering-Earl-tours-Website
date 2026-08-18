@@ -214,7 +214,7 @@ export default function HeroSection() {
       {/* Review Section */}
       <div className="page-container flex flex-col gap-16 sm:gap-20 md:gap-28 2xl:gap-[140px]">
         <div id="tours-2025">
-          <TourSection year="2025" />
+          <TourSection year="2025" cols={3} />
         </div>
         <ReviewSection />
       </div>

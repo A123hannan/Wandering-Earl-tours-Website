@@ -7,7 +7,7 @@ import { destCardDetils } from "@/data/2024data";
 
 const COLS_WIDTH_MAP: Record<number, string> = {
   2: "w-full sm:w-[calc(50%-16px)] max-w-[488px] sm:max-w-none",
-  3: "w-full sm:w-[calc(50%-16px)] 2xl:w-[calc(33.333%-14px)] max-w-[488px] sm:max-w-none",
+  3: "w-full min-[810px]:w-[calc(50%-16px)] 2xl:w-[calc(33.333%-14px)] max-w-[488px] sm:max-w-none",
   4: "w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] 2xl:w-[calc(25%-15px)] max-w-[488px] sm:max-w-none",
   5: "w-full sm:w-[calc(50%-16px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] 2xl:w-[calc(20%-16px)] max-w-[488px] sm:max-w-none",
 };
@@ -41,8 +41,8 @@ export default function TourSection({
     <div>
       <div
         className={` relative z-10 flex w-full items-end ${isToursPage
-            ? "justify-center text-center mb-[50px]"
-            : "justify-between"
+          ? "justify-center text-center mb-[50px]"
+          : "justify-between"
           }`}
       >
         <div className={isToursPage ? "w-full text-center" : ""}>

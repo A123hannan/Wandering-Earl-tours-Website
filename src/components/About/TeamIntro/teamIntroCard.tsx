@@ -27,7 +27,6 @@ export default function teamIntroCard({ memberData }: TeamIntroProps) {
         ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}
         items-center
         lg:items-start
-        page-container
         gap-8
         lg:gap-0
       `}
