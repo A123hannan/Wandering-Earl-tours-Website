@@ -51,10 +51,6 @@ interface Props {
     componentFor: "niches" | "countries";
 }
 
-/* =========================================================
-   NICHES
-========================================================= */
-
 const NichesCardDetails: CardData[] = [
     { icon: PotraitIcon, heading: "Portrait Photography" },
     { icon: BuildingIcon, heading: "Abandoned Building" },
@@ -69,10 +65,6 @@ const NichesCardDetails: CardData[] = [
     { icon: HistoryIcon, heading: "Cultural / History Focused" },
     { icon: SightseeingIcon, heading: "General Sightseeing" },
 ];
-
-/* =========================================================
-   COUNTRIES
-========================================================= */
 
 const CountriesCardDetails: CardData[] = [
     { icon: IndiaIcon, heading: "India" },
@@ -104,44 +96,43 @@ const CountriesCardDetails: CardData[] = [
     { icon: TurkmenistanIcon, heading: "Turkmenistan" },
 ];
 
-/* =========================================================
-   COMPONENT
-========================================================= */
-
 export default function NichesAndCountries({ componentFor }: Props) {
     const cardData = componentFor === "niches" ? NichesCardDetails : CountriesCardDetails;
-
     const title = componentFor === "niches" ? "Niches" : "Countries";
-
-    const description = componentFor === "niches"
-        ? "Some of the niches that we’ve organized private tours around include:"
-        : "Some of the countries that we’ve organized private tours around include:";
+    const description =
+        componentFor === "niches"
+            ? "Some of the niches that we've organized private tours around include:"
+            : "Some of the countries that we've organized private tours around include:";
 
     return (
-        <div className="max-w-[1760px] mx-auto mt-[100px] mb-[100px] md:mt-[200px] md:mb-[200px] lg:mt-[285px] lg:mb-[140px] max-[1536px]:px-[32px] flex flex-col justify-start items-center gap-[80px]">
-            <div className="flex flex-col items-center gap-[24px] w-full">
-                <p className="font-[700] text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] tracking-[0%] uppercase text-dark text-center">
-                    {title}
-                </p>
+        <section className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-8 xl:px-12 2xl:!px-[80px] my-12 lg:my-20">
+            <div className="w-full flex flex-col items-center gap-6 xl:gap-[80px]">
+                {/* Title Section matching reference structure */}
+                <div className="w-full flex justify-start lg:justify-center items-center text-left lg:text-center font-inter max-w-[850px] mx-auto">
+                    <h2 className="font-bold text-2xl sm:text-3xl lg:text-[40px] lg:leading-[50.5px] uppercase text-black">
+                        {title}
+                        <span className="block font-normal text-sm sm:text-base md:text-lg lg:text-[24px] leading-relaxed text-gray-600 capitalize mt-2">
+                            {description}
+                        </span>
+                    </h2>
+                </div>
 
-                <p className="font-[400] text-base sm:text-lg lg:text-[24px] leading-[130%] lg:leading-[100%] tracking-[0%] uppercase text-dark text-center max-w-[1200px]">
-                    {description}
-                </p>
+                {/* Responsive layout with Flex Wrap Centering */}
+                <div className="relative z-10 w-full flex flex-wrap justify-center gap-3 sm:gap-5 lg:gap-6 2xl:gap-[20px]">
+                    {cardData.map((item) => (
+                        <div
+                            key={item.heading}
+                            className={
+                                componentFor === "countries"
+                                    ? "flex justify-center w-[calc(50%-6px)] sm:w-[calc(33.333%-13.33px)] md:w-[calc(25%-15px)] lg:w-[calc(20%-19.2px)] xl:w-[calc(16.666%-20px)] 2xl:w-[calc(16.666%-16.67px)]"
+                                    : "flex justify-center w-[calc(50%-6px)] sm:w-[calc(33.333%-13.33px)] lg:w-[calc(25%-18px)] 2xl:w-[calc(25%-15px)]"
+                            }
+                        >
+                            <NiechesandCoutriesCard icon={item.icon} heading={item.heading} />
+                        </div>
+                    ))}
+                </div>
             </div>
-
-            <div className="w-full flex flex-wrap justify-center gap-3 sm:gap-5 lg:gap-6 2xl:gap-[20px]">
-                {cardData.map((country) => (
-                    <div
-                        key={country.heading}
-                        className={componentFor === "countries"
-                            ? "flex justify-center w-[calc(33.333%-8px)] sm:w-[calc(20%-16px)] lg:w-[calc(16.666%-20px)] 2xl:w-[calc(16.666%-16.67px)]"
-                            : "flex justify-center w-[calc(50%-6px)] sm:w-[calc(50%-10px)] lg:w-[calc(25%-18px)] 2xl:w-[calc(25%-15px)]"
-                        }
-                    >
-                        <NiechesandCoutriesCard icon={country.icon} heading={country.heading} />
-                    </div>
-                ))}
-            </div>
-        </div>
+        </section>
     );
 }

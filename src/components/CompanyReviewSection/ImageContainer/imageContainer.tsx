@@ -7,11 +7,11 @@ interface Props {
 
 export default function ImageContainer({ containerNumber, imageSources }: Props) {
   return (
-    <div className="relative flex items-center justify-center w-full max-w-[620px]">
+    <div className="relative flex items-center justify-center w-full max-w-[973px]">
       {containerNumber === 1 && (
-        <div className="relative w-full aspect-[620/573] max-w-[620px]">
+        <div className="relative w-full aspect-[620/573] max-w-[973px]">
           {/* c1 - stairs photo */}
-          <div className="absolute top-0 left-0 w-[51%] h-[71.7%] rounded-[16px] sm:rounded-[24px] overflow-hidden z-10">
+          <div className="max-w-full absolute top-0 left-0 w-[51%] h-[71.7%] rounded-[16px] sm:rounded-[24px] overflow-hidden z-10">
             <Image
               src="/images/About/Container/Container1/c1.jpg"
               fill
@@ -43,7 +43,7 @@ export default function ImageContainer({ containerNumber, imageSources }: Props)
       )}
 
       {containerNumber === 2 && (
-        <div className="relative w-full aspect-[620/573] max-w-[620px]">
+        <div className="relative w-full aspect-[620/573] max-w-[973px]">
           <div className="absolute top-0 left-0 w-[47.9%] h-[98.2%] rounded-[16px] sm:rounded-[24px] overflow-hidden z-10">
             <Image src={imageSources?.imgSrc1 ?? "/images/About/Container/Container1/c1.jpg"} fill alt="c1" className="object-cover" />
           </div>
@@ -57,7 +57,7 @@ export default function ImageContainer({ containerNumber, imageSources }: Props)
       )}
 
       {containerNumber === 3 && (
-        <div className="relative w-full aspect-[620/573] max-w-[620px]">
+        <div className="relative w-full aspect-[620/573] max-w-[973px]">
           <div className="absolute top-0 left-0 w-[99%] h-[55.6%] rounded-[16px] sm:rounded-[24px] overflow-hidden z-10">
             <Image src={imageSources?.imgSrc1 ?? "/images/About/Container/Container1/c1.jpg"} fill alt="c1" className="object-cover" />
           </div>
@@ -71,7 +71,7 @@ export default function ImageContainer({ containerNumber, imageSources }: Props)
       )}
 
       {containerNumber === 4 && (
-        <div className="relative w-full aspect-[620/573] max-w-[620px]">
+        <div className="relative w-full aspect-[620/573] max-w-[973]">
           <div className="w-full h-full rounded-[16px] sm:rounded-[24px] border-[8px] sm:border-[16px] border-white overflow-hidden shadow-[-20px_15px_30px_rgba(0,0,0,0.3)] sm:shadow-[-40px_30px_60px_rgba(0,0,0,0.4)] relative z-20">
             <Image src="/images/privateTours/Container1/c1.png" fill alt="c1" className="object-cover" />
           </div>

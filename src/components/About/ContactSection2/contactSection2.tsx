@@ -18,9 +18,9 @@ export default function ContactSection2() {
 
       {/* Switch clip-path by breakpoint */}
       <style>{`
-        .contact-curve-image {
-          clip-path: url(#global-family-curve-mobile);
-        }
+        // .contact-curve-image {
+        //   clip-path: url(#global-family-curve-mobile);
+        // }
         @media (min-width: 1024px) {
           .contact-curve-image {
             clip-path: url(#global-family-curve-desktop);

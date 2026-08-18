@@ -7,22 +7,13 @@ interface CardProps {
 
 export default function NiechesandCoutriesCard({ icon: Icon, heading }: CardProps) {
     return (
-        <div className="flex flex-col justify-between w-full h-full bg-white border border-[#D6D6D6] rounded-[24px] gap-6 sm:gap-8 2xl:gap-[40px] p-6 sm:p-8 2xl:pt-[30px] 2xl:pr-[40px] 2xl:pb-[40px] 2xl:pl-[40px] shadow-[0px_30px_60px_-24px_rgba(0,0,0,0.16)]">
-            <div className="flex flex-col items-center justify-start gap-4 sm:gap-6 2xl:gap-[30px]">
-
-                {/* Icon Container */}
-                <div className="pt-5 pb-5 px-5 2xl:pt-[27px] 2xl:pb-[28px] 2xl:px-[25px] rounded-[16px] bg-[#1E365C]/5 flex items-center justify-center">
-                    <Icon className="w-[80px] h-[54px] object-contain" title={heading} />
-                </div>
-
-                {/* Heading */}
-                <div>
-                    <p className="font-[900] text-xl sm:text-2xl 2xl:text-[24px] leading-tight 2xl:leading-[100%] tracking-[0%] text-center uppercase text-[#1E1E1E]">
-                        {heading}
-                    </p>
-                </div>
-
+        <div className="flex flex-col items-center justify-center w-full h-full bg-white border border-[#E5E7EB] rounded-[16px] p-4 sm:p-5 lg:p-6 shadow-sm hover:shadow-md transition-shadow duration-200 gap-3 text-center">
+            <div className="flex items-center justify-center w-full h-[60px] sm:h-[80px]">
+                <Icon className="max-w-full max-h-full object-contain" title={heading} />
             </div>
+            <p className="font-semibold text-xs sm:text-sm lg:text-base leading-snug uppercase text-[#1E1E1E]">
+                {heading}
+            </p>
         </div>
     );
 }

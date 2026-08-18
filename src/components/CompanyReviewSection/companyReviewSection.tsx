@@ -10,7 +10,10 @@ export default function CompanyReviewSection({ page }: Props) {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
       {page === "/about" && (
-        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32">
+        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32">
+          <div className="w-full min-[1280px]:w-1/2  flex justify-center min-[1280px]:justify-end shrink-0">
+            <ImageContainer containerNumber={1} />
+          </div>
           <div className="w-full min-[1280px]:flex-1 flex flex-col items-start justify-start">
             <p className="font-[500] text-base sm:text-lg lg:text-[19px] xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark">
               Our team at Wandering Earl Tours has a strong desire to bring rich
@@ -26,9 +29,6 @@ export default function CompanyReviewSection({ page }: Props) {
               offer!
             </p>
           </div>
-          <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
-            <ImageContainer containerNumber={1} />
-          </div>
         </div>
       )}
 
@@ -36,8 +36,11 @@ export default function CompanyReviewSection({ page }: Props) {
         stylesData.map((styleData: any) => (
           <div
             key={styleData.index}
-            className={`relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32 ${(styleData?.index ?? 0) % 2 === 0 ? "min-[1280px]:flex-row" : "min-[1280px]:flex-row-reverse"}`}
+            className={`relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32 ${(styleData?.index ?? 0) % 2 === 0 ? "min-[1280px]:flex-row-reverse" : "min-[1280px]:flex-row-reverse"}`}
           >
+            <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
+              <ImageContainer containerNumber={styleData.index + 2} imageSources={styleData.imageSources} />
+            </div>
             <div className="w-full min-[1280px]:flex-1 min-w-0 flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-8">
               <div className="flex flex-col">
                 <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-accent">{styleData?.title1}</p>
@@ -49,15 +52,15 @@ export default function CompanyReviewSection({ page }: Props) {
                 {styleData?.description3 && <p className="font-[500] text-base sm:text-lg xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark mt-3 sm:mt-5">{styleData?.description3}</p>}
               </div>
             </div>
-            <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
-              <ImageContainer containerNumber={styleData.index + 2} imageSources={styleData.imageSources} />
-            </div>
           </div>
         ))
       }
 
       {page === "/privateTours" && (
-        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32">
+        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32">
+          <div className="max-w-full w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
+            <ImageContainer containerNumber={4} />
+          </div>
           <div className="w-full min-[1280px]:flex-1 min-w-0 flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-8">
             <div className="flex flex-col">
               <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-accent">private tours</p>
@@ -74,9 +77,6 @@ export default function CompanyReviewSection({ page }: Props) {
                 Since 2013, we’ve offered our highly-regarded, excellent value trips to dozens of groups in dozens of countries around the world.
               </p>
             </div>
-          </div>
-          <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
-            <ImageContainer containerNumber={4} />
           </div>
         </div>
       )}
