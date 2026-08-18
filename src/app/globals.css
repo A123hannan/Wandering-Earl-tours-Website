@@ -11,7 +11,7 @@
   --color-mid: #404040;
   --color-white: #ffffff;
   --color-border: #d6d6d6;
-  --color-grey:#8F8F8F;
+  --color-grey: #8F8F8F;
   /* Typography */
   --font-main: "Inter", sans-serif;
 
@@ -29,7 +29,7 @@
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
-  padding-right:1rem
+  padding-right: 1rem
 }
 
 @media (min-width: 640px) {
@@ -63,7 +63,7 @@
 @media (min-width: 1920px) {
   .page-container {
     padding-left: var(--container-px-2xl);
-    padding-right:var(--container-px-2xl);
+    padding-right: var(--container-px-2xl);
   }
 }
 
@@ -78,6 +78,7 @@
 
 html {
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 body {

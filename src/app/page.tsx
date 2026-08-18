@@ -12,6 +12,7 @@ import CountryMap from "@/components/MapComponent/mapComponent";
 import ReviewSection from "@/components/ReviewSection/reviewSection";
 import ContactSection from "@/components/ContactSection/contactSection";
 import Footer from "@/components/Footer/footer";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -77,7 +78,7 @@ export default function HeroSection() {
         2xl:pt-[62px]
       "
             >
-              <button
+              <Link href="#tours-2024"
                 className="
           w-full max-w-[204px] h-[53px] pt-[17px] pb-[16px] px-[30px]
           rounded-[30px] flex gap-[10px] bg-[#1e365c]
@@ -85,14 +86,14 @@ export default function HeroSection() {
               >
                 {" "}
                 Visit 2024 Tours
-              </button>
-              <button
+              </Link>
+              <Link href="#tours-2025"
                 className="   w-full max-w-[204px] h-[53px] pt-[17px] pb-[16px] px-[30px]
           rounded-[30px] flex gap-[10px] bg-[#E9482B]
           sm:w-[204px] 2xl:w-[204px] cursor-pointer font-sans font-semibold tracking-[0.9] text-white leading-[100%] text-base sm:text-lg 2xl:text-[18px]"
               >
                 Visit 2025 Tours
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -196,8 +197,9 @@ export default function HeroSection() {
 
         <div className="page-container relative z-10">
           {/* 2024/2025 Tours & Header Action */}
-          <TourSection year="2024" />
-
+          <div id="tours-2024" >
+            <TourSection year="2024" />
+          </div>
           {/* Tour Feature Cards Container */}
           <div className="pt-16 sm:pt-24 md:pt-32 lg:pt-40 2xl:pt-[197px] pb-12 sm:pb-20 2xl:pb-[103px]">
             <FeatureSection />
@@ -211,7 +213,9 @@ export default function HeroSection() {
       </div>
       {/* Review Section */}
       <div className="page-container flex flex-col gap-16 sm:gap-20 md:gap-28 2xl:gap-[140px]">
-        <TourSection year="2025" />
+        <div id="tours-2025">
+          <TourSection year="2025" />
+        </div>
         <ReviewSection />
       </div>
       {/* Contact Us section */}
