@@ -63,7 +63,7 @@ export default function FeatureCards() {
       </div>
 
       {/* Feature Cards Grid */}
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6 sm:gap-8 2xl:gap-[20px] pt-10 sm:pt-14 2xl:pt-[80px] [&>*]:min-w-0">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6 sm:gap-8 2xl:gap-[20px] pt-10 sm:pt-14 2xl:pt-[80px] items-stretch [&>*]:w-full [&>*]:h-full [&>*]:min-w-0">
         {stndCardDetails.map(({ icon, heading, details, buttontext }) => (
           <StandardCard
             key={icon}

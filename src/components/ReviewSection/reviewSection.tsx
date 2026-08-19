@@ -101,7 +101,7 @@ export default function ReviewSection() {
   return (
     <div className="flex flex-col items-start w-full">
       {/* Header and Controls */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end w-full gap-4 sm:gap-0">
+      <div className="flex flex-row justify-between items-start sm:items-end w-full gap-4 sm:gap-0">
         <div className="flex flex-col items-start">
           <p className="font-[900] text-2xl sm:text-3xl md:text-4xl 2xl:text-[48px] leading-tight 2xl:leading-[100%] tracking-[0%] uppercase text-[#1E1E1E]">
             What our client says
@@ -139,7 +139,7 @@ export default function ReviewSection() {
       </div>
 
       {/* Cards Grid */}
-      <div className="w-full mt-6 sm:mt-8 2xl:mt-[32px] grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 2xl:gap-[20px] [&>*]:min-w-0">
+      <div className="w-full mt-6 sm:mt-8 2xl:mt-[32px] grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 2xl:gap-[20px] items-stretch [&>*]:w-full [&>*]:min-w-0 [&>*]:h-full">
         {currentReviews.map(({ id, description, clientName, location }) => (
           <ReviewCard
             key={id}
@@ -168,4 +168,3 @@ export default function ReviewSection() {
     </div>
   );
 }
-//Done

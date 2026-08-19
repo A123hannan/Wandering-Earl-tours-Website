@@ -102,46 +102,47 @@ export default function HeroSection() {
       {/* Sustainable and Responsible travel - Centered wrapper on ultra-wide screens (>1920px) */}
       <div className="w-full flex justify-center bg-[linear-gradient(180deg,#1E365C_0%,#1E365C_84.5%,rgba(30,54,92,0.94)_100%)]">
         <div className="w-full max-w-[1920px] pt-8 sm:pt-12 lg:pt-16 2xl:pt-[52px] relative flex flex-col-reverse lg:flex-row 2xl:flex-row items-center lg:items-start 2xl:items-start justify-between gap-8 lg:gap-6 2xl:gap-12 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-0 overflow-hidden 2xl:overflow-visible 2xl:[container-type:inline-size] 2xl:[container-name:heroRow]">
+
           {/* Text Content Block */}
-          <div className="pt-6 sm:pt-10 lg:pt-8 xl:pt-14 2xl:pt-[102px] px-0 2xl:pl-[208px] flex flex-col items-center lg:items-start 2xl:items-start text-center lg:text-left 2xl:text-left justify-start pb-16 sm:pb-24 lg:pb-24 2xl:pb-[122px] z-10 w-full lg:w-[50%] 2xl:w-auto flex-1">
-            <div>
+          <div className="pt-6 sm:pt-10 lg:pt-8 xl:pt-14 2xl:pt-[102px] px-0 2xl:pl-[208px] flex flex-col items-start lg:text-left justify-start pb-16 sm:pb-24 lg:pb-24 2xl:pb-[122px] z-10 w-full lg:w-[50%] 2xl:w-auto flex-1 min-w-0">
+            <div className="w-full">
               <p className="uppercase font-[Inter] font-black text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl 2xl:text-[48px] leading-tight 2xl:leading-[122%] tracking-[0%] text-white">
                 Sustainable and{" "}
-                <br className="hidden sm:inline lg:inline 2xl:inline" />{" "}
+                <br className="hidden sm:inline" />{" "}
                 Responsible Travel
               </p>
               <p className="font-[400] text-base sm:text-xl lg:text-base xl:text-lg 2xl:text-[24px] leading-snug 2xl:leading-[121%] tracking-[0.5%] text-white pt-3 xl:pt-3 2xl:pt-[12px]">
                 We're fully committed to promoting and offering responsible,{" "}
-                <br className="hidden md:inline lg:inline 2xl:inline" />{" "}
+                <br className="hidden md:inline" />{" "}
                 respectful and sustainable travel experiences around the world.
               </p>
             </div>
 
-            <div className="pt-6 lg:pt-4 xl:pt-6 2xl:pt-[30px] flex flex-col items-center lg:items-start 2xl:items-start max-w-xl lg:max-w-none">
+            <div className="pt-6 lg:pt-4 xl:pt-6 2xl:pt-[30px] flex flex-col items-start w-full">
               <p className="font-[200] text-sm sm:text-base lg:text-[13px] xl:text-sm 2xl:text-[16px] leading-relaxed 2xl:leading-[24px] tracking-[0%] text-white">
                 Everything we do is aimed at enriching the lives of the people
                 we work with. We want you to go{" "}
-                <br className="hidden xl:inline 2xl:inline" /> away from our
+                <br className="hidden 2xl:inline" /> away from our
                 tours with great memories, new friends, and a real appreciation
-                for the places we <br className="hidden xl:inline 2xl:inline" />{" "}
+                for the places we <br className="hidden 2xl:inline" />{" "}
                 visit. But, more than that, we also want to leave those places
                 better than we found them.
               </p>
               <p className="font-[Inter] font-[200] text-sm sm:text-base lg:text-[13px] xl:text-sm 2xl:text-[16px] leading-relaxed 2xl:leading-[24px] tracking-[0%] text-white pt-3 2xl:pt-[12px]">
                 We make a point of avoiding mass tourism destinations. Instead,
                 we sustainably support local
-                <br className="hidden xl:inline 2xl:inline" /> businesses,
+                <br className="hidden 2xl:inline" /> businesses,
                 communities and the environment everywhere we go. Every aspect
                 of our trips, from
-                <br className="hidden xl:inline 2xl:inline" />
+                <br className="hidden 2xl:inline" />
                 accommodation to local guides, activities to meals, and
                 everything in between, are chosen to
-                <br className="hidden xl:inline 2xl:inline" /> ensure that your
+                <br className="hidden 2xl:inline" /> ensure that your
                 tourism dollar leaves a positive and lasting impact and that our
-                visit leaves a<br className="hidden xl:inline 2xl:inline" />{" "}
+                visit leaves a<br className="hidden 2xl:inline" />{" "}
                 minimal footprint.
               </p>
-              <div className="pt-6 2xl:pt-[30px] flex justify-center lg:justify-start 2xl:justify-start">
+              <div className="pt-6 2xl:pt-[30px] flex justify-start w-full">
                 <button className="pt-[12px] xl:pt-[15px] px-[24px] xl:px-[30px] pb-[12px] xl:pb-[15px] rounded-[30px] bg-[#e9482b] font-[700] text-[15px] xl:text-[18px] leading-[100%] tracking-[0%] text-white cursor-pointer">
                   Book a Tour Now
                 </button>
@@ -150,8 +151,8 @@ export default function HeroSection() {
           </div>
 
           {/* Visual Components Section */}
-          <div className="w-full lg:w-[46%] xl:w-[48%] 2xl:w-auto 2xl:static flex justify-center lg:justify-end 2xl:justify-center items-center pt-8 lg:pt-4 2xl:pt-0 px-0">
-            <div className="relative w-full max-w-[480px] sm:max-w-[580px] lg:max-w-[460px] xl:max-w-[560px] aspect-[705/609] 2xl:max-w-none 2xl:w-auto 2xl:h-auto 2xl:aspect-none 2xl:static">
+          <div className="w-full lg:w-[46%] xl:w-[48%] 2xl:w-auto 2xl:static flex justify-center lg:justify-end 2xl:justify-center items-center pt-8 lg:pt-4 2xl:pt-0 px-0 min-w-0">
+            <div className="relative w-full max-w-[480px] sm:max-w-[840px] lg:max-w-[460px] xl:max-w-[560px] aspect-[705/609] 2xl:max-w-none 2xl:w-auto 2xl:h-auto 2xl:aspect-none 2xl:static">
               {/* Card Under — 1117,212,299,444 / 1920 */}
               <div className="absolute left-[18.30%] top-[27.09%] w-[42.41%] h-[72.91%] 2xl:left-[58.177cqw] 2xl:top-[11.042cqw] 2xl:w-[15.573cqw] 2xl:h-[23.125cqw] rounded-[16px] sm:rounded-[24px] border border-[#FFFFFF99] overflow-hidden shadow-[-30px_30px_60px_0px_#0000001A] z-10 2xl:z-auto">
                 <Image

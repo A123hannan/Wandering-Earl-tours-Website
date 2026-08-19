@@ -41,25 +41,24 @@ export default function StandardCard({
         </div>
 
         {/* Heading */}
-        <div>
-          <p className="font-[900] text-xl sm:text-2xl 2xl:text-[24px] leading-tight 2xl:leading-[100%] tracking-[0%] text-center uppercase text-[#1E1E1E]">
+        <div className="w-full">
+          <p className="font-[900] text-xl sm:text-2xl 2xl:text-[24px] leading-tight 2xl:leading-[100%] tracking-[0%] text-center uppercase text-[#1E1E1E] line-clamp-1">
             {heading}
           </p>
         </div>
 
         {/* Details */}
-        <div>
-          <p className="font-[400] text-base sm:text-lg 2xl:text-[20px] leading-relaxed 2xl:leading-[100%] tracking-[0%] text-center text-[#404040]">
+        <div className="w-full">
+          <p className="font-[400] text-base sm:text-lg 2xl:text-[20px] leading-relaxed 2xl:leading-[100%] tracking-[0%] text-center text-[#404040] line-clamp-4 sm:line-clamp-3 2xl:line-clamp-4">
             {details}
           </p>
         </div>
       </div>
 
       {/* Button */}
-      <button className="group flex items-center justify-center self-center pt-[15px] px-[30px] pb-[16px] gap-[10px] border border-[#1E365C] rounded-[30px] hover:bg-[#1E365C] hover:text-white transition-colors font-[600] text-[16px] sm:text-[18px] leading-[100%] text-center tracking-[0%] text-[#1E365C]  group-hover:text-white cursor-pointer">
+      <button className="group flex items-center justify-center self-center pt-[15px] px-[30px] pb-[16px] gap-[10px] border border-[#1E365C] rounded-[30px] hover:bg-[#1E365C] hover:text-white transition-colors font-[600] text-[16px] sm:text-[18px] leading-[100%] text-center tracking-[0%] text-[#1E365C] group-hover:text-white cursor-pointer">
         {buttontext}
       </button>
-
     </div>
   );
 }
