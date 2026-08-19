@@ -17,12 +17,12 @@ export default function PastandContactMainComponent({ page }: props) {
           alt="Background"
           fill
           sizes="100vw"
-          className="object-cover object-top"
+          className=" object-cover object-top"
           priority
         />
 
         <div
-          className="absolute inset-0 z-10 pointer-events-none"
+          className="absolute inset-0 z- pointer-events-none"
           style={{
             background: "linear-gradient(180deg, rgba(30, 54, 92, 0) 0%, #1E365C 100%)",
           }}
@@ -36,7 +36,7 @@ export default function PastandContactMainComponent({ page }: props) {
       {/* ONLY SHOW GRADIENT TO WHITE ON PAST TOURS PAGE */}
       {page === "/pastTours" && (
         <div
-          className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[350px] "
+          className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[350px] mt-[-30px]"
           style={{
             background: ` 
               linear-gradient( 

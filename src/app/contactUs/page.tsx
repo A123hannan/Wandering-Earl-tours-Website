@@ -4,11 +4,11 @@ import ContactPortion from '@/components/PastTours/ContactPortion/contactPortion
 
 export default function page() {
     return (
-        <div className="w-full bg-[#1e365c]">
+        <div className="w-full relative bg-[#1e365c]">
             <PastMainComponent page='/contactUs' />
 
             {/* Solid dark blue wrapper connecting directly to footer */}
-            <div className="w-full bg-[#1e365c] py-[60px] sm:py-[80px] lg:py-[100px]">
+            <div className="w-full bg-[#1e365c] relative top-[-10px] py-[60px] sm:py-[80px] lg:py-[100px]">
                 <ContactPortion
                     variant="dark"
                     title="Hello! Have a question?"
