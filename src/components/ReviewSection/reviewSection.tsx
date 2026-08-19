@@ -139,7 +139,7 @@ export default function ReviewSection() {
       </div>
 
       {/* Cards Grid */}
-      <div className="w-full mt-6 sm:mt-8 2xl:mt-[32px] grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 2xl:gap-[20px] [&>*]:min-w-0">
+      <div className="w-full mt-6 sm:mt-8 2xl:mt-[32px] grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 2xl:gap-[20px] [&>*]:min-w-0">
         {currentReviews.map(({ id, description, clientName, location }) => (
           <ReviewCard
             key={id}
