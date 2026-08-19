@@ -60,7 +60,7 @@ export default function AboutImgComponent({ page }: props) {
 
       {/* GRADIENT BELOW IMAGE */}
       <div
-        className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[350px] mt-[-1px]"
+        className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[350px] mt-[-2px]"
         style={{
           background: `
             linear-gradient(
