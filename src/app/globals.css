@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-xl: 1600px;
-  --breakpoint-3xl: 1920px;
+  /* --breakpoint-xl: 1600px; */
+  --breakpoint-3xl: 1860px;
 
   /* Brand Design Tokens */
   --color-primary: #1e365c;

@@ -21,7 +21,7 @@ export default function ContactPortion({
             className={`w-full py-16 sm:py-20 lg:py-[100px] `}
         >
             <div className=' px-4 sm:px-6 lg:px-8 2xl:!px-[80px] flex flex-col items-center gap-[24px] sm:gap-[32px] lg:gap-[42px] xl:gap-[80px]'>
-                <div className='flex flex-col items-center text-center gap-[8px] sm:gap-[12px] max-w-[1504px]'>
+                <div className='flex flex-col items-start lg:items-center lg:text-center gap-[8px] sm:gap-[12px] max-w-[1504px]'>
                     <h2
                         className={`font-inter font-bold uppercase text-[20px] sm:text-[28px] lg:text-[40px] leading-[1.2] ${isDark ? 'text-white' : 'text-text-dark'
                             }`}

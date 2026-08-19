@@ -8,7 +8,7 @@ export default function TourHero() {
       <div className="pb-[128px]">
         <ToursIndexPage />
       </div>
-      <div className="mx-auto max-w-[1760px] px-[1rem] 2xl:px-0 relative top-[-178px] z-50">
+      <div className="mx-auto max-w-[1760px] px-[1rem] 2xl:px-[1rem] relative top-[-178px] z-50">
         <div className="">
           <TourSection
             limit={8}

@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 function TourSpecs() {
     return (
-        <div className='max-w-[1920px] mx-auto flex flex-col min-[1200px]:flex-row'>
+        <div className='max-w-[1920px] mx-auto flex flex-col min-[1200px]:flex-row max-[1200px]:gap-[10px]'>
             {/* LEFT BLOCK */}
-            <div className='relative w-full min-[1200px]:w-1/2 min-h-[600px] sm:min-h-[700px] lg:h-[800px] 2xl:h-[960px] flex flex-col justify-end pt-[120px] pb-[40px] px-[24px] sm:pb-[60px] sm:px-[48px] lg:pb-[80px] lg:px-[60px] 2xl:p-0'>
+            <div className='relative w-full min-[1200px]:w-1/2 min-h-[600px] sm:min-h-[700px] lg:h-[800px] 2xl:h-[960px] flex flex-col max-[1200px]:rounded-[24px] overflow-hidden justify-end pt-[120px] pb-[40px] px-[24px] sm:pb-[60px] sm:px-[48px] lg:pb-[80px] lg:px-[60px] 2xl:p-0'>
                 <Image src="/images/OurStyles/TourSpecs/b1.jpg" alt="tourSpecs1" fill className="object-cover" />
                 <div className='relative 2xl:absolute 2xl:bottom-[60px] 2xl:left-[80px] 2xl:right-[80px] z-10 flex flex-col gap-[20px] md:gap-[24px] lg:gap-[28px] 2xl:gap-[30px]'>
                     <p className='font-[700] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[38px] 2xl:text-[40px] leading-[110%] tracking-[0%] text-white uppercase'>
@@ -25,7 +25,7 @@ function TourSpecs() {
             </div>
 
             {/* RIGHT BLOCK */}
-            <div className='relative w-full min-[1200px]:w-1/2 min-h-[500px] sm:min-h-[600px] lg:h-[800px] 2xl:h-[960px] flex flex-col justify-end pt-[120px] pb-[40px] px-[24px] sm:pb-[60px] sm:px-[48px] lg:pb-[80px] lg:px-[60px] 2xl:p-0'>
+            <div className='relative w-full min-[1200px]:w-1/2 min-h-[500px] sm:min-h-[600px] lg:h-[800px] 2xl:h-[960px] flex flex-col max-[1200px]:rounded-[24px]  overflow-hidden justify-end pt-[120px] pb-[40px] px-[24px] sm:pb-[60px] sm:px-[48px] lg:pb-[80px] lg:px-[60px] 2xl:p-0'>
                 <Image src="/images/OurStyles/TourSpecs/b2.jpg" alt="tourSpecs1" fill className="object-cover" />
                 <div className='relative 2xl:absolute 2xl:bottom-[60px] 2xl:left-[80px] 2xl:right-[80px] z-10 flex flex-col gap-[20px] md:gap-[28px] lg:gap-[32px] 2xl:gap-[40px]'>
                     <p className='font-[700] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[38px] 2xl:text-[40px] leading-[110%] tracking-[0%] text-white'>

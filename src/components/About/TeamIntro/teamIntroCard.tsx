@@ -26,13 +26,13 @@ export default function teamIntroCard({ memberData }: TeamIntroProps) {
         flex-col
         ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}
         items-center
-        lg:items-start
+
         gap-8
         lg:gap-0
       `}
     >
       {/* IMAGE */}
-      <div className="relative w-full max-w-[500px] aspect-square lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[500px] 2xl:w-[622px] 2xl:h-[622px] shrink-0 rounded-[24px] overflow-hidden">
+      <div className="relative w-full max-w-[926px] aspect-square lg:w-[400px] lg:h-[522px] xl:w-[550px] xl:h-[550px] 2xl:w-[622px] 2xl:h-[622px] shrink-0 rounded-[24px] overflow-hidden">
         <Image
           src={memberData.imgSrc}
           fill
@@ -50,7 +50,7 @@ export default function teamIntroCard({ memberData }: TeamIntroProps) {
           ${isEven ? "lg:ml-12 xl:ml-16 2xl:ml-[120px]" : "lg:mr-12 xl:mr-16 2xl:mr-[120px]"}
         `}
       >
-        <div className="flex flex-col gap-6 md:gap-8 2xl:gap-[48px]">
+        <div className="flex flex-col-reverse lg:flex-col gap-3 lg:gap-2 xl:gap-4 2xl:gap-[40px]">
           {memberData.description1 && (
             <p className="text-dark font-[400] text-base md:text-lg 2xl:text-[20px] leading-relaxed md:leading-[32px] 2xl:leading-[36px]">
               {memberData.description1}

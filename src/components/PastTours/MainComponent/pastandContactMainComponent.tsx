@@ -36,7 +36,7 @@ export default function PastandContactMainComponent({ page }: props) {
       {/* ONLY SHOW GRADIENT TO WHITE ON PAST TOURS PAGE */}
       {page === "/pastTours" && (
         <div
-          className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[350px]"
+          className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[350px] "
           style={{
             background: ` 
               linear-gradient( 

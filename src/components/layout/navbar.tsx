@@ -71,17 +71,17 @@ export default function Navbar() {
         className={`${pathName === "/" ? "absolute top-0 left-0" : "relative"
           } z-50 w-full ${styles.className}`}
       >
-        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-[80px] pt-[30px] pb-[20px] max-xl:px-8 max-xl:py-6">
+        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6 2xl:px-[80px] 2xl:pt-[30px] 2xl:pb-[20px]">
           {/* Logo */}
           <Logo />
 
           {/* Desktop Nav Links */}
-          <div className="hidden items-center gap-[30px] pt-[1px] lg:flex max-xl:gap-2">
+          <div className="hidden items-center gap-2 pt-[1px] lg:flex 2xl:gap-[30px]">
             {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={` flex gap-[10px] px-[16px] py-[10px] font-[500] text-[18px] leading-[100%] tracking-[0%] ${styles.textColor} uppercase whitespacdarkp transition-opacity hover:opacity-80 max-xl:px-2 max-xl:py-1 max-xl:text-[13px] hover:`}
+                className={`flex gap-[10px] px-2 py-1 text-[13px] font-[500] leading-[100%] tracking-[0%] 2xl:px-[16px] 2xl:py-[10px] 2xl:text-[18px] ${styles.textColor} uppercase whitespace-nowrap transition-opacity hover:opacity-80`}
               >
                 {label}
               </Link>
@@ -89,11 +89,11 @@ export default function Navbar() {
           </div>
 
           {/* Login + Cart */}
-          <div className="hidden items-center justify-start gap-[16px] py-[17px] lg:flex max-xl:gap-3">
+          <div className="hidden items-center justify-start gap-3 py-[17px] lg:flex 2xl:gap-[16px]">
             <Cart />
 
             <button
-              className={`flex gap-[10px] rounded-[24px] px-[30px] pt-[11px] pb-[12px] font-inter text-[14px] leading-[100%] tracking-[0%] whitespace-nowrap ${styles.buttonBg} ${textWeight} ${styles.textColor} cursor-pointer hovedarkar(--color-accent)] max-xl:px-4 max-xl:py-2 max-xl:text-[13px]`}
+              className={`flex gap-[10px] cursor-pointer rounded-[24px] px-4 py-2 text-[13px] font-inter leading-[100%] tracking-[0%] whitespace-nowrap 2xl:px-[30px] 2xl:pt-[11px] 2xl:pb-[12px] 2xl:text-[14px] ${styles.buttonBg} ${textWeight} ${styles.textColor}`}
             >
               Login
             </button>
