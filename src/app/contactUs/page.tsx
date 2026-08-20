@@ -1,5 +1,5 @@
 import React from 'react'
-import PastMainComponent from '@/components/PastTours/MainComponent/pastandContactMainComponent'
+import PastMainComponent from '@/components/PastTours/HeroComponent/pastandContactHeroComponent'
 import ContactPortion from '@/components/PastTours/ContactPortion/contactPortion'
 
 export default function page() {

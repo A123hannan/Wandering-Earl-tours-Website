@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ToursIndexPage from "@/components/Tours/ToursRouteComponent/ToursRouteComponent";
+import ToursIndexPage from "@/components/Tours/ToursHeroComponent/toursHeroComponent";
 import TourSection from "@/components/TourSection/tourSection";
 export default function TourHero() {
   return (

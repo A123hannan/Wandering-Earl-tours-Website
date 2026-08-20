@@ -77,7 +77,7 @@ export default function TourSection({
         )}
       </div>
 
-      <div className="flex flex-wrap justify-center items-stretch gap-6 sm:gap-8 2xl:gap-[20px] pt-8 sm:pt-10 2xl:pt-[32px] px-10">
+      <div className="flex flex-wrap justify-center items-stretch gap-6 sm:gap-8 2xl:gap-[20px] pt-8 sm:pt-10 2xl:pt-[32px]">
         {(limit ? cardData.slice(0, limit) : cardData).map(
           (
             {

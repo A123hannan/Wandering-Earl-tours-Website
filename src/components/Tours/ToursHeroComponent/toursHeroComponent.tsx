@@ -1,16 +1,21 @@
 import React from "react";
 import Image from "next/image";
-
-export default function TourHero() {
+interface props {
+  title?: string;
+  imgSrc?: string;
+}
+export default function TourHero({ title, imgSrc }: props) {
+  const src = imgSrc ? imgSrc : "/images/Tours/BgImage.png"
+  const titleContent = title ? title : "Tours"
   return (
     <div className="relative w-full overflow-x-hidden">
       {/* Image block — always full-bleed object-cover, like the homepage hero.
           Aspect ratio cascades from a tall mobile crop to a wide banner crop;
           lg/xl (and therefore 2xl+, which inherits xl) are UNCHANGED from
           before — this is the ratio that already looked right. */}
-      <div className="relative w-screen min-h-[360px] overflow-hidden aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9] lg:aspect-[1921/484] xl:aspect-[1921/484] flex items-center justify-center">
+      <div className="relative w-screen min-h-[360px] overflow-hidden aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9] lg:aspect-[1921/60] xl:aspect-[1921/460] flex items-center justify-center">
         <Image
-          src="/images/Tours/BgImage.png"
+          src={src}
           alt="Tours Background"
           fill
           priority
@@ -25,7 +30,7 @@ export default function TourHero() {
         {/* Centered heading */}
         <div className="relative z-30 flex items-center justify-center px-6">
           <h1 className="font-inter text-[var(--color-white)] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] pt-[100px] font-[900] text-center leading-[100%] tracking-[0%] uppercase drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
-            Tours
+            {titleContent}
           </h1>
         </div>
       </div>

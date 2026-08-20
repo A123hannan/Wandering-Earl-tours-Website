@@ -60,7 +60,7 @@
 // }
 
 import React from "react";
-import MapPosition from "@/components/MapPosition/mapPosition";
+import MapPosition from "@/components/MapComponent/MapPositionPin/mapPositionPin";
 
 const MapPositionDetails = [
   { name: "Africa", left: "22.5%", top: "32.2%" },

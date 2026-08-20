@@ -1,5 +1,5 @@
 import React from 'react'
-import PastMainComponent from '@/components/PastTours/MainComponent/pastandContactMainComponent'
+import PastMainComponent from '@/components/PastTours/HeroComponent/pastandContactHeroComponent'
 import ReviewSection from '@/components/ReviewSection/reviewSection'
 import ImageContainer from '@/components/PastTours/PhotoGallery/photoGallery'
 import ContactPortion from '@/components/PastTours/ContactPortion/contactPortion'

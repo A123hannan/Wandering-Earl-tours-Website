@@ -54,6 +54,11 @@ const navStyles: any = {
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",
   },
+  // "/toursDetailed": {
+  //   className: "bg-[var(--color-primary)]",
+  //   buttonBg: "bg-[var(--color-white)]",
+  //   textColor: "text-[var(--color-grey)]",
+  // },
 };
 
 export default function Navbar() {
@@ -68,7 +73,7 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={`${pathName === "/" ? "absolute top-0 left-0" : "relative"
+        className={`${pathName === "/" || pathName === "/pastTours" ? "absolute top-0 left-0" : "relative"
           } z-50 w-full ${styles.className}`}
       >
         <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6 lg:pt-[10px] lg:pb-[10px]  2xl:pt-[30px]  min-[1720px]:px-[80px] 2xl:pb-[20px]">

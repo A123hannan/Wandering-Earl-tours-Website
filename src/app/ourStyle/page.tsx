@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImgComponent from "@/components/About/aboutImgComponent/aboutImgComponent";
+import AboutImgComponent from "@/components/About/HeroComponent/HeroComponent";
 import ContactSection from "@/components/ContactSection/contactSection";
 import TourSection from "@/components/TourSection/tourSection";
 import ComapnyReviewSection from "@/components/CompanyReviewSection/companyReviewSection";

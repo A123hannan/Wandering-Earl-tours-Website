@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function TourSpecs() {
     return (
-        <div className='max-w-[1920px] mx-auto flex flex-col min-[1200px]:flex-row max-[1200px]:gap-[10px] mb-0'>
+        <div className='max-w-[1920px] mx-auto flex flex-col min-[1200px]:flex-row max-[1200px]:gap-[10px]'>
             {/* LEFT BLOCK */}
             <div className='relative w-full min-[1200px]:w-1/2 min-h-[600px] sm:min-h-[700px] lg:h-[800px] 2xl:h-[960px] flex flex-col max-[1200px]:rounded-[24px] overflow-hidden justify-end pt-[120px] pb-[40px] px-[24px] sm:pb-[60px] sm:px-[48px] lg:pb-[80px] lg:px-[60px] 2xl:p-0'>
                 <Image src="/images/OurStyles/TourSpecs/b1.jpg" alt="tourSpecs1" fill className="object-cover" />

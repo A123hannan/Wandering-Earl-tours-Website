@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 const ourPages = [
   { label: "Tours", href: "/tours" },
+  // { label: "Tours Detailed", href: "/toursDetiled" },
   { label: "About Us", href: "/about" },
   { label: "Our Style", href: "/ourStyle" },
 ];
