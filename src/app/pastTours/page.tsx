@@ -14,7 +14,7 @@ export default function page() {
                 <div className='page-container'>
                     <ReviewSection />
                 </div>
-                <div className="pb-[60px] sm:pb-[80px] lg:pb-[100px]">
+                <div className="pb-[60px] sm:pb-[5px] lg:pb-[10px]">
                     <ContactPortion
                         variant="dark"
                         title="IF YOU HAVE ANY QUESTIONS, SIMPLY GET IN TOUCH. WE'RE HERE TO HELP AND WE ALWAYS REPLY QUICKLY."

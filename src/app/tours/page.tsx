@@ -5,10 +5,10 @@ import TourSection from "@/components/TourSection/tourSection";
 export default function TourHero() {
   return (
     <div className="w-full">
-      <div className="pb-[128px]">
+      <div className="">
         <ToursIndexPage />
       </div>
-      <div className="mx-auto max-w-[1760px] px-[1rem] 2xl:px-[1rem] relative top-[-178px] z-50">
+      <div className="mx-auto max-w-[1760px] px-[3rem] 2xl:px-[1rem] relative top-[-178px] z-50">
         <div className="">
           <TourSection
             limit={8}

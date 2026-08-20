@@ -8,7 +8,7 @@ export default function TourHero() {
           Aspect ratio cascades from a tall mobile crop to a wide banner crop;
           lg/xl (and therefore 2xl+, which inherits xl) are UNCHANGED from
           before — this is the ratio that already looked right. */}
-      <div className="relative w-full min-h-[360px] overflow-hidden aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9] lg:aspect-[1921/484] xl:aspect-[1921/484]">
+      <div className="relative w-screen min-h-[360px] overflow-hidden aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9] lg:aspect-[1921/484] xl:aspect-[1921/484] flex items-center justify-center">
         <Image
           src="/images/Tours/BgImage.png"
           alt="Tours Background"
@@ -23,7 +23,7 @@ export default function TourHero() {
         <div className="absolute inset-0 z-[15] bg-[linear-gradient(180deg,rgba(30,54,92,0)_0%,rgba(30,54,92,0.3)_30%,#1E365C_100%)]" />
 
         {/* Centered heading */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center px-6">
+        <div className="relative z-30 flex items-center justify-center px-6">
           <h1 className="font-inter text-[var(--color-white)] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] pt-[100px] font-[900] text-center leading-[100%] tracking-[0%] uppercase drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
             Tours
           </h1>

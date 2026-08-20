@@ -10,7 +10,7 @@ export default function CompanyReviewSection({ page }: Props) {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
       {page === "/about" && (
-        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32">
+        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-0">
           <div className="w-full min-[1280px]:w-1/2  flex justify-center min-[1280px]:justify-end shrink-0">
             <ImageContainer containerNumber={1} />
           </div>
@@ -36,7 +36,7 @@ export default function CompanyReviewSection({ page }: Props) {
         stylesData.map((styleData: any) => (
           <div
             key={styleData.index}
-            className={`relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32 ${(styleData?.index ?? 0) % 2 === 0 ? "min-[1280px]:flex-row-reverse" : "min-[1280px]:flex-row-reverse"}`}
+            className={`relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-0 ${(styleData?.index ?? 0) % 2 === 0 ? "min-[1280px]:flex-row-reverse" : "min-[1280px]:flex-row-reverse"}`}
           >
             <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
               <ImageContainer containerNumber={styleData.index + 2} imageSources={styleData.imageSources} />

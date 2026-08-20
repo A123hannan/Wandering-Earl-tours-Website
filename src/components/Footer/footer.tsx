@@ -54,7 +54,7 @@ function FooterRoutes({
 export default function Footer() {
   const pathName = usePathname();
   return (
-    <div className={`relative w-full overflow-hidden w-full ${pathName !== "/pastTours" && pathName !== "/contactUs" && pathName !== "/privacy" && pathName !== "/terms" && pathName !== "/refund" ? "mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]" : "mt-0"}`}>
+    <div className={`relative w-full overflow-hidden w-full ${pathName !== "/pastTours" && pathName !== "/contactUs" && pathName !== "/privacy" && pathName !== "/terms" && pathName !== "/refund" && pathName !== "/tours" ? "mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]" : "mt-0"} ${pathName === "/tours" ? "" : ""}`}>
       {/* Background Image */}
       <Image
         src="/images/landingpage/footerImage.png"
@@ -68,11 +68,11 @@ export default function Footer() {
       <div className="bg-[linear-gradient(0deg,rgba(30,54,92,0)_0%,rgba(30,54,92,0.95)_54.63%,#1E365C_75.11%,#1E365C_100%)] absolute inset-0" />
 
       {/* Main Content Row */}
-      <div className="w-full max-w-[1920px] mx-auto relative flex flex-col 2xl:flex-row gap-10 sm:gap-14 2xl:gap-[148px] pt-12 sm:pt-16 2xl:pt-[80px] px-6 sm:px-12 2xl:px-0 2xl:pl-[80px]">
+      <div className="w-full max-w-[1920px] mx-auto relative flex flex-col 2xl:flex-row gap-10 sm:gap-10 lg:gap-[60px] 2xl:gap-[148px] pt-12 sm:pt-10 2xl:pt-[80px] px-6 sm:px-8 2xl:px-0 2xl:pl-[80px]">
         {/* Brand Logo and Description */}
-        <div className="relative flex flex-col items-start justify-start gap-5 sm:gap-[30px]">
+        <div className="relative flex flex-col items-start justify-start gap-3 sm:gap-[30px]">
           <Logo />
-          <p className="font-[Inter] font-[400] text-sm sm:text-base 2xl:text-[14px] leading-relaxed 2xl:leading-[24px] max-w-full 2xl:max-w-[425px] tracking-[0%] text-white">
+          <p className="font-[Inter] font-[400] text-sm sm:text-[16px] 2xl:text-[14px] sm:max-w-[1000px] leading-relaxed 2xl:leading-[24px] max-w-full 2xl:max-w-[425px] tracking-[0%] text-white">
             Thank you for such a well thought out and memorable trip. The sights
             and people of Morocco are wonderful. I appreciated you feeding my
             nerdy self with information on the geography, animals and plants of
@@ -90,7 +90,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright Footer */}
-      <div className="pt-10 sm:pt-16 2xl:pt-[106px] pb-6 sm:pb-8 2xl:pb-[36px]">
+      <div className="pt-10 sm:pt-16 lg:pt-10 2xl:pt-[106px] pb-6 sm:pb-8 2xl:pb-[36px]">
         <p className="relative text-center font-[500] text-xs sm:text-sm 2xl:text-[16px] leading-[100%] tracking-[0%] text-[#404040]">
           &copy;2024 Wandering Earl, LLC. All rights reserved.
         </p>

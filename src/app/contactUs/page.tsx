@@ -8,7 +8,7 @@ export default function page() {
             <PastMainComponent page='/contactUs' />
 
             {/* Solid dark blue wrapper connecting directly to footer */}
-            <div className="w-full bg-[#1e365c] relative top-[-10px] py-[60px] sm:py-[80px] lg:py-[100px]">
+            <div className="w-full bg-[#1e365c] relative top-[-10px] pt-[60px] sm:pt-[80px] lg:pt-[100px]">
                 <ContactPortion
                     variant="dark"
                     title="Hello! Have a question?"

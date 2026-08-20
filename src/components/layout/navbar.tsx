@@ -71,12 +71,12 @@ export default function Navbar() {
         className={`${pathName === "/" ? "absolute top-0 left-0" : "relative"
           } z-50 w-full ${styles.className}`}
       >
-        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6 2xl:px-[80px] 2xl:pt-[30px] 2xl:pb-[20px]">
+        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6 lg:pt-[10px] lg:pb-[10px]  2xl:pt-[30px]  min-[1720px]:px-[80px] 2xl:pb-[20px]">
           {/* Logo */}
           <Logo />
 
           {/* Desktop Nav Links */}
-          <div className="hidden items-center gap-2 pt-[1px] lg:flex 2xl:gap-[30px]">
+          <div className="hidden items-center gap-2 pt-[1px] lg:flex lg:gap-[10px] xl:gap-[20px] min-[1720px]:gap-[30px] ">
             {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
