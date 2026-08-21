@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import UserIcon from "@/components/svg/UserIconSvg/userIconSvg";
-import MapIcon from "@/components/svg/LocationIconSvg/locationIconSvg";
+import LocationIcon from "@/components/svg/LocationIconSvg/locationIconSvg";
 import CalenderIcon from "@/components/svg/CalenderIconSvg/calenderIconSvg";
 import BadgeLimit from "@/components/Badges/BadgeLimit/badgeLimit";
 import BadgeSold from "@/components/Badges/BadgeSold/badgeSold";
@@ -80,7 +80,7 @@ export default function DestinationCard({
             </div>
 
             <div className="flex flex-row items-center min-w-0">
-              <MapIcon />
+              <LocationIcon />
               <div className="pt-[3.5px] pb-[3.5px] pl-[8px] min-w-0">
                 <span className="font-[400] text-[13px] sm:text-[14px] leading-[100%] tracking-[0%] text-[#404040] truncate block">
                   {destination}

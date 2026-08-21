@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import ReviewCard from "@/components/ReviewCard/reviewCard";
+import ReviewCard from "@/components/ReviewSection/ReviewCard/reviewCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviewCardDetails = [

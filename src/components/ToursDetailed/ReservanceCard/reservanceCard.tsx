@@ -22,7 +22,7 @@ export default function TourHero() {
         setCount((prev) => prev > 1 ? prev - 1 : 1)
     }
     return (
-        <div className="relative rounded-[24px] mx-auto w-full max-w-[593px] shadow-[0px_40px_48px_-16px_#00000029]">
+        <div className="relative rounded-[24px] mx-auto w-full max-w-[593px] max-h-[641px] shadow-[0px_40px_48px_-16px_#00000029]">
             <div className="relative flex flex-col items-center justify-center">
                 <div className="absolute top-[-60px] z-[-10] h-[120px] w-[120px] rounded-full bg-accent flex justify-center pt-[15px]"><DollarIcon /></div>
                 <p className="px-[163px] py-[24px]  rounded-tr-[24px] rounded-tl-[24px] rounded-br-[10px] rounded-bl-[10px] bg-accent text-[36px] font-[900] leading-[100%] tracking-[0%] uppercase text-white">Reserve Now</p>

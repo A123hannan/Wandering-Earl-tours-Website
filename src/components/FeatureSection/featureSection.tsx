@@ -1,5 +1,5 @@
 import React from "react";
-import StandardCard from "@/components/FeatureCard/featureCard";
+import StandardCard from "@/components/FeatureSection/FeatureCard/featureCard";
 
 const stndCardDetails = [
   {

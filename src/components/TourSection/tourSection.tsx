@@ -1,5 +1,5 @@
 import React from "react";
-import TourCard from "@/components/TourCard/tourCard";
+import TourCard from "@/components/TourSection/TourCard/tourCard";
 import ArrowSvg from "@/components/svg/ArrowSvg/arrowSvg";
 import { toursData } from "@/data/data";
 import { destCardDetils2025 } from "@/data/2025data";
@@ -19,6 +19,8 @@ interface TourSectionProps {
   cols?: 2 | 3 | 4 | 5;
   limit?: number;
   button?: boolean;
+  titleContent?: string;
+
 }
 
 export default function TourSection({
@@ -27,6 +29,7 @@ export default function TourSection({
   cols = 3,
   limit = 3,
   button = true,
+  titleContent = "Tours"
 }: TourSectionProps) {
   const cardData =
     page === "/"
@@ -50,7 +53,7 @@ export default function TourSection({
           {isToursPage ? (
             <h2 className="font-[900] font-black uppercase text-[32px] sm:text-[40px] lg:text-[48px] leading-[100%] tracking-[0%] text-center">
               <span className="text-[var(--color-accent)]">{year}</span>{" "}
-              <span className="text-[var(--color-mid)]">Tours</span>
+              <span className="text-[var(--color-mid)]">{titleContent}</span>
             </h2>
           ) : (
             <>
@@ -59,7 +62,7 @@ export default function TourSection({
               </p>
 
               <p className="font-[900] font-black text-5xl sm:text-7xl md:text-8xl lg:text-[100px] 2xl:text-[128px] leading-tight sm:leading-none 2xl:leading-[120px] tracking-[0%] uppercase text-[#404040]">
-                Tours
+                {titleContent}
               </p>
             </>
           )}
