@@ -26,7 +26,7 @@ export default function WhatsIncludedSection() {
         <div id="whats-included" className="w-full max-w-[1038px]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 w-full">
                 {/* Included Card */}
-                <div className="bg-white rounded-[20px] border border-gray-200 p-5 sm:p-7 md:p-8 shadow-[0px_8px_24px_rgba(0,0,0,0.04)] flex flex-col gap-5">
+                <div className="bg-white rounded-[20px] border border-gray-200 p-5 sm:p-7 md:p-8 shadow-[0px_40px_48px_-16px_rgba(0,0,0,0.16)] flex flex-col gap-5">
                     <div className="flex items-center gap-2.5 text-primary pb-3 border-b border-gray-100">
                         <div className="h-7 w-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
                             <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
@@ -53,7 +53,7 @@ export default function WhatsIncludedSection() {
                 </div>
 
                 {/* Not Included Card */}
-                <div className="bg-white rounded-[20px] border border-gray-200 p-5 sm:p-7 md:p-8 shadow-[0px_8px_24px_rgba(0,0,0,0.04)] flex flex-col gap-5">
+                <div className="bg-white rounded-[20px] border border-gray-200 p-5 sm:p-7 md:p-8 shadow-[0px_40px_48px_-16px_rgba(0,0,0,0.16)] flex flex-col gap-5">
                     <div className="flex items-center gap-2.5 text-accent pb-3 border-b border-gray-100">
                         <div className="h-7 w-7 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0">
                             <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">

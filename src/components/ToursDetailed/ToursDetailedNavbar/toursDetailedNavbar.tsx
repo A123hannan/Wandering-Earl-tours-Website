@@ -31,13 +31,21 @@ export default function ToursDetailedNavbar() {
     }, [pathname]);
 
     return (
-        <nav className="w-full overflow-hidden rounded-[16px] bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)] ">
+        <nav className="w-full overflow-hidden rounded-[16px] bg-white  shadow-[0px_4px_20px_rgba(0,0,0,0.08)] ">
             <div className="flex w-full items-center justify-start gap-1.5 overflow-x-auto scroll-smooth scrollbar-hide sm:gap-2 lg:justify-between lg:gap-1 lg:overflow-x-hidden">
                 {navLinks.map((navLink) => {
                     const active = navLink.keys.includes(pathname);
 
                     return (
-                        <Link key={navLink.href} ref={active ? activeRef : null} href={navLink.href} className={`flex h-[42px] shrink-0 items-center justify-center whitespace-nowrap rounded-[12px] px-[22px] py-[6px] font-inter text-[12px] font-semibold uppercase tracking-[0.01em] transition-all duration-300 ease-out sm:h-[46px] sm:px-[25px] sm:text-[13px] md:h-[50px] md:px-[28px] md:text-[14px] lg:h-[52px] lg:flex-1 lg:shrink lg:px-[10px] lg:text-[14px] xl:h-[54px] xl:px-[14px] xl:text-[15px] 2xl:h-[56px] 2xl:text-[16px] ${active ? "bg-[#1E365C1A] text-[#1E365C] font-bold" : "text-[#8F8F8F] hover:bg-[#1E365C0D] hover:text-[#1E365C]"}`}>
+                        <Link
+                            key={navLink.href}
+                            ref={active ? activeRef : null}
+                            href={navLink.href}
+                            className={`flex h-[42px] shrink-0 items-center justify-center p-1.5 sm:p-2 lg:p-1.5 whitespace-nowrap rounded-[12px] px-[22px] font-inter text-[12px] font-semibold uppercase tracking-[0.01em] transition-all duration-300 ease-out sm:h-[46px] sm:px-[25px] sm:text-[13px] md:h-[50px] md:px-[28px] md:text-[14px] lg:h-[52px] lg:flex-1 lg:shrink lg:px-[10px] lg:text-[14px] xl:h-[54px] xl:px-[14px] xl:text-[15px] 2xl:h-[56px] 2xl:text-[16px] ${active
+                                ? "bg-[#1E365C1A] text-[#1E365C] font-bold"
+                                : "text-[#8F8F8F] hover:bg-[#1E365C0D] hover:text-[#1E365C]"
+                                }`}
+                        >
                             {navLink.title}
                         </Link>
                     );
