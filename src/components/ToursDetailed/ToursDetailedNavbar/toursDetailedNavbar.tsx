@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
@@ -7,61 +7,151 @@ import { useParams, usePathname } from "next/navigation";
 export default function ToursDetailedNavbar() {
     const params = useParams();
     const pathname = usePathname();
+
     const id = params?.id ? String(params.id) : "1";
+
     const activeRef = useRef<HTMLAnchorElement | null>(null);
     const navContainerRef = useRef<HTMLDivElement | null>(null);
 
     const navLinks = [
-        { href: `/tours/${id}`, title: "Details", keys: [`/tours/${id}`, `/tours/${id}/details`] },
-        { href: `/tours/${id}/gallery`, title: "Gallery", keys: [`/tours/${id}/gallery`] },
-        { href: `/tours/${id}/map`, title: "Map", keys: [`/tours/${id}/map`] },
-        { href: `/tours/${id}/itinerary`, title: "Itinerary", keys: [`/tours/${id}/itinerary`] },
-        { href: `/tours/${id}/toursEssentials`, title: "Tour Essentials", keys: [`/tours/${id}/toursEssentials`] },
-        { href: `/tours/${id}/whatsIncluded`, title: "What's Included", keys: [`/tours/${id}/whatsIncluded`] },
+        {
+            href: `/tours/${id}`,
+            title: "Details",
+            keys: [`/tours/${id}`, `/tours/${id}/details`],
+        },
+        {
+            href: `/tours/${id}/gallery`,
+            title: "Gallery",
+            keys: [`/tours/${id}/gallery`],
+        },
+        {
+            href: `/tours/${id}/map`,
+            title: "Map",
+            keys: [`/tours/${id}/map`],
+        },
+        {
+            href: `/tours/${id}/itinerary`,
+            title: "Itinerary",
+            keys: [`/tours/${id}/itinerary`],
+        },
+        {
+            href: `/tours/${id}/toursEssentials`,
+            title: "Tour Essentials",
+            keys: [`/tours/${id}/toursEssentials`],
+        },
+        {
+            href: `/tours/${id}/whatsIncluded`,
+            title: "What's Included",
+            keys: [`/tours/${id}/whatsIncluded`],
+        },
     ];
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            if (activeRef.current && navContainerRef.current) {
-                const container = navContainerRef.current;
-                const activeItem = activeRef.current;
+        const activeItem = activeRef.current;
+        const container = navContainerRef.current;
 
-                const containerWidth = container.clientWidth;
-                const itemLeft = activeItem.offsetLeft;
-                const itemWidth = activeItem.clientWidth;
+        if (!activeItem || !container) return;
 
-                const targetScrollLeft = itemLeft - (containerWidth / 2) + (itemWidth / 2);
-
-                container.scrollTo({
-                    left: Math.max(0, targetScrollLeft),
-                    behavior: "smooth",
-                });
-            }
-        }, 50);
-
-        return () => clearTimeout(timer);
+        // Only auto-scroll on screens where the navbar is actually scrollable.
+        if (window.innerWidth < 1024) {
+            activeItem.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center",
+            });
+        }
     }, [pathname]);
 
     return (
-        <div className="rounded-[16px] bg-white w-full overflow-hidden shadow-sm">
+        <nav className="w-full rounded-[16px] bg-white shadow-sm overflow-hidden">
             <div
                 ref={navContainerRef}
-                className="flex items-center justify-start 2xl:justify-between gap-1 sm:gap-2 2xl:gap-0 w-full overflow-x-auto no-scrollbar scroll-smooth whitespace-nowrap p-1.5 sm:p-2 2xl:p-0"
+                className="
+          flex w-full items-center
+
+          /* Mobile / tablet */
+          justify-start
+          gap-1
+          overflow-x-auto
+          scrollbar-hide
+          scroll-smooth
+          whitespace-nowrap
+          p-1.5
+
+          /* Small devices */
+          sm:gap-1.5
+          sm:p-2
+
+          /* Large screens */
+          lg:justify-between
+          lg:gap-0
+          lg:overflow-x-hidden
+          lg:p-0
+        "
             >
-                {navLinks.map((navLink, index) => {
+                {navLinks.map((navLink) => {
                     const active = navLink.keys.includes(pathname);
+
                     return (
                         <Link
-                            key={index}
+                            key={navLink.href}
                             ref={active ? activeRef : null}
                             href={navLink.href}
-                            className={`inline-flex items-center justify-center py-[14px] px-[16px] sm:py-[18px] sm:px-[20px] 2xl:py-[20px] 2xl:px-[35px] rounded-[16px] cursor-pointer hover:bg-[#1E365C1A] font-[600] text-[13px] sm:text-[14px] 2xl:text-[16px] leading-[100%] tracking-[0%] uppercase text-center shrink-0 whitespace-nowrap ${active ? "bg-[#1E365C1A] text-primary" : "text-grey"} transition-all duration-300`}
+                            className={`
+                inline-flex
+                shrink-0
+                items-center
+                justify-center
+                whitespace-nowrap
+                rounded-[14px]
+
+                font-inter
+                font-semibold
+                uppercase
+                text-center
+                leading-none
+
+                transition-all
+                duration-300
+                ease-out
+
+                /* Mobile */
+                px-[16px]
+                py-[12px]
+                text-[13px]
+
+                /* Small */
+                sm:px-[20px]
+                sm:py-[14px]
+                sm:text-[14px]
+
+                /* Medium */
+                md:px-[24px]
+                md:py-[16px]
+
+                /* Large - distribute across entire navbar */
+                lg:flex-1
+                lg:px-[12px]
+                lg:py-[17px]
+                lg:text-[15px]
+
+                /* XL */
+                xl:px-[16px]
+                xl:py-[18px]
+                xl:text-[16px]
+
+                /* Active */
+                ${active
+                                    ? "bg-[#1E365C1A] text-primary font-bold"
+                                    : "text-[#8F8F8F] hover:bg-[#1E365C0D] hover:text-[#1E365C]"
+                                }
+              `}
                         >
                             {navLink.title}
                         </Link>
                     );
                 })}
             </div>
-        </div>
+        </nav>
     );
 }

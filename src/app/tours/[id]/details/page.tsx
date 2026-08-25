@@ -1,7 +1,7 @@
 import React from "react";
 import { getTourById } from "@/data/getTour";
 import { notFound } from "next/navigation";
-import DetailsSection from "@/components/ToursDetailed/DetailsPage/DetailsSection";
+import DetailsSection from "@/components/ToursDetailed/details/DetailsSection";
 
 interface props {
     params: Promise<{ id: string }>;
