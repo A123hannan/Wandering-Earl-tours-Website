@@ -2,14 +2,15 @@ import React from "react";
 import Image from "next/image";
 import ToursIndexPage from "@/components/Tours/ToursHeroComponent/toursHeroComponent";
 import TourSection from "@/components/TourSection/tourSection";
+
 export default function TourHero() {
   return (
     <div className="w-full">
-      <div className="">
+      <div>
         <ToursIndexPage />
       </div>
       <div className="mx-auto max-w-[1760px] px-[3rem] 2xl:px-[1rem] relative top-[-178px] z-50">
-        <div className="">
+        <div id="tours-2024" className="scroll-mt-28">
           <TourSection
             limit={8}
             year="2024"
@@ -19,7 +20,7 @@ export default function TourHero() {
             button={false}
           />
         </div>
-        <div className="mt-[94px]">
+        <div id="tours-2025" className="mt-[94px] scroll-mt-28">
           <TourSection
             limit={8}
             year="2025"

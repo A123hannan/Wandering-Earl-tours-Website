@@ -4,7 +4,7 @@ import ArrowSvg from "@/components/svg/ArrowSvg/arrowSvg";
 import { toursData } from "@/data/data";
 import { destCardDetils2025 } from "@/data/2025data";
 import { destCardDetils } from "@/data/2024data";
-
+import Link from "next/link";
 const COLS_WIDTH_MAP: Record<number, string> = {
   2: "w-full sm:w-[calc(50%-16px)] max-w-[488px] sm:max-w-none",
   3: "w-full min-[810px]:w-[calc(50%-16px)] 2xl:w-[calc(33.333%-14px)] max-w-[488px] sm:max-w-none",
@@ -69,13 +69,22 @@ export default function TourSection({
         </div>
 
         {button && !isToursPage && (
-          <div className="pb-[10px] sm:pb-[8px] 2xl:pb-[13px]">
-            <button className="group flex flex-row items-center cursor-pointer font-[700] leading-[100%] tracking-[0%] text-[#1E365C] rounded-[30px] border border-[#1E365C] hover:bg-[#1E365C] hover:text-white transition-colors text-[13px] sm:text-[14px] 2xl:text-[16px] gap-[6px] sm:gap-[8px] 2xl:gap-[10px] pt-[9px] pb-[10px] px-[18px] sm:pt-[11px] sm:pb-[12px] sm:px-[22px] 2xl:pt-[13px] 2xl:pb-[14px] 2xl:px-[31px]">
+          <div className="pb-[10px] sm:pb-[8px] 2xl:pb-[13px] shrink-0 relative z-20">
+            <Link
+              href={
+                year === "2024"
+                  ? "/tours#tours-2024"
+                  : year === "2025"
+                  ? "/tours#tours-2025"
+                  : "/tours"
+              }
+              className="group flex flex-row items-center cursor-pointer font-[700] leading-[100%] tracking-[0%] text-[#1E365C] rounded-[30px] border border-[#1E365C] hover:bg-[#1E365C] hover:text-white transition-colors text-[13px] sm:text-[14px] 2xl:text-[16px] gap-[6px] sm:gap-[8px] 2xl:gap-[10px] pt-[9px] pb-[10px] px-[18px] sm:pt-[11px] sm:pb-[12px] sm:px-[22px] 2xl:pt-[13px] 2xl:pb-[14px] 2xl:px-[31px] pointer-events-auto select-none"
+            >
               All Tours
-              <div className="pl-0 pt-[1px] text-[#1E365C] group-hover:text-white transition-colors shrink-0">
+              <div className="pl-0 pt-[1px] text-[#1E365C] group-hover:text-white transition-colors shrink-0 pointer-events-none">
                 <ArrowSvg />
               </div>
-            </button>
+            </Link>
           </div>
         )}
       </div>
