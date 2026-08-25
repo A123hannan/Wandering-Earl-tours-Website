@@ -9,52 +9,20 @@ export default function ToursDetailedNavbar() {
     const pathname = usePathname();
 
     const id = params?.id ? String(params.id) : "1";
-
     const activeRef = useRef<HTMLAnchorElement | null>(null);
-    const navContainerRef = useRef<HTMLDivElement | null>(null);
 
     const navLinks = [
-        {
-            href: `/tours/${id}`,
-            title: "Details",
-            keys: [`/tours/${id}`, `/tours/${id}/details`],
-        },
-        {
-            href: `/tours/${id}/gallery`,
-            title: "Gallery",
-            keys: [`/tours/${id}/gallery`],
-        },
-        {
-            href: `/tours/${id}/map`,
-            title: "Map",
-            keys: [`/tours/${id}/map`],
-        },
-        {
-            href: `/tours/${id}/itinerary`,
-            title: "Itinerary",
-            keys: [`/tours/${id}/itinerary`],
-        },
-        {
-            href: `/tours/${id}/toursEssentials`,
-            title: "Tour Essentials",
-            keys: [`/tours/${id}/toursEssentials`],
-        },
-        {
-            href: `/tours/${id}/whatsIncluded`,
-            title: "What's Included",
-            keys: [`/tours/${id}/whatsIncluded`],
-        },
+        { href: `/tours/${id}`, title: "Details", keys: [`/tours/${id}`, `/tours/${id}/details`] },
+        { href: `/tours/${id}/gallery`, title: "Gallery", keys: [`/tours/${id}/gallery`] },
+        { href: `/tours/${id}/map`, title: "Map", keys: [`/tours/${id}/map`] },
+        { href: `/tours/${id}/itinerary`, title: "Itinerary", keys: [`/tours/${id}/itinerary`] },
+        { href: `/tours/${id}/toursEssentials`, title: "Tour Essentials", keys: [`/tours/${id}/toursEssentials`] },
+        { href: `/tours/${id}/whatsIncluded`, title: "What's Included", keys: [`/tours/${id}/whatsIncluded`] },
     ];
 
     useEffect(() => {
-        const activeItem = activeRef.current;
-        const container = navContainerRef.current;
-
-        if (!activeItem || !container) return;
-
-        // Only auto-scroll on screens where the navbar is actually scrollable.
-        if (window.innerWidth < 1024) {
-            activeItem.scrollIntoView({
+        if (window.innerWidth < 1024 && activeRef.current) {
+            activeRef.current.scrollIntoView({
                 behavior: "smooth",
                 block: "nearest",
                 inline: "center",
@@ -63,90 +31,13 @@ export default function ToursDetailedNavbar() {
     }, [pathname]);
 
     return (
-        <nav className="w-full rounded-[16px] bg-white shadow-sm overflow-hidden">
-            <div
-                ref={navContainerRef}
-                className="
-          flex w-full items-center
-
-          /* Mobile / tablet */
-          justify-start
-          gap-1
-          overflow-x-auto
-          scrollbar-hide
-          scroll-smooth
-          whitespace-nowrap
-          p-1.5
-
-          /* Small devices */
-          sm:gap-1.5
-          sm:p-2
-
-          /* Large screens */
-          lg:justify-between
-          lg:gap-0
-          lg:overflow-x-hidden
-          lg:p-0
-        "
-            >
+        <nav className="w-full overflow-hidden rounded-[16px] bg-white p-1.5 shadow-[0px_4px_20px_rgba(0,0,0,0.08)] sm:p-2 lg:p-1.5">
+            <div className="flex w-full items-center justify-start gap-1.5 overflow-x-auto scroll-smooth scrollbar-hide sm:gap-2 lg:justify-between lg:gap-1 lg:overflow-x-hidden">
                 {navLinks.map((navLink) => {
                     const active = navLink.keys.includes(pathname);
 
                     return (
-                        <Link
-                            key={navLink.href}
-                            ref={active ? activeRef : null}
-                            href={navLink.href}
-                            className={`
-                inline-flex
-                shrink-0
-                items-center
-                justify-center
-                whitespace-nowrap
-                rounded-[14px]
-
-                font-inter
-                font-semibold
-                uppercase
-                text-center
-                leading-none
-
-                transition-all
-                duration-300
-                ease-out
-
-                /* Mobile */
-                px-[16px]
-                py-[12px]
-                text-[13px]
-
-                /* Small */
-                sm:px-[20px]
-                sm:py-[14px]
-                sm:text-[14px]
-
-                /* Medium */
-                md:px-[24px]
-                md:py-[16px]
-
-                /* Large - distribute across entire navbar */
-                lg:flex-1
-                lg:px-[12px]
-                lg:py-[17px]
-                lg:text-[15px]
-
-                /* XL */
-                xl:px-[16px]
-                xl:py-[18px]
-                xl:text-[16px]
-
-                /* Active */
-                ${active
-                                    ? "bg-[#1E365C1A] text-primary font-bold"
-                                    : "text-[#8F8F8F] hover:bg-[#1E365C0D] hover:text-[#1E365C]"
-                                }
-              `}
-                        >
+                        <Link key={navLink.href} ref={active ? activeRef : null} href={navLink.href} className={`flex h-[42px] shrink-0 items-center justify-center whitespace-nowrap rounded-[12px] px-[22px] font-inter text-[12px] font-semibold uppercase tracking-[0.01em] transition-all duration-300 ease-out sm:h-[46px] sm:px-[25px] sm:text-[13px] md:h-[50px] md:px-[28px] md:text-[14px] lg:h-[52px] lg:flex-1 lg:shrink lg:px-[10px] lg:text-[14px] xl:h-[54px] xl:px-[14px] xl:text-[15px] 2xl:h-[56px] 2xl:text-[16px] ${active ? "bg-[#1E365C1A] text-[#1E365C] font-bold" : "text-[#8F8F8F] hover:bg-[#1E365C0D] hover:text-[#1E365C]"}`}>
                             {navLink.title}
                         </Link>
                     );
