@@ -7,7 +7,7 @@ import { Tour } from "@/data/type";
 
 export default function DetailsSection({ tour }: { tour?: Tour }) {
     return (
-        <div className="flex flex-col gap-[40px] max-w-[1038px]">
+        <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10 w-full max-w-[1038px]">
             <DetailsPageComponent1 tour={tour} />
             <DetailsPageComponent2 />
             <DetailsPageComponent3 />

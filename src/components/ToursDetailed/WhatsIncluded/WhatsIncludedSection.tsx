@@ -1,45 +1,81 @@
-import React from 'react';
+import React from "react";
 
 export default function WhatsIncludedSection() {
+    const includedItems = [
+        "Wandering Earl Tours Expert Tour Leader",
+        "Small group (maximum 12 participants)",
+        "Accommodation (11 nights – 3*/4* hotels and a guesthouse)",
+        "Transportation within Southeast Asia (vans, public transportation and flights)",
+        "Local English-speaking guides",
+        "All mentioned activities and entrance fees",
+        "Breakfast every day, 7 lunches and 10 dinners",
+        "Water throughout the trip",
+        "Gratuities at hotels/included meals",
+        "All airport transfers",
+    ];
+
+    const notIncludedItems = [
+        "Flights to/from Bangkok and Singapore",
+        "Passport/visa fees",
+        "Meals and activities not mentioned",
+        "Travel insurance (mandatory)",
+        "Other gratuities",
+    ];
+
     return (
-        <div id='whats-included' className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1038px]">
-                <div className="bg-white rounded-2xl border-[2px] border-gray-200 p-5 sm:p-8 shadow-[0px_16px_24px_-10px_rgba(0,0,0,0.1)]">
-                    <div className="flex items-center gap-2 mb-4 sm:mb-6 text-[#1A2B4C] font-extrabold tracking-wide">
-                        <svg className="w-6 h-6 fill-current shrink-0" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span className='text-[16px] lg:text-[20px] font-inter font-semibold'>INCLUDED</span>
+        <div id="whats-included" className="w-full max-w-[1038px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 w-full">
+                {/* Included Card */}
+                <div className="bg-white rounded-[20px] border border-gray-200 p-5 sm:p-7 md:p-8 shadow-[0px_8px_24px_rgba(0,0,0,0.04)] flex flex-col gap-5">
+                    <div className="flex items-center gap-2.5 text-primary pb-3 border-b border-gray-100">
+                        <div className="h-7 w-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                            <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    fillRule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
+                        </div>
+                        <h3 className="text-[17px] sm:text-[19px] font-bold tracking-wide uppercase">
+                            What's Included
+                        </h3>
                     </div>
 
-                    <ul className="list-disc list-outside ml-5 space-y-3 sm:space-y-5 leading-relaxed font-inter font-medium text-[15px] sm:text-[18px] lg:text-[20px] text-text-muted">
-                        <li>Wandering Earl Tours Expert Tour Leader</li>
-                        <li>Small group (maximum 12 participants)</li>
-                        <li>Accommodation (11 nights – 3*/4* hotels and a guesthouse)</li>
-                        <li>Transportation within Southeast Asia (vans, public transportation and flights)</li>
-                        <li>Local English-speaking guides</li>
-                        <li>All mentioned activities and entrance fees</li>
-                        <li>Breakfast every day, 7 lunches and 10 dinners</li>
-                        <li>Water throughout the trip</li>
-                        <li>Gratuities at hotels/included meals</li>
-                        <li>All airport transfers</li>
+                    <ul className="space-y-3.5 leading-relaxed text-[14px] sm:text-[15px] md:text-[16px] text-gray-700">
+                        {includedItems.map((item, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                                <span className="h-2 w-2 rounded-full bg-emerald-500 shrink-0 mt-2" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
-                <div className="bg-white rounded-2xl border-[2px] border-gray-200 p-5 sm:p-8 shadow-[0px_16px_24px_-10px_rgba(0,0,0,0.1)]">
-                    <div className="flex items-center gap-2 mb-4 sm:mb-6 text-[#C81E1E] font-extrabold tracking-wide">
-                        <svg className="w-6 h-6 fill-current shrink-0" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                        </svg>
-                        <span className='text-[16px] lg:text-[20px] font-inter font-semibold'>NOT INCLUDED</span>
+                {/* Not Included Card */}
+                <div className="bg-white rounded-[20px] border border-gray-200 p-5 sm:p-7 md:p-8 shadow-[0px_8px_24px_rgba(0,0,0,0.04)] flex flex-col gap-5">
+                    <div className="flex items-center gap-2.5 text-accent pb-3 border-b border-gray-100">
+                        <div className="h-7 w-7 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0">
+                            <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    fillRule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
+                        </div>
+                        <h3 className="text-[17px] sm:text-[19px] font-bold tracking-wide uppercase text-accent">
+                            Not Included
+                        </h3>
                     </div>
 
-                    <ul className="list-disc list-outside ml-5 space-y-3 sm:space-y-5 leading-relaxed font-inter font-medium text-[15px] sm:text-[18px] lg:text-[20px] text-text-muted">
-                        <li>Flights to/from Bangkok and Singapore</li>
-                        <li>Passport/visa fees</li>
-                        <li>Meals and activities not mentioned</li>
-                        <li>Travel insurance (mandatory)</li>
-                        <li>Other gratuities</li>
+                    <ul className="space-y-3.5 leading-relaxed text-[14px] sm:text-[15px] md:text-[16px] text-gray-700">
+                        {notIncludedItems.map((item, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                                <span className="h-2 w-2 rounded-full bg-red-400 shrink-0 mt-2" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>

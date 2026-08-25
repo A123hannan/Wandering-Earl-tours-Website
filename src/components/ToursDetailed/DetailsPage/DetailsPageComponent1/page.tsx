@@ -9,49 +9,52 @@ interface Props {
 }
 
 export default function DetailsPageComponent1({ tour }: Props) {
-    const detailsText = tour?.details || "Join us on an unforgettable food-focused adventure in Southeast Asia, where we will uncover the culinary secrets of Thailand, Malaysia and Singapore!";
+    const detailsText = tour?.details || "Join our unique journey into the heart of Mexico! We'll dive into the rich history, flavorful cuisine, city and village life and vibrant cultures in a style you won't want to miss!";
     const bookingsText = tour?.bookings || "2 out of 12 spots booked";
-    const destinationText = tour?.destination || "Romania";
-    const durationText = tour?.duration || "Nov 8 - Nov 17, 2024 (10 days)";
+    const destinationText = tour?.destination || "Mexico";
+    const durationText = tour?.duration || "Nov 08 — Nov 17, 2024 (10 days)";
 
     return (
-        <div className="flex flex-col gap-[16px] sm:gap-[24px] items-start w-full">
-            <p className="font-[500] text-[18px] sm:text-[22px] md:text-[24px] leading-[26px] sm:leading-[30px] tracking-[0%] text-dark">{detailsText}</p>
-            <div className="flex flex-row gap-4 sm:gap-6 md:gap-[30px] items-center flex-wrap">
+        <div className="flex flex-col gap-4 sm:gap-6 items-start w-full">
+            <h2 className="font-semibold text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] leading-snug sm:leading-relaxed text-dark">
+                {detailsText}
+            </h2>
 
-                <div className="flex flex-row items-center shrink-0">
-                    <UserIcon />
-                    <div className="pt-[3.5px] pb-[3.5px] pl-[8px] whitespace-nowrap">
-                        <span className="font-[600] text-[13px] sm:text-[14px] leading-[100%] tracking-[0%] text-[#404040]">
-                            {bookingsText.slice(0, 2)}{" "}
-                        </span>
-                        <span className="font-[400] text-[13px] sm:text-[14px] leading-[100%] tracking-[0%] text-[#8F8F8F]">
-                            {bookingsText.slice(2, 12)}
-                        </span>{" "}
-                        <span className="font-[600] text-[13px] sm:text-[14px] leading-[100%] tracking-[0%] text-[#404040]">
-                            {bookingsText.slice(12)}
-                        </span>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 w-full pt-1">
+                {/* Bookings */}
+                <div className="flex items-center gap-2 bg-gray-50 sm:bg-transparent px-3 py-1.5 sm:p-0 rounded-xl sm:rounded-none">
+                    <div className="text-primary shrink-0 scale-90 sm:scale-100">
+                        <UserIcon />
                     </div>
-                </div>
-                <span className="hidden md:inline-block bg-border h-[24px] w-[0px] border-[1px]" />
-                <div className="flex flex-row items-center min-w-0">
-                    <LocationIcon />
-                    <div className="pt-[3.5px] pb-[3.5px] pl-[8px] min-w-0">
-                        <span className="font-[400] text-[13px] sm:text-[14px] leading-[100%] tracking-[0%] text-[#404040] truncate block">
-                            {destinationText}
-                        </span>
-                    </div>
+                    <span className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-gray-700 whitespace-nowrap">
+                        <strong className="font-bold text-gray-900">{bookingsText.slice(0, 2)}</strong>
+                        <span className="text-gray-500">{bookingsText.slice(2, 12)}</span>
+                        <strong className="font-bold text-gray-900">{bookingsText.slice(12)}</strong>
+                    </span>
                 </div>
 
-                <span className="hidden md:inline-block bg-border h-[24px] w-[0px] border-[1px]" />
+                <span className="hidden md:inline-block h-5 w-[1px] bg-gray-300" />
+
+                {/* Location */}
+                <div className="flex items-center gap-2 bg-gray-50 sm:bg-transparent px-3 py-1.5 sm:p-0 rounded-xl sm:rounded-none">
+                    <div className="text-accent shrink-0 scale-90 sm:scale-100">
+                        <LocationIcon />
+                    </div>
+                    <span className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-gray-700 whitespace-nowrap">
+                        {destinationText}
+                    </span>
+                </div>
+
+                <span className="hidden md:inline-block h-5 w-[1px] bg-gray-300" />
+
                 {/* Duration */}
-                <div className="flex flex-row items-center">
-                    <CalenderIcon />
-                    <div className="pl-[8px] pt-[3.5px] pb-[3.5px]">
-                        <span className="font-[400] text-[13px] sm:text-[14px] leading-[100%] tracking-[0%] text-[#404040]">
-                            {durationText}
-                        </span>
+                <div className="flex items-center gap-2 bg-gray-50 sm:bg-transparent px-3 py-1.5 sm:p-0 rounded-xl sm:rounded-none">
+                    <div className="text-primary shrink-0 scale-90 sm:scale-100">
+                        <CalenderIcon />
                     </div>
+                    <span className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-gray-700 whitespace-nowrap">
+                        {durationText}
+                    </span>
                 </div>
             </div>
         </div>

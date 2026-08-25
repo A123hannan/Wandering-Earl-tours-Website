@@ -43,7 +43,7 @@ const cardData = [
 
 export default function ToursEssentialsSection() {
     return (
-        <div className="gap-4 sm:gap-[20px] w-full max-w-[1038px] grid grid-cols-1 sm:grid-cols-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 w-full max-w-[1038px]">
             {cardData.map((card, index) => (
                 <CardOfComponent3 key={index} Icon={card.icon} title={card.title} description={card.description} />
             ))}
