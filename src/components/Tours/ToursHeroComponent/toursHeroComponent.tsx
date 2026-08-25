@@ -8,12 +8,8 @@ export default function TourHero({ title, imgSrc }: props) {
   const src = imgSrc ? imgSrc : "/images/Tours/BgImage.png"
   const titleContent = title ? title : "Tours"
   return (
-    <div className="relative w-full overflow-x-hidden">
-      {/* Image block — always full-bleed object-cover, like the homepage hero.
-          Aspect ratio cascades from a tall mobile crop to a wide banner crop;
-          lg/xl (and therefore 2xl+, which inherits xl) are UNCHANGED from
-          before — this is the ratio that already looked right. */}
-      <div className="relative w-screen min-h-[360px] overflow-hidden aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9] lg:aspect-[1921/60] xl:aspect-[1921/460] flex items-center justify-center">
+    <div className="relative w-full overflow-hidden">
+      <div className="relative w-full min-h-[360px] overflow-hidden aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9] lg:aspect-[1921/460] xl:aspect-[1921/460] flex items-center justify-center">
         <Image
           src={src}
           alt="Tours Background"
