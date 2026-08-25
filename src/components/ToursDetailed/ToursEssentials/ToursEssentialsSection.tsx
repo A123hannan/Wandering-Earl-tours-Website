@@ -1,11 +1,7 @@
 import React from "react";
-import Image from "next/image";
-import { ShoesIcon } from "@/assets/icons";
-import { KeysIcon } from "@/assets/icons";
-import { BusIcon } from "@/assets/icons";
-import { FoodIcon } from "@/assets/icons";
-import { SustainableIcon } from "@/assets/icons";
-import { GroupIcon } from "@/assets/icons";
+import { ShoesIcon, KeysIcon, BusIcon, FoodIcon, SustainableIcon, GroupIcon } from "@/assets/icons";
+import CardOfComponent3 from "@/components/ToursDetailed/DetailsPage/DetailsPageComponent3/cardOfComponent3/page";
+
 const cardData = [
     {
         id: 1,
@@ -43,13 +39,11 @@ const cardData = [
         title: "Small Groups",
         description: "This tour requires a minimum of 8 participants and has a maximum of 12 participants in order to ensure the best small group tour experience. With such a small group, you'll be able to enjoy unique, rewarding activities that would not be accessible with more people. That's the kind of trip we love to offer!"
     },
+];
 
-]
-import CardOfComponent3 from "@/components/ToursDetailed/DetailsPage/DetailsPageComponent3/cardOfComponent3/page";
-import { title } from "process";
-export default function Page() {
+export default function ToursEssentialsSection() {
     return (
-        <div className="gap-[20px] w-full w-full grid grid-cols-1 sm:grid-cols-2 ">
+        <div className="gap-4 sm:gap-[20px] w-full max-w-[1038px] grid grid-cols-1 sm:grid-cols-2">
             {cardData.map((card, index) => (
                 <CardOfComponent3 key={index} Icon={card.icon} title={card.title} description={card.description} />
             ))}

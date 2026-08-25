@@ -42,7 +42,7 @@ const cardData = [
 import CardOfComponent3 from "@/components/ToursDetailed/DetailsPage/DetailsPageComponent3/cardOfComponent3/page";
 export default function Page() {
     return (
-        <div className="gap-[20px] w-full w-full grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 ">
+        <div className="gap-4 sm:gap-[20px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {cardData.map((card, index) => (
                 <CardOfComponent3 key={index} Icon={card.icon} description={card.description} />
             ))}

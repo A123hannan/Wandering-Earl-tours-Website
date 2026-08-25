@@ -85,7 +85,7 @@ export default function TourSection({
           (
             {
               badge,
-              cardNo,
+              id,
               imgSrc,
               heading,
               details,
@@ -102,7 +102,7 @@ export default function TourSection({
             >
               <TourCard
                 badge={badge}
-                cardNo={cardNo}
+                id={id}
                 imgSrc={imgSrc}
                 heading={heading}
                 details={details}

@@ -1,10 +1,10 @@
 import { Tour } from "./type";
 
 // export const toursData: Tour[] = [
-export const destCardDetils2025 :Tour[]= [
+export const destCardDetils2025: Tour[] = [
   {
     badge: "Limit",
-    cardNo: 1,
+    id: 1,
     imgSrc: "/images/landingpage/2025CardImages/dcard1.png",
     heading: "WANDER ACROSS MEXICO",
     details:
@@ -16,7 +16,7 @@ export const destCardDetils2025 :Tour[]= [
   },
   {
     badge: "",
-    cardNo: 3,
+    id: 2,
     imgSrc: "/images/landingpage/2025CardImages/dcard2.png",
     heading: "WANDER TO VIETNAM",
     details:
@@ -28,7 +28,7 @@ export const destCardDetils2025 :Tour[]= [
   },
   {
     badge: "Sold",
-    cardNo: 2,
+    id: 3,
     imgSrc: "/images/landingpage/2025CardImages/dcard3.png",
     heading: "WANDER ACROSS Romania",
     details:
@@ -39,5 +39,5 @@ export const destCardDetils2025 :Tour[]= [
     buttontext: "Add to wishlist",
   },
 
-  
+
 ];

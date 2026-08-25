@@ -5,10 +5,11 @@ import LocationIcon from "@/components/svg/LocationIconSvg/locationIconSvg";
 import CalenderIcon from "@/components/svg/CalenderIconSvg/calenderIconSvg";
 import BadgeLimit from "@/components/Badges/BadgeLimit/badgeLimit";
 import BadgeSold from "@/components/Badges/BadgeSold/badgeSold";
+import Link from "next/link";
 
 type CardProps = {
   badge: string;
-  cardNo?: number;
+  id?: number;
   imgSrc: string;
   heading: string;
   details: string;
@@ -18,9 +19,9 @@ type CardProps = {
   buttontext: string;
 };
 
-export default function DestinationCard({
+export default function TourCard({
   badge,
-  cardNo,
+  id,
   imgSrc,
   heading,
   details,
@@ -104,9 +105,9 @@ export default function DestinationCard({
         </div>
 
         {/* Action Button */}
-        <button className="font-[700] text-[15px] sm:text-[16px] 2xl:text-[18px] leading-[100%] tracking-[0%] text-[var(--color-primary)] hover:text-[var(--color-accent)] pt-[14px] px-[24px] sm:px-[30px] pb-[15px] sm:pb-[16px] rounded-[30px] flex items-center justify-center gap-[10px] border border-[var(--color-border)] hover:border-[#E9482B4D] cursor-pointer transition-colors w-full">
+        <Link href={`/tours/${id}`} className="font-[700] text-[15px] sm:text-[16px] 2xl:text-[18px] leading-[100%] tracking-[0%] text-[var(--color-primary)] hover:text-[var(--color-accent)] pt-[14px] px-[24px] sm:px-[30px] pb-[15px] sm:pb-[16px] rounded-[30px] flex items-center justify-center gap-[10px] border border-[var(--color-border)] hover:border-[#E9482B4D] cursor-pointer transition-colors w-full">
           {buttontext}
-        </button>
+        </Link>
       </div>
     </div>
   );

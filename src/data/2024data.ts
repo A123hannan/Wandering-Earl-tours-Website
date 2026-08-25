@@ -1,9 +1,9 @@
 import { Tour } from "./type";
 
-export const destCardDetils:Tour[] = [
+export const destCardDetils: Tour[] = [
   {
     badge: "Limit",
-    cardNo: 1,
+    id: 1,
     imgSrc: "/images/landingpage/2024CardImages/dCard1.png",
     heading: "WANDER ACROSS MEXICO",
     details:
@@ -15,7 +15,7 @@ export const destCardDetils:Tour[] = [
   },
   {
     badge: "Sold",
-    cardNo: 2,
+    id: 2,
     imgSrc: "/images/landingpage/2024CardImages/dCard2.png",
     heading: "WANDER TO VIETNAM",
     details:
@@ -27,7 +27,7 @@ export const destCardDetils:Tour[] = [
   },
   {
     badge: "",
-    cardNo: 3,
+    id: 3,
     imgSrc: "/images/landingpage/2024CardImages/dCard3.png",
     heading: "WANDER ACROSS Romania",
     details:

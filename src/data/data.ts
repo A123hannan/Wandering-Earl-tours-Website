@@ -3,7 +3,7 @@ import { Tour } from "./type";
 export const toursData: Tour[] = [
   {
     badge: "Limit",
-    cardNo: 1,
+    id: 1,
     imgSrc: "/images/landingpage/2024CardImages/dCard1.png",
     heading: "WANDER ACROSS MEXICO",
     details:
@@ -15,7 +15,7 @@ export const toursData: Tour[] = [
   },
   {
     badge: "",
-    cardNo: 2,
+    id: 2,
     imgSrc: "/images/landingpage/2025CardImages/dcard1.png",
     heading: "WANDER ACROSS MEXICO",
     details:
@@ -27,7 +27,7 @@ export const toursData: Tour[] = [
   },
   {
     badge: "Sold",
-    cardNo: 3,
+    id: 3,
     imgSrc: "/images/landingpage/2025CardImages/dcard2.png",
     heading: "WANDER TO VIETNAM",
     details:
@@ -39,7 +39,7 @@ export const toursData: Tour[] = [
   },
   {
     badge: "Limit",
-    cardNo: 4,
+    id: 4,
     imgSrc: "/images/landingpage/2025CardImages/dcard3.png",
     heading: "WANDER ACROSS Romania",
     details:
@@ -49,9 +49,9 @@ export const toursData: Tour[] = [
     duration: "Nov 08 — Nov 17, 2024 (10 days)",
     buttontext: "Add to wishlist",
   },
- {
+  {
     badge: "Sold",
-    cardNo: 5,
+    id: 5,
     imgSrc: "/images/landingpage/2024CardImages/dCard3.png",
     heading: "WANDER ACROSS Romania",
     details:
@@ -63,7 +63,7 @@ export const toursData: Tour[] = [
   },
   {
     badge: "",
-    cardNo: 6,
+    id: 6,
     imgSrc: "/images/landingpage/2024CardImages/dCard2.png",
     heading: "WANDER TO VIETNAM",
     details:
@@ -75,7 +75,7 @@ export const toursData: Tour[] = [
   },
   {
     badge: "",
-    cardNo: 6,
+    id: 7,
     imgSrc: "/images/landingpage/2024CardImages/dCard2.png",
     heading: "WANDER TO VIETNAM",
     details:
@@ -87,7 +87,7 @@ export const toursData: Tour[] = [
   },
   {
     badge: "",
-    cardNo: 7,
+    id: 8,
     imgSrc: "/images/landingpage/2024CardImages/dCard1.png",
     heading: "WANDER ACROSS MEXICO",
     details:
@@ -99,7 +99,7 @@ export const toursData: Tour[] = [
   },
   {
     badge: "",
-    cardNo: 8,
+    id: 9,
     imgSrc: "/images/landingpage/2025CardImages/dcard1.png",
     heading: "WANDER ACROSS MEXICO",
     details:
@@ -109,5 +109,5 @@ export const toursData: Tour[] = [
     duration: "Nov 08 — Nov 17, 2024 (10 days)",
     buttontext: "Details",
   },
-  
+
 ];

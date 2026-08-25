@@ -1,7 +1,7 @@
 export type Tour = {
-  badge:string;
+  badge: string;
   imgSrc: string;
-  cardNo?:number;
+  id?: number;
   heading: string;
   details: string;
   bookings: string;
