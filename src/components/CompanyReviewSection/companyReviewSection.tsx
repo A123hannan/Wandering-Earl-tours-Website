@@ -12,7 +12,7 @@ export default function CompanyReviewSection({ page }: Props) {
   return (
     <div className="w-full page-container px-4 sm:px-6 lg:px-8 xl:px-12">
       {page === "/about" && (
-        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-start gap-8 lg:gap-12 xl:gap-[128px] mb-12 sm:mb-20 lg:mb-0">
+        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-start gap-8 lg:gap-12 xl:gap-[128px] mb-12 sm:mb-20 lg:mb-30">
           <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0 max-h-[573px]">
             <ImageContainer containerNumber={1} />
           </div>
