@@ -12,11 +12,11 @@ export default function CompanyReviewSection({ page }: Props) {
   return (
     <div className="w-full page-container px-4 sm:px-6 lg:px-8 xl:px-12">
       {page === "/about" && (
-        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-0">
-          <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
+        <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-start gap-8 lg:gap-12 xl:gap-[128px] mb-12 sm:mb-20 lg:mb-0">
+          <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0 max-h-[573px]">
             <ImageContainer containerNumber={1} />
           </div>
-          <div className="w-full min-[1280px]:flex-1 flex flex-col items-start justify-start">
+          <div className="w-full min-[1280px]:flex-1 flex flex-col items-start justify-start ">
             <p className="font-[500] text-base sm:text-lg lg:text-[19px] xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark">
               Our team at Wandering Earl Tours has a strong desire to bring rich
               cultural connections around the world to people who would appreciate
