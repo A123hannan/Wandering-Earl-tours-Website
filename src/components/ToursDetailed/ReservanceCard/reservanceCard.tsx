@@ -33,8 +33,8 @@ export default function ReservanceCard() {
             {/* Top Dollar Arch & Red Header */}
             <div className="relative flex flex-col items-center justify-center">
                 {/* Protruding Semicircle Dome */}
-                <div className="absolute -top-[48px] sm:-top-[58px] z-0 h-[96px] w-[96px] sm:h-[116px] sm:w-[116px] rounded-full bg-accent flex justify-center pt-2.5 sm:pt-3.5">
-                    <div className="text-white scale-75 sm:scale-85 origin-center flex items-center justify-center">
+                <div className="absolute -top-[48px] sm:-top-[58px] z-0 h-[96px] w-[96px] sm:h-[116px] sm:w-[116px] rounded-full bg-accent flex justify-center pt-2.5 sm:pt-2.5">
+                    <div className="text-white scale-75 sm:scale-85 origin-center flex items-start justify-center">
                         <DollarIcon />
                     </div>
                 </div>
@@ -72,11 +72,10 @@ export default function ReservanceCard() {
                         {/* Option 2 - Single Supplement (Selectable) */}
                         <div
                             onClick={() => handleSelectedOption("single_supplement")}
-                            className={`flex w-full flex-row items-center justify-between px-3.5 sm:px-4 2xl:px-[20px] py-3 sm:py-3.5 2xl:py-[16px] rounded-[16px] border-[1px] bg-white cursor-pointer transition-all ${
-                                selectedOption === "single_supplement"
-                                    ? "border-primary shadow-sm"
-                                    : "border-gray-300 hover:border-primary/50"
-                            }`}
+                            className={`flex w-full flex-row items-center justify-between px-3.5 sm:px-4 2xl:px-[20px] py-3 sm:py-3.5 2xl:py-[16px] rounded-[16px] border-[1px] bg-white cursor-pointer transition-all ${selectedOption === "single_supplement"
+                                ? "border-primary shadow-sm"
+                                : "border-gray-300 hover:border-primary/50"
+                                }`}
                         >
                             <div className="flex flex-col gap-1">
                                 <p className="font-[500] text-[13px] sm:text-[15px] 2xl:text-[16px] leading-none text-mid">
@@ -105,11 +104,10 @@ export default function ReservanceCard() {
                         {/* Deposit */}
                         <div
                             onClick={handleSelectedDeposit}
-                            className={`flex w-full flex-row items-center justify-between px-3.5 sm:px-4 2xl:px-[20px] py-3 sm:py-3.5 2xl:py-[16px] rounded-[16px] border-[1px] bg-white cursor-pointer transition-all ${
-                                selectedPayment === "deposit"
-                                    ? "border-primary shadow-sm"
-                                    : "border-border hover:border-primary/50"
-                            }`}
+                            className={`flex w-full flex-row items-center justify-between px-3.5 sm:px-4 2xl:px-[20px] py-3 sm:py-3.5 2xl:py-[16px] rounded-[16px] border-[1px] bg-white cursor-pointer transition-all ${selectedPayment === "deposit"
+                                ? "border-primary shadow-sm"
+                                : "border-border hover:border-primary/50"
+                                }`}
                         >
                             <p className="font-[500] text-[13px] sm:text-[14px] 2xl:text-[15px] leading-none text-mid">
                                 Pay Deposit
@@ -124,11 +122,10 @@ export default function ReservanceCard() {
                         {/* Pay in Full */}
                         <div
                             onClick={handleSelectedFull}
-                            className={`flex w-full flex-row items-center justify-between px-3.5 sm:px-4 2xl:px-[20px] py-3 sm:py-3.5 2xl:py-[16px] rounded-[16px] border-[1px] bg-white cursor-pointer transition-all ${
-                                selectedPayment === "full"
-                                    ? "border-primary shadow-sm"
-                                    : "border-border hover:border-primary/50"
-                            }`}
+                            className={`flex w-full flex-row items-center justify-between px-3.5 sm:px-4 2xl:px-[20px] py-3 sm:py-3.5 2xl:py-[16px] rounded-[16px] border-[1px] bg-white cursor-pointer transition-all ${selectedPayment === "full"
+                                ? "border-primary shadow-sm"
+                                : "border-border hover:border-primary/50"
+                                }`}
                         >
                             <p className="font-[500] text-[13px] sm:text-[14px] 2xl:text-[15px] leading-none text-mid">
                                 Pay in Full
