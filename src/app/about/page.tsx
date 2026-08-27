@@ -10,9 +10,9 @@ export default function page() {
         <div className="">
             <AboutImgComponent page="/about" />
 
-            <div className="page-container ">
-                <ComapnyReviewSection page="/about" />
-            </div>
+            {/* <div className="page-container "> */}
+            <ComapnyReviewSection page="/about" />
+            {/* </div> */}
             <ContactSection />
             <TeamIntro />
             <div className="page-container ">

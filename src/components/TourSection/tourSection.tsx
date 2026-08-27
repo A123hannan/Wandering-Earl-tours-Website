@@ -45,13 +45,13 @@ export default function TourSection({
     <div>
       <div
         className={`relative z-10 flex w-full items-end ${isToursPage
-          ? "justify-center text-center mb-[50px]"
+          ? "justify-center text-center mb-[30px]"
           : "justify-between"
           }`}
       >
         <div className={isToursPage ? "w-full text-center" : ""}>
           {isToursPage ? (
-            <h2 className="font-[900] font-black uppercase text-[32px] sm:text-[40px] lg:text-[48px] leading-[100%] tracking-[0%] text-center">
+            <h2 className="font-[900] font-black uppercase text-[32px] sm:text-[40px] lg:text-[48px] leading-[100%] tracking-[0%] text-start lg:text-center">
               <span className="text-[var(--color-accent)]">{year}</span>{" "}
               <span className="text-[var(--color-mid)]">{titleContent}</span>
             </h2>
@@ -75,8 +75,8 @@ export default function TourSection({
                 year === "2024"
                   ? "/tours#tours-2024"
                   : year === "2025"
-                  ? "/tours#tours-2025"
-                  : "/tours"
+                    ? "/tours#tours-2025"
+                    : "/tours"
               }
               className="group flex flex-row items-center cursor-pointer font-[700] leading-[100%] tracking-[0%] text-[#1E365C] rounded-[30px] border border-[#1E365C] hover:bg-[#1E365C] hover:text-white transition-colors text-[13px] sm:text-[14px] 2xl:text-[16px] gap-[6px] sm:gap-[8px] 2xl:gap-[10px] pt-[9px] pb-[10px] px-[18px] sm:pt-[11px] sm:pb-[12px] sm:px-[22px] 2xl:pt-[13px] 2xl:pb-[14px] 2xl:px-[31px] pointer-events-auto select-none"
             >

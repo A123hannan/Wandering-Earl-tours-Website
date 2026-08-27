@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { DollarIcon } from "@/assets/icons";
 
 export default function ReservanceCard() {
-    const [selectedOption, setSelectedOption] = useState<string>("single_supplement");
+    const [selectedOption, setSelectedOption] = useState<string>("");
     const [selectedPayment, setSelectedPayment] = useState<string>("full");
     const [count, setCount] = useState<number>(1);
 

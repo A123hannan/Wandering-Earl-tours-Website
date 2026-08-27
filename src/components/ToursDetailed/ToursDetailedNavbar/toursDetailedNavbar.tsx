@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 
@@ -10,6 +10,10 @@ export default function ToursDetailedNavbar() {
 
     const id = params?.id ? String(params.id) : "1";
     const activeRef = useRef<HTMLAnchorElement | null>(null);
+    const scrollRef = useRef<HTMLDivElement | null>(null);
+
+    const [showLeftShadow, setShowLeftShadow] = useState(false);
+    const [showRightShadow, setShowRightShadow] = useState(false);
 
     const navLinks = [
         { href: `/tours/${id}`, title: "Details", keys: [`/tours/${id}`, `/tours/${id}/details`] },
@@ -20,6 +24,30 @@ export default function ToursDetailedNavbar() {
         { href: `/tours/${id}/whatsIncluded`, title: "What's Included", keys: [`/tours/${id}/whatsIncluded`] },
     ];
 
+    const updateShadows = useCallback(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+
+        const { scrollLeft, scrollWidth, clientWidth } = el;
+        setShowLeftShadow(scrollLeft > 4);
+        setShowRightShadow(scrollLeft + clientWidth < scrollWidth - 4);
+    }, []);
+
+    useEffect(() => {
+        updateShadows();
+
+        const el = scrollRef.current;
+        if (!el) return;
+
+        el.addEventListener("scroll", updateShadows, { passive: true });
+        window.addEventListener("resize", updateShadows);
+
+        return () => {
+            el.removeEventListener("scroll", updateShadows);
+            window.removeEventListener("resize", updateShadows);
+        };
+    }, [updateShadows]);
+
     useEffect(() => {
         if (window.innerWidth < 1024 && activeRef.current) {
             activeRef.current.scrollIntoView({
@@ -28,11 +56,16 @@ export default function ToursDetailedNavbar() {
                 inline: "center",
             });
         }
-    }, [pathname]);
+        const timeout = setTimeout(updateShadows, 350);
+        return () => clearTimeout(timeout);
+    }, [pathname, updateShadows]);
 
     return (
-        <nav className="w-full overflow-hidden rounded-[16px] bg-white  shadow-[0px_4px_20px_rgba(0,0,0,0.08)] ">
-            <div className="flex w-full items-center justify-start gap-1.5 overflow-x-auto scroll-smooth scrollbar-hide sm:gap-2 lg:justify-between lg:gap-1 lg:overflow-x-hidden">
+        <nav className="relative w-screen left-1/2 right-1/2 -mx-[50vw] rounded-none lg:w-full lg:left-auto lg:right-auto lg:mx-0 lg:rounded-[16px] overflow-hidden bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)]">
+            <div
+                ref={scrollRef}
+                className="flex w-full items-center justify-start gap-1.5 overflow-x-auto scroll-smooth scrollbar-hide px-4 lg:px-0 lg:gap-1 lg:justify-between lg:overflow-x-hidden"
+            >
                 {navLinks.map((navLink) => {
                     const active = navLink.keys.includes(pathname);
 
@@ -51,6 +84,28 @@ export default function ToursDetailedNavbar() {
                     );
                 })}
             </div>
+
+            {/* Left edge shadow/fade */}
+            <div
+                aria-hidden
+                className={`pointer-events-none absolute left-0 top-0 h-full w-8 transition-opacity duration-200 lg:hidden ${showLeftShadow ? "opacity-100" : "opacity-0"
+                    }`}
+                style={{
+                    background:
+                        "linear-gradient(to right, rgba(30,54,92,0.65), rgba(30,54,92,0))",
+                }}
+            />
+
+            {/* Right edge shadow/fade */}
+            <div
+                aria-hidden
+                className={`pointer-events-none absolute right-0 top-0 h-full w-8 transition-opacity duration-200 lg:hidden ${showRightShadow ? "opacity-100" : "opacity-0"
+                    }`}
+                style={{
+                    background:
+                        "linear-gradient(to left, rgba(30,54,92,0.65), rgba(30,54,92,0))",
+                }}
+            />
         </nav>
     );
 }

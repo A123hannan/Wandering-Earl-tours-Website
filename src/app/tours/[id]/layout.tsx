@@ -31,7 +31,7 @@ export default async function Layout({
                         {children}
                     </div>
                 </div>
-                <div className="w-full max-w-[593px] mx-auto 2xl:mx-0 2xl:w-[593px] shrink-0">
+                <div className="lg:sticky lg:top-24 self-start w-full max-w-[593px] mx-auto 2xl:mx-0 2xl:w-[593px] shrink-0">
                     <ReservanceCard />
                 </div>
             </main>

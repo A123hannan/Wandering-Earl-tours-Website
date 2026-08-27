@@ -2,7 +2,7 @@
 
 import Logo from "./logo";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cart from "@/components/Cart/cart";
 import Button from "@/components/Button/button";
 import { usePathname } from "next/navigation";
@@ -16,7 +16,6 @@ const NAV_LINKS = [
   { href: "/contactUs", label: "Contact Us" },
 ];
 
-// Nav styles
 const navStyles: any = {
   "/": {
     className: "bg-transparent",
@@ -54,15 +53,11 @@ const navStyles: any = {
     buttonBg: "bg-[var(--color-white)]",
     textColor: "text-[var(--color-grey)]",
   },
-  // "/toursDetailed": {
-  //   className: "bg-[var(--color-primary)]",
-  //   buttonBg: "bg-[var(--color-white)]",
-  //   textColor: "text-[var(--color-grey)]",
-  // },
 };
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
@@ -70,23 +65,35 @@ export default function Navbar() {
   const styles = navStyles[pathName] ?? navStyles["/contactUs"];
   const textWeight = styles.textWeight ?? "text-[700]";
 
+  const isTransparentRoute = pathName === "/" || pathName === "/pastTours";
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <div
-        className={`${pathName === "/" || pathName === "/pastTours" ? "absolute top-0 left-0" : "relative"
-          } z-50 w-full ${styles.className}`}
+        className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${isTransparentRoute && !scrolled
+            ? "bg-transparent"
+            : styles.className
+          }`}
       >
-        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6 lg:pt-[10px] lg:pb-[10px]  2xl:pt-[30px]  min-[1720px]:px-[80px] 2xl:pb-[20px]">
+        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6 lg:pt-[10px] lg:pb-[10px] 2xl:pt-[30px] min-[1720px]:px-[80px] 2xl:pb-[20px]">
           {/* Logo */}
           <Logo />
 
           {/* Desktop Nav Links */}
-          <div className="hidden items-center gap-2 pt-[1px] lg:flex lg:gap-[10px] xl:gap-[20px] min-[1720px]:gap-[30px] ">
+          <div className="hidden items-center gap-2 pt-[1px] lg:flex lg:gap-[10px] xl:gap-[20px] min-[1720px]:gap-[30px]">
             {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`flex gap-[10px] px-2 py-1 text-[13px] font-[500] leading-[100%] tracking-[0%] 2xl:px-[16px] 2xl:py-[10px] 2xl:text-[18px] ${styles.textColor} uppercase whitespace-nowrap transition-opacity hover:opacity-80`}
+                className={`flex gap-[10px] px-2 py-1 text-[13px] font-[500] leading-[100%] tracking-[0%] 2xl:px-[16px] 2xl:py-[10px] 2xl:text-[18px] ${isTransparentRoute && !scrolled ? navStyles["/"].textColor : styles.textColor
+                  } uppercase whitespace-nowrap transition-opacity hover:opacity-80`}
               >
                 {label}
               </Link>
@@ -98,7 +105,9 @@ export default function Navbar() {
             <Cart />
 
             <button
-              className={`flex gap-[10px] cursor-pointer rounded-[24px] px-4 py-2 text-[13px] font-inter leading-[100%] tracking-[0%] whitespace-nowrap 2xl:px-[30px] 2xl:pt-[11px] 2xl:pb-[12px] 2xl:text-[14px] ${styles.buttonBg} ${textWeight} ${styles.textColor}`}
+              className={`flex gap-[10px] cursor-pointer rounded-[24px] px-4 py-2 text-[13px] font-inter leading-[100%] tracking-[0%] whitespace-nowrap 2xl:px-[30px] 2xl:pt-[11px] 2xl:pb-[12px] 2xl:text-[14px] ${isTransparentRoute && !scrolled ? navStyles["/"].buttonBg : styles.buttonBg
+                } ${textWeight} ${isTransparentRoute && !scrolled ? navStyles["/"].textColor : styles.textColor
+                }`}
             >
               Login
             </button>
@@ -106,10 +115,13 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Spacer to offset fixed navbar height, only for non-transparent-hero routes */}
+      {!isTransparentRoute && <div className="h-[92px] lg:h-[70px] 2xl:h-[110px]" />}
+
       {/* Hamburger Toggle Button */}
       <button
         onClick={toggleMenu}
-        className={`absolute top-5 right-5 z-[95] flex cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full bg-transparent p-2.5 backdrop-blur-md transition-transform lg:hidden ${isOpen ? "fixed" : "absolute"}`}
+        className={`fixed top-5 right-5 z-[95] flex cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full bg-transparent p-2.5 backdrop-blur-md transition-transform lg:hidden`}
         aria-label="Open menu"
       >
         <span

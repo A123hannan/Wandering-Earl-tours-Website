@@ -15,7 +15,7 @@ export default function AboutImgComponent({ page }: props) {
     <section className="w-full bg-white">
       {/* DARK BLUE AREA */}
       <div className="w-full bg-[#1E365C]">
-        <div className="max-w-[1760px] mx-auto pt-[40px] sm:pt-[60px] md:pt-[80px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
+        <div className="max-w-[1760px] mx-auto pt-[40px] sm:pt-[60px] md:pt-[80px]">
           {/* Heading + Description */}
           <div className="flex flex-col xl:flex-row xl:items-center lg:justify-between gap-6 lg:gap-12 mb-[30px] sm:mb-[50px] lg:mb-[80px]">
             <div className="flex-1">

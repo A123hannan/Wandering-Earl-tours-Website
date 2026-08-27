@@ -8,7 +8,7 @@ export default function page() {
     return (
         <div className=''>
             <AboutImgComponent page="/privateTours" />
-            <div className='page-container'>
+            <div className=''>
                 <ComapnyReviewSection page="/privateTours" />
 
             </div>

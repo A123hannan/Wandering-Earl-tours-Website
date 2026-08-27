@@ -24,7 +24,7 @@ export default function TourHero({ title, imgSrc }: props) {
         <div className="absolute inset-0 z-[15] bg-[linear-gradient(180deg,rgba(30,54,92,0)_0%,rgba(30,54,92,0.3)_30%,#1E365C_100%)]" />
 
         {/* Centered heading */}
-        <div className="relative z-30 flex items-center justify-center px-6">
+        <div className="relative z-30 flex items-start lg:items-center justify-center px-6">
           <h1 className="font-inter text-[var(--color-white)] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] pt-[100px] font-[900] text-center leading-[100%] tracking-[0%] uppercase drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
             {titleContent}
           </h1>
