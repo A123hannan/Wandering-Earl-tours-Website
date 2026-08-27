@@ -13,10 +13,10 @@ export default function CompanyReviewSection({ page }: Props) {
     <div className="w-full page-container px-4 sm:px-6 lg:px-8 xl:px-12">
       {page === "/about" && (
         <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-start gap-8 lg:gap-12 xl:gap-[128px] mb-12 sm:mb-20 lg:mb-30">
-          <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0 max-h-[573px]">
+          <div className="-mx-4 sm:-mx-6 lg:-mx-8 min-[1280px]:mx-0 w-[calc(100%+2rem)] sm:w-[calc(100%+3rem)] lg:w-[calc(100%+4rem)] min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0 max-h-[573px]">
             <ImageContainer containerNumber={1} />
           </div>
-          <div className="w-full min-[1280px]:flex-1 flex flex-col items-start justify-start ">
+          <div className="w-full min-[1280px]:flex-1 flex flex-col items-start justify-start">
             <p className="font-[500] text-base sm:text-lg lg:text-[19px] xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark">
               Our team at Wandering Earl Tours has a strong desire to bring rich
               cultural connections around the world to people who would appreciate
@@ -36,7 +36,6 @@ export default function CompanyReviewSection({ page }: Props) {
 
       {page === "/ourStyle" &&
         stylesData.map((styleData: any, i: number) => {
-          // Use item index fallback if styleData.index is zero-based or missing
           const itemIndex = styleData?.index ?? i;
           const isEven = itemIndex % 2 === 0;
 
@@ -46,8 +45,9 @@ export default function CompanyReviewSection({ page }: Props) {
               className={`relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col items-center gap-8 lg:gap-12 xl:gap-30 mb-12 sm:mb-[120px] last:mb-0 ${isEven ? "min-[1280px]:flex-row-reverse" : "min-[1280px]:flex-row"
                 }`}
             >
+              {/* Added Breakout utility classes below min-[1280px] */}
               <div
-                className={`w-full min-[1280px]:w-1/2 flex justify-center shrink-0 max-w-[614px] ${isEven ? "min-[1280px]:justify-end" : "min-[1280px]:justify-start"
+                className={`-mx-4 sm:-mx-6 lg:-mx-8 min-[1280px]:mx-0 w-[calc(100%+2rem)] sm:w-[calc(100%+3rem)] lg:w-[calc(100%+4rem)] min-[1280px]:w-1/2 flex justify-center shrink-0 min-[1280px]:max-w-[614px] ${isEven ? "min-[1280px]:justify-end" : "min-[1280px]:justify-start"
                   }`}
               >
                 <ImageContainer
@@ -88,7 +88,7 @@ export default function CompanyReviewSection({ page }: Props) {
 
       {page === "/privateTours" && (
         <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32">
-          <div className="max-w-full w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
+          <div className="-mx-4 sm:-mx-6 lg:-mx-8 min-[1280px]:mx-0 w-[calc(100%+2rem)] sm:w-[calc(100%+3rem)] lg:w-[calc(100%+4rem)] min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
             <ImageContainer containerNumber={4} />
           </div>
           <div className="w-full min-[1280px]:flex-1 min-w-0 flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-8">
