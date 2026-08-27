@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ImageContainer from "@/components/CompanyReviewSection/ImageContainer/imageContainer";
 import { stylesData } from "@/data/OurStlye/ourStyle";
@@ -11,7 +13,7 @@ export default function CompanyReviewSection({ page }: Props) {
     <div className="w-full page-container px-4 sm:px-6 lg:px-8 xl:px-12">
       {page === "/about" && (
         <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-0">
-          <div className="w-full min-[1280px]:w-1/2  flex justify-center min-[1280px]:justify-end shrink-0">
+          <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0">
             <ImageContainer containerNumber={1} />
           </div>
           <div className="w-full min-[1280px]:flex-1 flex flex-col items-start justify-start">
@@ -33,28 +35,56 @@ export default function CompanyReviewSection({ page }: Props) {
       )}
 
       {page === "/ourStyle" &&
-        stylesData.map((styleData: any) => (
-          <div
-            key={styleData.index}
-            className={`relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col items-center gap-8 lg:gap-12 xl:gap-30 mb-12 sm:mb-[120px] last:mb-0 ${(styleData?.index ?? 0) % 2 === 0 ? "min-[1280px]:flex-row-reverse" : "min-[1280px]:flex-row-reverse"}`}
-          >
-            <div className="w-full min-[1280px]:w-1/2 flex justify-center min-[1280px]:justify-end shrink-0 max-w-[614px]">
-              <ImageContainer containerNumber={styleData.index + 2} imageSources={styleData.imageSources} />
-            </div>
-            <div className="w-full min-[1280px]:flex-1 min-w-0 flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-8 max-w-[1362px]">
-              <div className="flex flex-col">
-                <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-accent">{styleData?.title1}</p>
-                <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-dark">{styleData?.title2}</p>
+        stylesData.map((styleData: any, i: number) => {
+          // Use item index fallback if styleData.index is zero-based or missing
+          const itemIndex = styleData?.index ?? i;
+          const isEven = itemIndex % 2 === 0;
+
+          return (
+            <div
+              key={styleData.index ?? i}
+              className={`relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col items-center gap-8 lg:gap-12 xl:gap-30 mb-12 sm:mb-[120px] last:mb-0 ${isEven ? "min-[1280px]:flex-row-reverse" : "min-[1280px]:flex-row"
+                }`}
+            >
+              <div
+                className={`w-full min-[1280px]:w-1/2 flex justify-center shrink-0 max-w-[614px] ${isEven ? "min-[1280px]:justify-end" : "min-[1280px]:justify-start"
+                  }`}
+              >
+                <ImageContainer
+                  containerNumber={itemIndex + 2}
+                  imageSources={styleData.imageSources}
+                />
               </div>
-              <div className="flex flex-col">
-                {styleData?.description1 && <p className="font-[500] text-base sm:text-lg xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark mt-3 sm:mt-5">{styleData?.description1}</p>}
-                {styleData?.description2 && <p className="font-[500] text-base sm:text-lg xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark mt-3 sm:mt-5">{styleData?.description2}</p>}
-                {styleData?.description3 && <p className="font-[500] text-base sm:text-lg xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark mt-3 sm:mt-5">{styleData?.description3}</p>}
+              <div className="w-full min-[1280px]:flex-1 min-w-0 flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-8 max-w-[1362px]">
+                <div className="flex flex-col">
+                  <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-accent">
+                    {styleData?.title1}
+                  </p>
+                  <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-dark">
+                    {styleData?.title2}
+                  </p>
+                </div>
+                <div className="flex flex-col">
+                  {styleData?.description1 && (
+                    <p className="font-[500] text-base sm:text-lg xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark mt-3 sm:mt-5">
+                      {styleData?.description1}
+                    </p>
+                  )}
+                  {styleData?.description2 && (
+                    <p className="font-[500] text-base sm:text-lg xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark mt-3 sm:mt-5">
+                      {styleData?.description2}
+                    </p>
+                  )}
+                  {styleData?.description3 && (
+                    <p className="font-[500] text-base sm:text-lg xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark mt-3 sm:mt-5">
+                      {styleData?.description3}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))
-      }
+          );
+        })}
 
       {page === "/privateTours" && (
         <div className="relative top-[-40px] sm:top-[-80px] lg:top-[-120px] xl:top-[-150px] flex flex-col min-[1280px]:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16 mb-12 sm:mb-20 lg:mb-32">
@@ -63,8 +93,12 @@ export default function CompanyReviewSection({ page }: Props) {
           </div>
           <div className="w-full min-[1280px]:flex-1 min-w-0 flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-8">
             <div className="flex flex-col">
-              <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-accent">private tours</p>
-              <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-dark">perfectly crfted</p>
+              <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-accent">
+                private tours
+              </p>
+              <p className="font-[700] text-[28px] sm:text-[36px] md:text-[40px] xl:text-[49px] leading-[110%] uppercase text-dark">
+                perfectly crfted
+              </p>
             </div>
             <div className="flex flex-col">
               <p className="font-[500] text-base sm:text-lg xl:text-[20px] leading-relaxed sm:leading-8 xl:leading-[36px] text-dark mt-3 sm:mt-5">
