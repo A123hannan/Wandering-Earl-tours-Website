@@ -33,7 +33,7 @@ export default function ReservanceCard() {
             {/* Top Dollar Arch & Red Header */}
             <div className="relative flex flex-col items-center justify-center">
                 {/* Protruding Semicircle Dome */}
-                <div className="absolute -top-[48px] sm:-top-[58px] z-0 h-[96px] w-[96px] sm:h-[116px] sm:w-[116px] rounded-full bg-accent flex justify-center pt-2.5 sm:pt-2.5">
+                <div className="absolute -top-[48px] sm:-top-[58px] z-0 h-[96px] w-[96px] sm:h-[116px] sm:w-[116px] rounded-full bg-accent flex justify-center min-[0px]:pt-0 sm:pt-2.25">
                     <div className="text-white scale-75 sm:scale-85 origin-center flex items-start justify-center">
                         <DollarIcon />
                     </div>
