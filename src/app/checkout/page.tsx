@@ -49,7 +49,7 @@ export default async function CheckoutPage({
                 </div>
 
                 {/* Right Card Container with equal spacing */}
-                <div className="w-full xl:max-w-[593px] max-xl:max-w-[1038px] mx-auto shrink-0 xl:sticky xl:top-33 ">
+                <div className="w-full xl:max-w-[593px] max-xl:max-w-[1038px] min-xl:pr-[40px] mx-auto shrink-0 xl:sticky xl:top-33 ">
                     <CheckoutCard
                         tourHeading={tour.heading}
                         guestCount={guestCount}
