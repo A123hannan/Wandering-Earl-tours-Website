@@ -2,7 +2,7 @@
 
 import Logo from "./logo";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Cart from "@/components/Cart/cart";
 import Button from "@/components/Button/button";
 import { usePathname } from "next/navigation";
@@ -58,6 +58,8 @@ const navStyles: any = {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
+  const navRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
@@ -74,12 +76,36 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Measure the fixed navbar's real rendered height so the spacer below
+  // always matches exactly, at every breakpoint, with no guessed px values.
+  useEffect(() => {
+    const updateHeight = () => {
+      if (navRef.current) setNavHeight(navRef.current.offsetHeight);
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+
+    // Re-measure if the navbar's content changes size (e.g. font load, logo swap)
+    let resizeObserver: ResizeObserver | undefined;
+    if (navRef.current && typeof ResizeObserver !== "undefined") {
+      resizeObserver = new ResizeObserver(updateHeight);
+      resizeObserver.observe(navRef.current);
+    }
+
+    return () => {
+      window.removeEventListener("resize", updateHeight);
+      resizeObserver?.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <div
+        ref={navRef}
         className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${isTransparentRoute && !scrolled
-            ? "bg-transparent"
-            : styles.className
+          ? "bg-transparent"
+          : styles.className
           }`}
       >
         <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6 lg:pt-[10px] lg:pb-[10px] 2xl:pt-[30px] min-[1720px]:px-[80px] 2xl:pb-[20px]">
@@ -115,8 +141,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Spacer to offset fixed navbar height, only for non-transparent-hero routes */}
-      {!isTransparentRoute && <div className="h-[92px] lg:h-[70px] 2xl:h-[110px]" />}
+      {/* Spacer to offset fixed navbar height, only for non-transparent-hero routes.
+          Height is measured live from the navbar itself, so it always matches
+          exactly at every breakpoint — no gap, no guessed px values. */}
+      {!isTransparentRoute && <div style={{ height: navHeight }} />}
 
       {/* Hamburger Toggle Button */}
       <button

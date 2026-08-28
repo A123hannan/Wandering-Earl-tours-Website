@@ -14,7 +14,7 @@ export default function page() {
             </div>
             <NichesandCountiresComponent componentFor="niches" />
             <NichesandCountiresComponent componentFor="countries" />
-            <div className='page-container'>
+            <div className='page-container mt-[100px]'>
                 <ReviewSection />
             </div>
             <div className="w-full flex justify-center mt-[40px] sm:mt-[70px] md:mt-[95px] lg:mt-[115px] 2xl:mt-[140px] px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] 2xl:px-[80px]">

@@ -105,7 +105,7 @@ export default function NichesAndCountries({ componentFor }: Props) {
             : "Some of the countries that we've organized private tours around include:";
 
     return (
-        <section className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-8 xl:px-12 2xl:!px-[80px] my-12 lg:my-20">
+        <section className="max-w-[1760px] mx-auto px-4 sm:px-6 md:px-12 lg:px-8 xl:px-12 2xl:!px-[80px] my-12 lg:my-20">
             <div className="w-full flex flex-col items-center gap-6 xl:gap-[80px]">
                 {/* Title Section matching reference structure */}
                 <div className="w-full flex justify-start lg:justify-center items-center text-left lg:text-center font-inter max-w-[850px] mx-auto">

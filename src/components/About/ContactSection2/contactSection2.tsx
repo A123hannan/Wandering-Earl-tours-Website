@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function ContactSection2() {
   return (
     <div className="bg-accent w-full relative max-w-[1920px] mx-auto overflow-hidden">
@@ -44,9 +44,9 @@ export default function ContactSection2() {
             experiences!
           </p>
           <div>
-            <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary text-white hover:bg-primary/80 transition-all font-medium text-sm sm:text-base cursor-pointer shadow-md">
+            <Link href="/contactUs" className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary text-white hover:bg-primary/80 transition-all font-medium text-sm sm:text-base cursor-pointer shadow-md">
               Contact us today
-            </button>
+            </Link>
           </div>
         </div>
 
