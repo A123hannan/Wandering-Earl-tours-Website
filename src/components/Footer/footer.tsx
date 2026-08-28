@@ -54,6 +54,9 @@ function FooterRoutes({
 
 export default function Footer() {
   const pathName = usePathname();
+  if (pathName.startsWith("/checkout")) {
+    return null;
+  }
   return (
     <div className={`relative w-full overflow-hidden w-full ${pathName !== "/pastTours" && pathName !== "/contactUs" && pathName !== "/privacy" && pathName !== "/terms" && pathName !== "/refund" && pathName !== "/tours" ? "mt-[64px] sm:mt-[100px] md:mt-[120px] 2xl:mt-[140px]" : "mt-0"} ${pathName === "/tours" ? "" : ""}`}>
       {/* Background Image */}

@@ -3,7 +3,9 @@ import { destCardDetils } from "./2024data";
 import { destCardDetils2025 } from "./2025data";
 import { Tour } from "./type";
 
-export function getTourById(id: number | string): Tour {
+export function getTourById(id: number | string | undefined): Tour | undefined {
+  if (id === undefined || id === null || id === "") return undefined;
+
   const numericId = Number(id);
 
   // Search in toursData
@@ -18,6 +20,6 @@ export function getTourById(id: number | string): Tour {
   const tourFrom2024 = destCardDetils.find((t) => t.id === numericId);
   if (tourFrom2024) return tourFrom2024;
 
-  // Default fallback to first tour if ID isn't matched
-  return toursData[0];
+  // No match found — return undefined so the page can call notFound()
+  return undefined;
 }

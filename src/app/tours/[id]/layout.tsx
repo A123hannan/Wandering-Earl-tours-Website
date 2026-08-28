@@ -3,6 +3,7 @@ import ReservanceCard from "@/components/ToursDetailed/ReservanceCard/reservance
 import TourSection from "@/components/TourSection/tourSection";
 import ToursDetailedNavbar from "@/components/ToursDetailed/ToursDetailedNavbar/toursDetailedNavbar";
 import { getTourById } from "@/data/getTour";
+import { notFound } from "next/navigation";
 
 export default async function Layout({
     children,
@@ -13,6 +14,7 @@ export default async function Layout({
 }) {
     const { id } = await params;
     const tour = getTourById(id);
+    if (!tour) notFound();
 
     return (
         <>
@@ -31,8 +33,8 @@ export default async function Layout({
                         {children}
                     </div>
                 </div>
-                <div className="lg:sticky lg:top-24 self-start w-full max-w-[593px] mx-auto 2xl:mx-0 2xl:w-[593px] shrink-0">
-                    <ReservanceCard />
+                <div className="lg:sticky lg:top-30.5 self-start w-full max-w-[593px] mx-auto 2xl:mx-0 2xl:w-[593px] shrink-0">
+                    <ReservanceCard tourId={id} />
                 </div>
             </main>
 

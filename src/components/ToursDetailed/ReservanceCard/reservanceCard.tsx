@@ -2,11 +2,35 @@
 
 import React, { useState } from "react";
 import { DollarIcon } from "@/assets/icons";
+import { useRouter, useParams } from "next/navigation";
 
-export default function ReservanceCard() {
+export default function ReservanceCard({ tourId }: { tourId?: string }) {
+    const route = useRouter();
+    const params = useParams();
+
+    // Fallback to route params if prop is undefined
+    const activeTourId = tourId || (params?.id as string);
+
     const [selectedOption, setSelectedOption] = useState<string>("");
     const [selectedPayment, setSelectedPayment] = useState<string>("full");
     const [count, setCount] = useState<number>(1);
+
+    const handleCheckOut = () => {
+        if (!selectedOption) {
+            alert("Mehbani krka koi option select kr lay");
+            return;
+        }
+
+        const checkoutParams = new URLSearchParams({
+            id: activeTourId,
+            option: selectedOption,
+            payment: selectedPayment,
+            guests: count.toString(),
+        });
+
+        const destinationURL = `/checkout?${checkoutParams.toString()}`;
+        route.push(destinationURL);
+    };
 
     const handleSelectedOption = (option: string) => {
         setSelectedOption(option);
@@ -181,6 +205,7 @@ export default function ReservanceCard() {
                         {/* Checkout Button */}
                         <button
                             type="button"
+                            onClick={handleCheckOut}
                             className="flex-1 py-3.5 sm:py-4 2xl:p-[20px] rounded-[30px] bg-primary hover:bg-[#162844] active:scale-[0.98] text-white font-[600] text-[16px] leading-none shadow-md transition-all duration-200 text-center flex items-center justify-center cursor-pointer"
                         >
                             Checkout
