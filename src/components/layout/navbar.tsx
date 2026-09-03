@@ -103,7 +103,7 @@ export default function Navbar() {
     <>
       <div
         ref={navRef}
-        className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${isTransparentRoute && !scrolled
+        className={`fixed top-0 left-0 z-[100] w-full transition-colors duration-300 ${isTransparentRoute && !scrolled
           ? "bg-transparent"
           : styles.className
           }`}
