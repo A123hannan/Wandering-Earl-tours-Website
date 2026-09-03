@@ -149,7 +149,7 @@ export default function Navbar() {
       {/* Hamburger Toggle Button */}
       <button
         onClick={toggleMenu}
-        className={`fixed top-5 right-5 z-[95] flex cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full bg-transparent p-2.5 backdrop-blur-md transition-transform lg:hidden`}
+        className={`fixed top-5 right-5 z-[101] flex cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full bg-transparent p-2.5 backdrop-blur-md transition-transform lg:hidden`}
         aria-label="Open menu"
       >
         <span
